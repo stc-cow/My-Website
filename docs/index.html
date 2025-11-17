@@ -3,6 +3,22 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bannaga Altieb — Modern AI CV</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+      :root {
+        --slate-50: #f8fafc;
+        --slate-100: #eef2ff;
+        --slate-200: #e2e8f0;
+        --slate-300: #cbd5f5;
+        --slate-400: #94a3b8;
+        --slate-500: #64748b;
+        --slate-700: #334155;
+        --primary: #2563eb;
+        --accent: #f97316;
+        --success: #0ea5e9;
+        --panel: #ffffff;
     <title>Bannaga Altieb Abdul Muhsin — Intelligent Energy Engineer</title>
     <style>
       :root {
@@ -25,6 +41,14 @@
       }
 
       body {
+        margin: 0;
+        font-family: "Poppins", "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+        background: linear-gradient(180deg, #e2e8f0, #f8fafc);
+        color: var(--slate-700);
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        padding: 24px;
         font-family: "Inter", "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
         margin: 0;
         background: var(--bg);
@@ -40,6 +64,20 @@
       h4,
       h5,
       h6 {
+        font-weight: 600;
+        color: #111827;
+        margin-top: 0;
+      }
+
+      h2.section-title {
+        font-size: 1.35rem;
+        margin-bottom: 4px;
+      }
+
+      .page {
+        width: 100%;
+        display: flex;
+        justify-content: center;
         font-weight: 700;
         letter-spacing: -0.01em;
       }
@@ -56,6 +94,418 @@
       .paper {
         width: min(210mm, 100%);
         min-height: 297mm;
+        background: #ffffff;
+        border-radius: 32px;
+        box-shadow: 0 35px 80px rgba(15, 23, 42, 0.2);
+        overflow: hidden;
+        border: 1px solid rgba(100, 116, 139, 0.15);
+      }
+
+      #cv-sheet {
+        padding: 0;
+      }
+
+      .layout {
+        display: flex;
+        min-height: 100%;
+      }
+
+      .sidebar {
+        width: 260px;
+        background: var(--slate-50);
+        padding: 32px 24px;
+        border-right: 1px solid var(--slate-200);
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .brand-logo {
+        width: 40px;
+        height: 40px;
+        border-radius: 12px;
+        background: var(--primary);
+        color: white;
+        display: grid;
+        place-items: center;
+        font-weight: 700;
+        font-size: 1.1rem;
+      }
+
+      .profile-card {
+        text-align: center;
+      }
+
+      .profile-card img {
+        width: 140px;
+        height: 140px;
+        border-radius: 24px;
+        object-fit: cover;
+        border: 4px solid #fff;
+        box-shadow: 0 20px 40px rgba(37, 99, 235, 0.3);
+      }
+
+      .profile-card h1 {
+        font-size: 1.45rem;
+        margin: 16px 0 4px;
+      }
+
+      .profile-card p {
+        margin: 2px 0;
+        color: var(--slate-500);
+        font-size: 0.95rem;
+      }
+
+      .nav {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .nav a {
+        text-decoration: none;
+        color: var(--slate-500);
+        font-weight: 500;
+        font-size: 0.92rem;
+        padding: 10px 14px;
+        border-radius: 999px;
+        transition: all 0.2s ease;
+      }
+
+      .nav a:hover,
+      .nav a:focus {
+        background: rgba(37, 99, 235, 0.08);
+        color: var(--primary);
+      }
+
+      .contact-pill {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 12px;
+        border-radius: 14px;
+        background: white;
+        border: 1px solid var(--slate-200);
+        font-size: 0.9rem;
+        color: var(--slate-700);
+      }
+
+      .contact-actions {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .contact-actions a,
+      .contact-actions button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        padding: 12px;
+        border-radius: 14px;
+        border: none;
+        cursor: pointer;
+        font-weight: 600;
+        font-size: 0.95rem;
+        text-decoration: none;
+      }
+
+      .contact-actions a {
+        color: white;
+      }
+
+      .whatsapp {
+        background: #25d366;
+      }
+
+      .email {
+        background: var(--primary);
+      }
+
+      .linkedin {
+        background: #0a66c2;
+      }
+
+      .pdf-btn {
+        background: #1f2937;
+        color: white;
+      }
+
+      .owner-btn {
+        background: transparent;
+        color: var(--primary);
+        border: 1px dashed var(--primary);
+      }
+
+      .content {
+        flex: 1;
+        padding: 48px;
+        background: radial-gradient(circle at top, rgba(37, 99, 235, 0.12), transparent 55%);
+      }
+
+      .hero-panel {
+        background: linear-gradient(135deg, rgba(37, 99, 235, 0.95), rgba(14, 165, 233, 0.9));
+        color: white;
+        padding: 32px;
+        border-radius: 28px;
+        margin-bottom: 32px;
+        box-shadow: 0 25px 60px rgba(15, 23, 42, 0.25);
+      }
+
+      .hero-panel h2 {
+        color: white;
+        font-size: 2rem;
+        margin-bottom: 8px;
+      }
+
+      .hero-panel p {
+        color: rgba(255, 255, 255, 0.9);
+        margin-bottom: 20px;
+      }
+
+      .hero-stats {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 12px;
+      }
+
+      .hero-stats div {
+        padding: 16px;
+        border-radius: 18px;
+        background: rgba(15, 23, 42, 0.25);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        font-weight: 500;
+      }
+
+      .hero-stats strong {
+        display: block;
+        font-size: 1.6rem;
+        margin-bottom: 4px;
+      }
+
+      .section-card {
+        background: var(--panel);
+        border-radius: 24px;
+        padding: 28px;
+        margin-bottom: 28px;
+        border: 1px solid rgba(148, 163, 184, 0.25);
+      }
+
+      .section-card h3 {
+        text-transform: uppercase;
+        font-size: 0.8rem;
+        color: var(--slate-500);
+        letter-spacing: 0.25em;
+        margin-bottom: 4px;
+      }
+
+      .section-description {
+        color: var(--slate-500);
+        font-size: 0.95rem;
+      }
+
+      .stat-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 18px;
+      }
+
+      .stat-card {
+        border: 1px solid var(--slate-200);
+        border-radius: 18px;
+        padding: 18px;
+        background: var(--slate-50);
+      }
+
+      .stat-card strong {
+        font-size: 1.5rem;
+        color: var(--primary);
+      }
+
+      .job-card {
+        border: 1px solid var(--slate-200);
+        border-radius: 20px;
+        overflow: hidden;
+        display: grid;
+        grid-template-columns: 180px 1fr;
+        margin-bottom: 16px;
+        background: #fff;
+      }
+
+      .job-photo {
+        background-size: cover;
+        background-position: center;
+        min-height: 160px;
+      }
+
+      .job-body {
+        padding: 20px 24px;
+      }
+
+      .job-body h4 {
+        margin-bottom: 4px;
+      }
+
+      .job-meta {
+        font-size: 0.9rem;
+        color: var(--slate-500);
+        margin-bottom: 12px;
+      }
+
+      .show-link {
+        color: var(--primary);
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.88rem;
+      }
+
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 10px;
+      }
+
+      .skill-pill {
+        border-radius: 999px;
+        border: 1px solid var(--slate-200);
+        padding: 10px 16px;
+        font-size: 0.9rem;
+        text-align: center;
+        background: var(--slate-50);
+      }
+
+      .education-card {
+        display: grid;
+        grid-template-columns: 220px 1fr;
+        gap: 20px;
+        align-items: center;
+      }
+
+      .education-card img {
+        width: 100%;
+        border-radius: 20px;
+        box-shadow: 0 15px 40px rgba(30, 64, 175, 0.3);
+      }
+
+      .timeline {
+        position: relative;
+        padding-left: 24px;
+      }
+
+      .timeline::before {
+        content: "";
+        position: absolute;
+        left: 8px;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: var(--slate-200);
+      }
+
+      .timeline-item {
+        position: relative;
+        padding: 12px 0 12px 16px;
+      }
+
+      .timeline-item::before {
+        content: "";
+        position: absolute;
+        left: -4px;
+        top: 16px;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        border: 2px solid var(--primary);
+        background: #fff;
+      }
+
+      .availability-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 12px;
+      }
+
+      .availability-table th,
+      .availability-table td {
+        padding: 10px;
+        text-align: center;
+        border: 1px solid var(--slate-200);
+        font-size: 0.85rem;
+      }
+
+      .availability-table th {
+        background: var(--slate-50);
+      }
+
+      .preference-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 12px;
+        margin-top: 12px;
+      }
+
+      .preference-card {
+        padding: 14px;
+        border-radius: 16px;
+        border: 1px solid var(--slate-200);
+        font-size: 0.9rem;
+      }
+
+      .list-columns {
+        columns: 2;
+        column-gap: 24px;
+      }
+
+      .quote {
+        font-size: 1.1rem;
+        font-style: italic;
+        border-left: 4px solid var(--primary);
+        padding-left: 16px;
+        color: var(--slate-700);
+      }
+
+      .owner-console {
+        position: fixed;
+        inset: 0;
+        background: rgba(15, 23, 42, 0.7);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+        z-index: 50;
+      }
+
+      .owner-console.visible {
+        display: flex;
+      }
+
+      .owner-panel {
+        width: min(960px, 100%);
+        max-height: 90vh;
+        overflow-y: auto;
+        background: white;
+        border-radius: 24px;
+        padding: 32px;
+        box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+      }
+
+      .viewer-form {
+        display: grid;
+        gap: 12px;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      }
+
+      .viewer-form textarea {
+        grid-column: 1 / -1;
+        resize: vertical;
+        min-height: 80px;
         margin: 0 auto;
         background: #f8fafc;
         border-radius: 32px;
@@ -478,6 +928,20 @@
 
       .viewer-form input,
       .viewer-form textarea {
+        border-radius: 12px;
+        border: 1px solid var(--slate-200);
+        padding: 10px 14px;
+        font-family: inherit;
+      }
+
+      .viewer-form button,
+      .viewer-export {
+        grid-column: 1 / -1;
+        padding: 12px 18px;
+        border: none;
+        border-radius: 12px;
+        background: var(--primary);
+        color: #fff;
         padding: 10px 14px;
         border-radius: 12px;
         border: 1px solid #cbd5f5;
@@ -495,6 +959,10 @@
         cursor: pointer;
       }
 
+      .viewer-log {
+        margin-top: 18px;
+        border-top: 1px solid var(--slate-200);
+        padding-top: 16px;
       .viewer-export {
         margin-top: 12px;
         width: 100%;
@@ -515,6 +983,15 @@
       }
 
       .viewer-entry {
+        border: 1px solid var(--slate-200);
+        border-radius: 14px;
+        padding: 12px 14px;
+      }
+
+      .viewer-entry span {
+        display: block;
+        font-size: 0.85rem;
+        color: var(--slate-500);
         padding: 12px;
         border-radius: 14px;
         border: 1px solid var(--border);
@@ -534,6 +1011,36 @@
 
       .empty-state {
         font-size: 0.9rem;
+        color: var(--slate-500);
+      }
+
+      @media (max-width: 1100px) {
+        .layout {
+          flex-direction: column;
+        }
+        .sidebar {
+          width: 100%;
+          border-right: none;
+          border-bottom: 1px solid var(--slate-200);
+        }
+        .education-card,
+        .job-card {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 640px) {
+        body {
+          padding: 12px;
+        }
+        .content {
+          padding: 32px 20px;
+        }
+        .hero-stats {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        .list-columns {
+          columns: 1;
         color: var(--muted);
       }
 
@@ -571,6 +1078,311 @@
   <body>
     <div class="page">
       <div class="paper" id="cv-sheet">
+        <div class="layout">
+          <aside class="sidebar">
+            <div class="brand">
+              <div class="brand-logo">BA</div>
+              <div>
+                <strong>Bannaga.pro</strong>
+                <div style="font-size: 0.8rem; color: var(--slate-500)">AI Resume Experience</div>
+              </div>
+            </div>
+            <div class="profile-card">
+              <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=600&q=80" alt="Portrait" />
+              <h1>Bannaga Altieb</h1>
+              <p>Project Director · AI Energy Systems</p>
+              <p>Riyadh, Saudi Arabia</p>
+              <div class="contact-pill">+966 542 966 343</div>
+              <div class="contact-pill">bannaga.altieb@gmail.com</div>
+            </div>
+            <nav class="nav">
+              <a href="#summary">Summary</a>
+              <a href="#overview">Overview</a>
+              <a href="#work-history">Work History</a>
+              <a href="#education">Education</a>
+              <a href="#skills">Skills</a>
+              <a href="#certifications">Certifications</a>
+              <a href="#availability">Availability</a>
+              <a href="#preference">Work Preference</a>
+              <a href="#software">Software</a>
+              <a href="#websites">Websites</a>
+              <a href="#languages">Languages</a>
+              <a href="#quote">Quote</a>
+              <a href="#accomplishments">Accomplishments</a>
+            </nav>
+            <div class="contact-actions">
+              <a class="whatsapp" href="https://wa.me/966542966343" target="_blank">WhatsApp</a>
+              <a class="email" href="mailto:bannaga.altieb@gmail.com">Email</a>
+              <a class="linkedin" href="https://www.linkedin.com/in/bannaga-abdalmuhsin-cmvp%C2%AE-cem%C2%AE415106bb/" target="_blank">LinkedIn</a>
+              <button class="pdf-btn" id="download-pdf" type="button">Download PDF</button>
+              <button class="owner-btn" id="owner-access-btn" type="button">Owner Console</button>
+            </div>
+          </aside>
+          <main class="content">
+            <section class="hero-panel" id="summary">
+              <h2>Modern CV — Intelligent Project Director</h2>
+              <p>
+                Strategic leader blending over a decade of telecom and energy delivery with full-stack artificial intelligence. I
+                design, deploy, and optimize infrastructure programs that fuse SCADA, IoT, data lakes, and predictive models to
+                guarantee uptime and unlock autonomous operations.
+              </p>
+              <div class="hero-stats">
+                <div><strong>18</strong>Years of experience</div>
+                <div><strong>27</strong>Certifications & trainings</div>
+                <div><strong>300+</strong>Sites automated with AI twins</div>
+                <div><strong>30%</strong>Average efficiency gain delivered</div>
+              </div>
+            </section>
+
+            <section class="section-card" id="overview">
+              <h3>Overview</h3>
+              <h2 class="section-title">Executive Snapshot</h2>
+              <p class="section-description">
+                Direct complex programs from feasibility through handover, orchestrate cross-functional teams, and craft
+                data-driven playbooks that align engineering rigor with board-level objectives. Expert in translating operations
+                manuals into digital workflows, partnering with utilities and hyperscalers, and embedding AI copilots into every
+                asset lifecycle.
+              </p>
+              <div class="stat-grid" style="margin-top: 18px">
+                <div class="stat-card"><strong>90%</strong>Predictive accuracy on critical alarms</div>
+                <div class="stat-card"><strong>6</strong>National rollouts led end-to-end</div>
+                <div class="stat-card"><strong>4</strong>Languages across multicultural teams</div>
+                <div class="stat-card"><strong>$120M</strong>Programs stewarded with zero downtime</div>
+              </div>
+            </section>
+
+            <section class="section-card" id="work-history">
+              <h3>Work History</h3>
+              <h2 class="section-title">Career Timeline</h2>
+              <div class="job-card">
+                <div class="job-photo" style="background-image: url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=500&q=80')"></div>
+                <div class="job-body">
+                  <h4>Project Director — CSS, Salam</h4>
+                  <div class="job-meta">Riyadh · 2018 – Current</div>
+                  <p>
+                    Lead a national modernization mandate for high-availability telecom infrastructure. Architected an AI command
+                    center, orchestrated predictive maintenance, and governed digital twin rollouts covering 300+ remote sites.
+                  </p>
+                  <a class="show-link" href="#">Show description</a>
+                </div>
+              </div>
+              <div class="job-card">
+                <div class="job-photo" style="background-image: url('https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=500&q=80')"></div>
+                <div class="job-body">
+                  <h4>Senior Projects Manager — Alfanar Telecom</h4>
+                  <div class="job-meta">Riyadh · 2014 – 2018</div>
+                  <p>
+                    Directed multi-site rollouts for smart grid integration, IoT monitoring, and fiber backbones. Championed ML
+                    pilots for outage prediction and analytics adoption among field teams.
+                  </p>
+                  <a class="show-link" href="#">Show description</a>
+                </div>
+              </div>
+              <div class="job-card">
+                <div class="job-photo" style="background-image: url('https://images.unsplash.com/photo-1434493789847-2f02dc6ca35d?auto=format&fit=crop&w=500&q=80')"></div>
+                <div class="job-body">
+                  <h4>BS Optimization Manager — Ericsson</h4>
+                  <div class="job-meta">Khartoum · 2011 – 2014</div>
+                  <p>
+                    Delivered KPI-driven network performance initiatives, automated RAN tuning workflows, and engineered
+                    telemetry streams that inspired later AI investments.
+                  </p>
+                  <a class="show-link" href="#">Show description</a>
+                </div>
+              </div>
+            </section>
+
+            <section class="section-card" id="education">
+              <h3>Education</h3>
+              <h2 class="section-title">Academic Foundation</h2>
+              <div class="education-card">
+                <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=600&q=80" alt="University" />
+                <div>
+                  <h4>Bachelor of Electronic Engineering (Control)</h4>
+                  <p>El Neelain University · 2007 – 2012</p>
+                  <p class="section-description">
+                    Specialized in control systems, embedded design, and automation — now elevated with AI, digital twins, and
+                    enterprise analytics certifications.
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            <section class="section-card" id="skills">
+              <h3>Skills</h3>
+              <h2 class="section-title">Core Strengths</h2>
+              <div class="skills-grid">
+                <div class="skill-pill">Leadership & PMO</div>
+                <div class="skill-pill">AI / ML Strategy</div>
+                <div class="skill-pill">Predictive Maintenance</div>
+                <div class="skill-pill">Smart Grid Design</div>
+                <div class="skill-pill">Digital Twins</div>
+                <div class="skill-pill">Data Governance</div>
+                <div class="skill-pill">Vendor Management</div>
+                <div class="skill-pill">Energy Analytics</div>
+                <div class="skill-pill">Cyber Hardening</div>
+                <div class="skill-pill">Stakeholder Coaching</div>
+              </div>
+            </section>
+
+            <section class="section-card" id="certifications">
+              <h3>Certifications</h3>
+              <h2 class="section-title">Learning Journey</h2>
+              <div class="timeline">
+                <div class="timeline-item">
+                  <strong>Certified Measurement & Verification Professional (CMVP®)</strong>
+                  <div class="section-description">Association of Energy Engineers</div>
+                </div>
+                <div class="timeline-item">
+                  <strong>Certified Energy Manager (CEM®)</strong>
+                  <div class="section-description">AEE — Global</div>
+                </div>
+                <div class="timeline-item">
+                  <strong>Machine Learning Specialization (Python)</strong>
+                  <div class="section-description">Coursera & industry lab projects</div>
+                </div>
+                <div class="timeline-item">
+                  <strong>Power BI Advanced Analytics</strong>
+                  <div class="section-description">Microsoft Partner Network</div>
+                </div>
+                <div class="timeline-item">
+                  <strong>SCADA / PLC / DCS Masterclass</strong>
+                  <div class="section-description">Industrial Automation Center</div>
+                </div>
+              </div>
+            </section>
+
+            <section class="section-card" id="availability">
+              <h3>Work Availability</h3>
+              <h2 class="section-title">Engagement Windows</h2>
+              <table class="availability-table">
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th>Mon</th>
+                    <th>Tue</th>
+                    <th>Wed</th>
+                    <th>Thu</th>
+                    <th>Fri</th>
+                    <th>Sat</th>
+                    <th>Sun</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th>Morning</th>
+                    <td>✔</td>
+                    <td>✔</td>
+                    <td>✔</td>
+                    <td>✔</td>
+                    <td>✔</td>
+                    <td>✖</td>
+                    <td>✖</td>
+                  </tr>
+                  <tr>
+                    <th>Afternoon</th>
+                    <td>✔</td>
+                    <td>✔</td>
+                    <td>✔</td>
+                    <td>✔</td>
+                    <td>✔</td>
+                    <td>✖</td>
+                    <td>✖</td>
+                  </tr>
+                  <tr>
+                    <th>Evening</th>
+                    <td>✔</td>
+                    <td>✔</td>
+                    <td>✔</td>
+                    <td>✔</td>
+                    <td>✔</td>
+                    <td>✖</td>
+                    <td>✖</td>
+                  </tr>
+                </tbody>
+              </table>
+            </section>
+
+            <section class="section-card" id="preference">
+              <h3>Work Preference</h3>
+              <h2 class="section-title">Ideal Collaboration</h2>
+              <div class="preference-grid">
+                <div class="preference-card"><strong>Work Type:</strong> Full Time</div>
+                <div class="preference-card"><strong>Location:</strong> On-site · Remote · Hybrid</div>
+                <div class="preference-card"><strong>Important:</strong> Culture, innovation, AI-driven missions</div>
+                <div class="preference-card"><strong>Benefits:</strong> Growth pathways, wellness, team retreats</div>
+              </div>
+            </section>
+
+            <section class="section-card" id="software">
+              <h3>Software</h3>
+              <h2 class="section-title">Tool Stack</h2>
+              <div class="list-columns">
+                <p>Microsoft Excel · Power BI · Project · Visio · PowerPoint</p>
+                <p>Python · TensorFlow · PyTorch · SQL Server · Azure Synapse</p>
+                <p>MATLAB · Simulink · ETAP · AutoCAD Electrical</p>
+                <p>SCADA · PLC · DCS · RTU · OPC-UA · Modbus</p>
+              </div>
+            </section>
+
+            <section class="section-card" id="websites">
+              <h3>Websites</h3>
+              <h2 class="section-title">Digital Presence</h2>
+              <p>
+                <a href="https://www.linkedin.com/in/bannaga-abdalmuhsin-cmvp%C2%AE-cem%C2%AE415106bb/" target="_blank">LinkedIn</a>
+                · <a href="https://wa.me/966542966343" target="_blank">WhatsApp Direct</a>
+              </p>
+            </section>
+
+            <section class="section-card" id="languages">
+              <h3>Languages</h3>
+              <h2 class="section-title">Communication</h2>
+              <p>Arabic — Native · English — Advanced C1</p>
+            </section>
+
+            <section class="section-card" id="quote">
+              <h3>Quote</h3>
+              <h2 class="section-title">Guiding Principle</h2>
+              <p class="quote">“You can’t start the next chapter of your life if you keep rereading the last one.” — Michael McMillan</p>
+            </section>
+
+            <section class="section-card" id="accomplishments">
+              <h3>Accomplishments</h3>
+              <h2 class="section-title">Highlights</h2>
+              <ul>
+                <li>Used Microsoft Excel to develop inventory tracking spreadsheets adopted across national depots.</li>
+                <li>Collaborated with IT on design of the Internet of Things department of Smart Automation System (SAS).</li>
+                <li>Delivered AI-enabled maintenance workflows with 35% faster incident closure.</li>
+                <li>Mentored 40+ engineers on analytics-first project delivery and digital safety.</li>
+              </ul>
+            </section>
+          </main>
+        </div>
+      </div>
+    </div>
+
+    <section id="owner-console" class="owner-console" aria-hidden="true">
+      <div class="owner-panel">
+        <h2>Private Viewer Dashboard</h2>
+        <p>Track view counts and optional visitor check-ins. Data stays in your browser storage.</p>
+        <div class="stat-card" style="margin-bottom: 18px; display: inline-block">
+          <strong id="owner-view-count">--</strong>
+          <div>Total Visits (CountAPI)</div>
+        </div>
+        <form class="viewer-form" id="viewer-form">
+          <input type="text" name="viewer-name" placeholder="Visitor name" required />
+          <input type="text" name="viewer-organization" placeholder="Organization" />
+          <input type="email" name="viewer-email" placeholder="Email" />
+          <textarea name="viewer-note" placeholder="Notes or opportunities"></textarea>
+          <button type="submit">Log Viewer Locally</button>
+        </form>
+        <div class="viewer-log" id="viewer-log">
+          <div class="empty-state">No check-ins yet. Be the first to say hello!</div>
+        </div>
+        <button class="viewer-export" type="button" id="export-viewers">Export Log (.json)</button>
+      </div>
+    </section>
+
         <div class="container">
         <header class="hero">
           <div class="hero-grid">
@@ -976,11 +1788,18 @@
           if (!response) return;
           if (response.trim().toLowerCase() === OWNER_PIN) {
             ownerConsole.classList.add("visible");
+            ownerConsole.setAttribute("aria-hidden", "false");
             ownerButton.textContent = "Owner Console Ready";
             ownerButton.classList.add("unlocked");
             ownerButton.disabled = true;
           } else {
             alert("Incorrect passphrase. Please try again.");
+          }
+        });
+        ownerConsole.addEventListener("click", (event) => {
+          if (event.target === ownerConsole) {
+            ownerConsole.classList.remove("visible");
+            ownerConsole.setAttribute("aria-hidden", "true");
           }
         });
       }
