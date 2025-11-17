@@ -5,126 +5,350 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bannaga Altieb Abdul Muhsin - CV</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f4f4f4; }
-    .container { max-width: 900px; margin: auto; background: #fff; padding: 30px; }
-    h1, h2 { margin-bottom: 10px; }
-    h1 { font-size: 32px; }
-    h2 { margin-top: 30px; border-bottom: 2px solid #ddd; padding-bottom: 6px; }
-    .header { text-align: center; }
-    .section { margin-top: 20px; }
-    ul { margin: 0; padding-left: 20px; }
-    .contact a { color: #0056b3; text-decoration: none; }
+    :root {
+      --primary: #005f73;
+      --accent: #0a9396;
+      --muted: #64748b;
+      --bg: #f5f7fb;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Segoe UI", "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      margin: 0;
+      background: var(--bg);
+      color: #0f172a;
+      line-height: 1.6;
+    }
+
+    .page {
+      max-width: 1100px;
+      margin: 30px auto;
+      padding: 0 20px 40px;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--primary), #001f3f);
+      color: white;
+      border-radius: 22px;
+      padding: 32px;
+      box-shadow: 0 20px 50px rgba(0, 17, 51, 0.2);
+      margin-bottom: 30px;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin: 0 0 5px;
+      letter-spacing: 1px;
+    }
+
+    header h2 {
+      margin: 0;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    header p {
+      margin: 12px 0 0;
+      font-size: 0.95rem;
+    }
+
+    .contact-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 18px;
+      font-size: 0.95rem;
+    }
+
+    .contact-grid span {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.15);
+      padding: 6px 12px;
+      border-radius: 999px;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .content {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 24px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 18px;
+      padding: 26px;
+      box-shadow: 0 18px 35px rgba(15, 23, 42, 0.08);
+      margin-bottom: 24px;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--muted);
+    }
+
+    .summary {
+      font-size: 1rem;
+      color: #1e293b;
+    }
+
+    .experience article {
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .experience article:last-child {
+      border-bottom: none;
+    }
+
+    .role {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-weight: 600;
+      color: #0f172a;
+    }
+
+    .employer {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    ul {
+      margin: 10px 0 0 20px;
+      padding: 0;
+    }
+
+    .badge-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .badge {
+      background: rgba(0, 95, 115, 0.08);
+      padding: 7px 14px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      color: #0f172a;
+    }
+
+    .sidebar-section + .sidebar-section {
+      margin-top: 24px;
+    }
+
+    .list-tight {
+      list-style: none;
+      margin: 10px 0 0;
+      padding: 0;
+    }
+
+    .list-tight li {
+      padding: 6px 0;
+      border-bottom: 1px solid #e2e8f0;
+      font-size: 0.95rem;
+    }
+
+    .list-tight li:last-child {
+      border-bottom: none;
+    }
+
+    @media (max-width: 900px) {
+      .content {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="header">
-      <h1>ELECTRICAL ENGINEER</h1>
-      <h2>BANNAGA ALTIEB ABDUL MUHSIN</h2>
-      <p>Riyadh, Saudi Arabia | (966) 542-966-343 | ENG.ALTIEB@GMAIL.COM</p>
+  <div class="page">
+    <header>
+      <h1>Bannaga Altieb Abdul Muhsin</h1>
+      <h2>Electrical Project Engineer & Energy Specialist</h2>
+      <p>
+        Riyadh, Saudi Arabia &bull; (+966) 542-966-343 &bull;
+        <a href="mailto:eng.altieb@gmail.com" style="color: #94fbff">ENG.ALTIEB@GMAIL.COM</a>
+      </p>
+      <div class="contact-grid">
+        <span>CMVP® & CEM® Certified</span>
+        <span><a href="https://www.linkedin.com/in/bannaga-abdalmuhsin-cmvp%C2%AE-cem%C2%AE415106bb/" target="_blank">LinkedIn Profile</a></span>
+      </div>
+    </header>
+
+    <div class="content">
+      <main>
+        <section class="card summary">
+          <h3>Professional Summary</h3>
+          <p>
+            Dedicated Electrical Project Engineer with a proven record of delivering energy-efficient, budget-conscious projects across the telecom and utility sectors.
+            Adept at electrical design, preventive maintenance, and managed services operations, with a passion for mentoring teams and building digital solutions that drive measurable performance improvements.
+          </p>
+        </section>
+
+        <section class="card experience">
+          <h3>Experience</h3>
+
+          <article>
+            <div class="role">
+              <span>Electrical Project Engineer</span>
+              <span>Jul 2019 &ndash; Present</span>
+            </div>
+            <div class="employer">Advanced Communications & Electronics Systems (ACES) &mdash; Riyadh, Saudi Arabia</div>
+            <ul>
+              <li>Lead energy manager overseeing design and implementation of efficiency initiatives across Mobily ENM managed services.</li>
+              <li>Operate and maintain STC COW managed service infrastructure with high-availability SLAs.</li>
+              <li>Author technical documentation, troubleshooting guides, and maintenance playbooks adopted across regional teams.</li>
+              <li>Propose and execute system modifications that elevate reliability while reducing operational costs.</li>
+              <li>Standardize manuals and mentor junior engineers, accelerating onboarding and compliance.</li>
+            </ul>
+          </article>
+
+          <article>
+            <div class="role">
+              <span>Electrical Project Engineer</span>
+              <span>Jun 2018 &ndash; Jun 2019</span>
+            </div>
+            <div class="employer">Absar for General Contracting &mdash; Riyadh</div>
+            <ul>
+              <li>Delivered Saudi Electricity Company (SEC) unified contract scope including RMU, transformer, and mini-pillar installation.</li>
+              <li>Led commissioning, testing, and handover activities to SEC stakeholders.</li>
+              <li>Monitored UHV/MV/LV lines via SCADA to ensure stability and rapid incident response.</li>
+            </ul>
+          </article>
+
+          <article>
+            <div class="role">
+              <span>Electrical Engineer</span>
+              <span>Feb 2017 &ndash; Feb 2018</span>
+            </div>
+            <div class="employer">Arabian BEMCO Contracting &mdash; Riyadh</div>
+            <ul>
+              <li>Planned preventive maintenance routines for 11kV distribution systems at large industrial complexes.</li>
+              <li>Directed electrical acceptance testing and commissioning plans.</li>
+              <li>Produced maintenance manuals, budgets, and NCR/punch-list close-out strategies.</li>
+            </ul>
+          </article>
+
+          <article>
+            <div class="role">
+              <span>Electrical Engineer</span>
+              <span>Jan 2016 &ndash; Sept 2017</span>
+            </div>
+            <div class="employer">Sudanese Electricity Company (Thermal Generation) &mdash; Sudan</div>
+            <ul>
+              <li>Maintained wastewater treatment controls leveraging PH meters and OC 4000 DCS.</li>
+              <li>Served as plant maintenance and control room engineer, securing steady-state operations.</li>
+              <li>Developed routines that safeguarded 11kV distribution performance.</li>
+            </ul>
+          </article>
+
+          <article>
+            <div class="role">
+              <span>Electrical Maintenance Engineer</span>
+              <span>Jan 2014 &ndash; Sept 2015</span>
+            </div>
+            <div class="employer">Shawahid Engineering &mdash; Sudan</div>
+            <ul>
+              <li>Installed conduits, cable trays, duct banks, and extensive power/control cabling.</li>
+              <li>Led inspections for LV/MV switchgear, MCCs, panels, and transformers.</li>
+              <li>Produced maintenance schedules and detailed technical reports.</li>
+            </ul>
+          </article>
+
+          <article>
+            <div class="role">
+              <span>Electrical Maintenance Engineer</span>
+              <span>Sept 2012 &ndash; Sept 2013</span>
+            </div>
+            <div class="employer">Ministry of Defense &mdash; Sudan</div>
+            <ul>
+              <li>Designed and executed electrical projects across defense installations.</li>
+              <li>Supervised technicians through installation, troubleshooting, and acceptance testing.</li>
+              <li>Managed electrification works for power and lighting distribution.</li>
+            </ul>
+          </article>
+        </section>
+
+        <section class="card">
+          <h3>Education</h3>
+          <p><strong>B.Sc. (Honors) Electronic Engineering (Control)</strong><br />El Neelain University, 2007 &ndash; 2012</p>
+        </section>
+
+        <section class="card">
+          <h3>Certifications &amp; Licenses</h3>
+          <div class="badge-list">
+            <span class="badge">Certified Measurement &amp; Verification Professional (CMVP®)</span>
+            <span class="badge">Certified Energy Manager (CEM®)</span>
+            <span class="badge">Machine Learning with Python</span>
+            <span class="badge">Power BI Essential Training</span>
+            <span class="badge">SCADA / PLC / DCS / RTU</span>
+            <span class="badge">English Language Diploma</span>
+            <span class="badge">Quality Control &mdash; ACES</span>
+          </div>
+        </section>
+      </main>
+
+      <aside>
+        <section class="card sidebar-section">
+          <h3>Technical Toolkit</h3>
+          <ul class="list-tight">
+            <li>Microsoft Power BI &amp; advanced analytics</li>
+            <li>Microsoft Office Suite automation</li>
+            <li>GNS3 &amp; Cisco Packet Tracer</li>
+            <li>SQL Server for access control systems</li>
+            <li>Network configuration (LAN/WAN, TCP/IP)</li>
+            <li>Monitoring platforms: Symmetry, RTTS, Remedy, NetCool</li>
+          </ul>
+        </section>
+
+        <section class="card sidebar-section">
+          <h3>Languages</h3>
+          <ul class="list-tight">
+            <li>Arabic &mdash; Native</li>
+            <li>English &mdash; Fluent</li>
+          </ul>
+        </section>
+
+        <section class="card sidebar-section">
+          <h3>Professional Memberships</h3>
+          <ul class="list-tight">
+            <li>Saudi Council of Engineers (SCE) &mdash; Registered Member</li>
+            <li>Sudanese Engineers Association (SEA) &mdash; Active Member</li>
+          </ul>
+        </section>
+
+        <section class="card sidebar-section">
+          <h3>Hobbies &amp; Interests</h3>
+          <ul class="list-tight">
+            <li>Electrical power systems (UHV, HV, MV, LV)</li>
+            <li>Industrial automation</li>
+            <li>Energy efficiency &amp; sustainability</li>
+            <li>Technology research and innovation</li>
+            <li>Data analysis and visualization</li>
+            <li>Continuous learning &amp; development</li>
+          </ul>
+        </section>
+      </aside>
     </div>
-
-    <h2>Social Links</h2>
-    <p class="contact">LinkedIn: <a href="https://www.linkedin.com/in/bannaga-abdalmuhsin-cmvp%C2%AE-cem%C2%AE415106bb/" target="_blank">Profile Link</a></p>
-
-    <h2>Summary</h2>
-    <p>As a dedicated Electrical Project Engineer with extensive experience in electrical design, project management, and maintenance engineering, I am eager to contribute my skills to your esteemed team. My passion for innovative solutions and commitment to excellence drive me to deliver projects on time and within budget. I am excited about the opportunity to collaborate with talented professionals and contribute to the success of your organization while advancing my career in a dynamic environment.</p>
-
-    <h2>Skills</h2>
-    <ul>
-      <li>Microsoft Power BI</li>
-      <li>Microsoft Office Suite</li>
-      <li>GNS3 & Cisco Packet Tracer</li>
-      <li>SQL Server for Access Control Systems</li>
-      <li>Network Configuration (LAN/WAN, TCP/IP)</li>
-      <li>Monitoring Systems (Symmetry, RTTS, Remedy, NetCool)</li>
-    </ul>
-
-    <h2>Experience</h2>
-
-    <h3>Electrical Project Engineer | ACES | Riyadh, Saudi Arabia (July 2019 - Present)</h3>
-    <ul>
-      <li>Energy manager, energy efficiency implementer and designer.</li>
-      <li>Operation & maintenance engineer for Mobily ENM managed service.</li>
-      <li>Operation & maintenance engineer for STC COW managed service.</li>
-      <li>Prepared technical documentation for troubleshooting & maintenance.</li>
-      <li>Proposed system modifications to improve efficiency.</li>
-      <li>Created standardized manuals and mentored junior engineers.</li>
-    </ul>
-
-    <h3>Electrical Project Engineer | Absar for General Contracting | Riyadh (June 2018 - June 2019)</h3>
-    <ul>
-      <li>Project Engineer (SEC unified contract).</li>
-      <li>Managed installation of RMU, transformers, mini-pillars.</li>
-      <li>Commissioning & handover to SEC.</li>
-      <li>Monitoring UHV, MV, LV lines through SCADA for system stability.</li>
-    </ul>
-
-    <h3>Electrical Engineer | Arabian BEMCO | Riyadh (Feb 2017 - Feb 2018)</h3>
-    <ul>
-      <li>Planned preventive maintenance routines for 11kV distribution.</li>
-      <li>Performed electrical acceptance testing.</li>
-      <li>Created maintenance manuals and project budgets.</li>
-      <li>Handled NCR & punch list clearance.</li>
-    </ul>
-
-    <h3>Electrical Engineer | SEC (Thermal Generation) | Sudan (Jan 2016 - Sept 2017)</h3>
-    <ul>
-      <li>Wastewater treatment using PH meter & OC 4000 DCS.</li>
-      <li>Plant maintenance and control room engineer.</li>
-      <li>Planned routines for trouble-free 11kV distribution operation.</li>
-    </ul>
-
-    <h3>Electrical Maintenance Engineer | Shawahid Eng. | Sudan (Jan 2014 - Sept 2015)</h3>
-    <ul>
-      <li>Installed conduits, cable trays, duct banks, power & control cables.</li>
-      <li>Inspections for LV/MV switchgear, MCCs, panels, transformers.</li>
-      <li>Prepared maintenance schedules and technical reports.</li>
-    </ul>
-
-    <h3>Electrical Maintenance Engineer | Ministry of Defense Sudan (Sept 2012 - Sept 2013)</h3>
-    <ul>
-      <li>Designed and implemented electrical projects.</li>
-      <li>Supervised technicians for installation & troubleshooting.</li>
-      <li>Managed electrification works including power & lighting.</li>
-    </ul>
-
-    <h2>Education</h2>
-    <p>B.Sc. (Honor) Electronic Engineering (Control), El Neelain University (2007 - 2012)</p>
-
-    <h2>Languages</h2>
-    <ul>
-      <li>Arabic</li>
-      <li>English</li>
-    </ul>
-
-    <h2>Certifications & Licenses</h2>
-    <ul>
-      <li>Certified Measurement & Verification Professional (CMVP®)</li>
-      <li>Certified Energy Manager (CEM®)</li>
-      <li>Machine Learning with Python</li>
-      <li>Power BI Essential Training</li>
-      <li>SCADA, PLC, DCS, RTU</li>
-      <li>English Language Diploma</li>
-      <li>Quality Control - ACES</li>
-    </ul>
-
-    <h2>Professional Memberships</h2>
-    <ul>
-      <li>Saudi Council of Engineers (SCE) – Registered Member</li>
-      <li>Sudanese Engineers Association (SEA) – Active Member</li>
-    </ul>
-
-    <h2>Hobbies & Interests</h2>
-    <ul>
-      <li>Electrical power systems (UHV, HV, MV, LV)</li>
-      <li>Industrial automation</li>
-      <li>Energy efficiency & sustainability</li>
-      <li>Technology research and innovation</li>
-      <li>Data analysis and visualization</li>
-      <li>Continuous learning & development</li>
-    </ul>
-
   </div>
 </body>
 </html>
