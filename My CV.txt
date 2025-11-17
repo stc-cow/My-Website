@@ -19,16 +19,49 @@
         box-sizing: border-box;
       }
 
+      @page {
+        size: A4;
+        margin: 0;
+      }
+
       body {
         font-family: "Inter", "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
         margin: 0;
         background: var(--bg);
         color: #0f172a;
         line-height: 1.7;
+        display: flex;
+        justify-content: center;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-weight: 700;
+        letter-spacing: -0.01em;
       }
 
       .page {
         min-height: 100vh;
+        width: 100%;
+        background: radial-gradient(circle at top, rgba(37, 99, 235, 0.35), transparent 55%),
+          radial-gradient(circle at 20% 20%, rgba(0, 196, 204, 0.35), transparent 40%),
+          linear-gradient(180deg, rgba(15, 23, 42, 0.95), rgba(2, 6, 23, 0.97));
+        padding: 32px 12px 60px;
+      }
+
+      .paper {
+        width: min(210mm, 100%);
+        min-height: 297mm;
+        margin: 0 auto;
+        background: #f8fafc;
+        border-radius: 32px;
+        box-shadow: 0 45px 90px rgba(2, 6, 23, 0.55);
+        border: 1px solid rgba(148, 163, 184, 0.2);
+        position: relative;
         background: radial-gradient(circle at top, rgba(37, 99, 235, 0.35), transparent 55%),
           radial-gradient(circle at 20% 20%, rgba(0, 196, 204, 0.35), transparent 40%),
           linear-gradient(180deg, rgba(15, 23, 42, 0.95), rgba(2, 6, 23, 0.97));
@@ -38,6 +71,7 @@
       .container {
         max-width: 1200px;
         margin: 0 auto;
+        padding: 40px 48px 80px;
         padding: 32px 20px 80px;
       }
 
@@ -60,6 +94,15 @@
         pointer-events: none;
       }
 
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 2.5fr 1fr;
+        gap: 32px;
+        align-items: center;
+        position: relative;
+        z-index: 1;
+      }
+
       .hero h1 {
         margin: 0 0 8px;
         font-size: clamp(2.4rem, 4vw, 3.4rem);
@@ -78,6 +121,28 @@
         margin: 0 0 24px;
         max-width: 720px;
         font-size: 1.05rem;
+      }
+
+      .hero-photo {
+        text-align: center;
+      }
+
+      .hero-photo img {
+        width: 100%;
+        max-width: 220px;
+        border-radius: 28px;
+        border: 4px solid rgba(255, 255, 255, 0.4);
+        box-shadow: 0 25px 45px rgba(15, 23, 42, 0.7);
+        object-fit: cover;
+      }
+
+      .hero-photo small {
+        display: block;
+        margin-top: 12px;
+        font-weight: 600;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.7);
       }
 
       .chips {
@@ -108,6 +173,61 @@
         color: inherit;
         font-weight: 600;
         text-decoration: none;
+      }
+
+      .contact-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 20px;
+      }
+
+      .contact-button {
+        border: none;
+        border-radius: 999px;
+        padding: 12px 22px;
+        font-weight: 600;
+        font-size: 0.95rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background: rgba(15, 23, 42, 0.35);
+        color: white;
+        text-decoration: none;
+        transition: transform 0.2s ease, background 0.2s ease;
+        cursor: pointer;
+      }
+
+      .contact-button:hover {
+        transform: translateY(-2px);
+        background: rgba(255, 255, 255, 0.15);
+      }
+
+      .contact-button.whatsapp {
+        background: rgba(37, 211, 102, 0.25);
+      }
+
+      .contact-button.email {
+        background: rgba(255, 255, 255, 0.15);
+      }
+
+      .contact-button.linkedin {
+        background: rgba(10, 102, 194, 0.25);
+      }
+
+      .contact-button.pdf {
+        background: rgba(255, 255, 255, 0.2);
+        border: 1px solid rgba(255, 255, 255, 0.35);
+      }
+
+      .contact-button.owner {
+        background: rgba(249, 115, 22, 0.25);
+        border: 1px solid rgba(249, 115, 22, 0.45);
+      }
+
+      .contact-button.unlocked {
+        background: rgba(34, 197, 94, 0.2);
+        border-color: rgba(34, 197, 94, 0.4);
       }
 
       .stats {
@@ -298,6 +418,139 @@
         filter: saturate(1.1);
       }
 
+      .viewer-panel {
+        background: rgba(37, 99, 235, 0.05);
+      }
+
+      .owner-console {
+        display: none;
+        margin-top: 24px;
+      }
+
+      .owner-console.visible {
+        display: block;
+      }
+
+      .no-print {
+        position: relative;
+        z-index: 2;
+      }
+
+      @media print {
+        body {
+          background: white;
+        }
+        .page {
+          padding: 0;
+          background: white;
+        }
+        .paper {
+          width: 210mm;
+          min-height: 297mm;
+          border-radius: 0;
+          box-shadow: none;
+          border: none;
+        }
+        .no-print,
+        .owner-console:not(.visible) {
+          display: none !important;
+        }
+      }
+
+      .viewer-stats {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        margin-bottom: 18px;
+      }
+
+      .viewer-stats strong {
+        font-size: 2.5rem;
+        color: #0f172a;
+      }
+
+      .viewer-form {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin-top: 18px;
+      }
+
+      .viewer-form input,
+      .viewer-form textarea {
+        padding: 10px 14px;
+        border-radius: 12px;
+        border: 1px solid #cbd5f5;
+        font-family: inherit;
+        font-size: 0.95rem;
+      }
+
+      .viewer-form button {
+        border: none;
+        border-radius: 12px;
+        padding: 12px 18px;
+        background: var(--primary);
+        color: white;
+        font-weight: 600;
+        cursor: pointer;
+      }
+
+      .viewer-export {
+        margin-top: 12px;
+        width: 100%;
+        border-radius: 12px;
+        border: 1px solid var(--primary);
+        background: transparent;
+        padding: 10px 16px;
+        font-weight: 600;
+        color: var(--primary);
+        cursor: pointer;
+      }
+
+      .viewer-log {
+        margin-top: 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .viewer-entry {
+        padding: 12px;
+        border-radius: 14px;
+        border: 1px solid var(--border);
+        background: white;
+      }
+
+      .viewer-entry strong {
+        display: block;
+        font-size: 1rem;
+        color: #0f172a;
+      }
+
+      .viewer-entry span {
+        font-size: 0.85rem;
+        color: var(--muted);
+      }
+
+      .empty-state {
+        font-size: 0.9rem;
+        color: var(--muted);
+      }
+
+      @media (max-width: 960px) {
+        .hero-grid {
+          grid-template-columns: 1fr;
+          text-align: center;
+        }
+
+        .contact {
+          justify-content: center;
+        }
+
+        .contact-buttons {
+          justify-content: center;
+        }
+
       @media (max-width: 960px) {
         main {
           grid-template-columns: 1fr;
@@ -317,6 +570,55 @@
   </head>
   <body>
     <div class="page">
+      <div class="paper" id="cv-sheet">
+        <div class="container">
+        <header class="hero">
+          <div class="hero-grid">
+            <div>
+              <h1>Bannaga Altieb Abdul Muhsin</h1>
+              <h2>Electrical &amp; AI Systems Leader</h2>
+              <p>
+                Electrical project engineer and energy specialist blending a decade of infrastructure delivery with modern
+                artificial intelligence. I architect safe, reliable power systems while deploying applied machine learning,
+                computer vision, and data platforms that unlock predictive maintenance, energy optimization, and autonomous
+                operations at scale.
+              </p>
+              <div class="chips">
+                <span class="chip">CMVP® &amp; CEM®</span>
+                <span class="chip">AI/ML &amp; Data Science</span>
+                <span class="chip">Digital Twin Strategy</span>
+                <span class="chip">Energy Analytics</span>
+              </div>
+              <div class="contact">
+                <span>Riyadh, Saudi Arabia</span>
+                <span>+966 542 966 343</span>
+                <span><a href="mailto:bannaga.altieb@gmail.com">bannaga.altieb@gmail.com</a></span>
+                <span>
+                  <a href="https://www.linkedin.com/in/bannaga-abdalmuhsin-cmvp%C2%AE-cem%C2%AE415106bb/" target="_blank"
+                    >LinkedIn</a
+                  >
+                </span>
+              </div>
+              <div class="contact-buttons">
+                <a class="contact-button whatsapp" href="https://wa.me/966542966343" target="_blank">WhatsApp Me</a>
+                <a class="contact-button email" href="mailto:bannaga.altieb@gmail.com">Email</a>
+                <a
+                  class="contact-button linkedin"
+                  href="https://www.linkedin.com/in/bannaga-abdalmuhsin-cmvp%C2%AE-cem%C2%AE415106bb/"
+                  target="_blank"
+                  >LinkedIn Profile</a
+                >
+                <button class="contact-button pdf" type="button" id="download-pdf">Download PDF</button>
+                <button class="contact-button owner no-print" type="button" id="owner-access-btn">Owner Console</button>
+              </div>
+            </div>
+            <div class="hero-photo">
+              <img
+                src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=600&q=80"
+                alt="Bannaga Altieb Abdul Muhsin portrait"
+              />
+              <small>AI-Ready Electrical Leader</small>
+            </div>
       <div class="container">
         <header class="hero">
           <h1>Bannaga Altieb Abdul Muhsin</h1>
@@ -347,6 +649,7 @@
             <div class="stat-card"><strong>12+</strong>Years integrating energy &amp; AI platforms</div>
             <div class="stat-card"><strong>500+</strong>Sites monitored through predictive models</div>
             <div class="stat-card"><strong>30%</strong>Average savings from data-driven optimization</div>
+            <div class="stat-card"><strong>8</strong>AI blueprints industrialized end-to-end</div>
           </div>
         </header>
 
@@ -544,6 +847,32 @@
           </section>
 
           <aside>
+            <section id="owner-console" class="owner-console">
+              <article class="panel viewer-panel">
+                <h3>Owner Insights</h3>
+                <h2 class="section-title">Private Viewer Dashboard</h2>
+                <div class="viewer-stats">
+                  <div>Live visits tracked via CountAPI</div>
+                  <strong id="owner-view-count">--</strong>
+                  <span class="empty-state">Only visible after you unlock the console</span>
+                </div>
+                <p>
+                  Entries remain inside your browser so only you can review the organizations, emails, and notes left by
+                  visitors. Export the JSON file when you need to follow up.
+                </p>
+                <form class="viewer-form" id="viewer-form">
+                  <input type="text" name="viewer-name" placeholder="Your name" required />
+                  <input type="text" name="viewer-organization" placeholder="Company / Organization" />
+                  <input type="email" name="viewer-email" placeholder="Email (optional)" />
+                  <textarea name="viewer-note" rows="3" placeholder="What brought you here?" ></textarea>
+                  <button type="submit">Check In &amp; Log Visit</button>
+                </form>
+                <div class="viewer-log" id="viewer-log">
+                  <div class="empty-state">No check-ins yet. Be the first to say hello!</div>
+                </div>
+                <button class="viewer-export" type="button" id="export-viewers">Export Log (.json)</button>
+              </article>
+            </section>
             <article class="panel">
               <h3>Stacks</h3>
               <h2 class="section-title">Technical Toolkit</h2>
@@ -611,6 +940,151 @@
         </main>
       </div>
     </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script>
+      const viewCountEls = [document.getElementById("owner-view-count")].filter(Boolean);
+      const countEndpoint = "https://api.countapi.xyz/hit/bannaga-ai-cv/views";
+      const ownerConsole = document.getElementById("owner-console");
+      const ownerButton = document.getElementById("owner-access-btn");
+      const downloadButton = document.getElementById("download-pdf");
+      const STORAGE_KEY = "bannaga-cv-viewers";
+      const viewerForm = document.getElementById("viewer-form");
+      const viewerLog = document.getElementById("viewer-log");
+      const OWNER_PIN = "bannaga-ai";
+
+      function updateCounters(value) {
+        viewCountEls.forEach((el) => {
+          if (el) {
+            el.textContent = value.toLocaleString();
+          }
+        });
+      }
+
+      fetch(countEndpoint)
+        .then((res) => res.json())
+        .then((data) => {
+          if (data && typeof data.value === "number") {
+            updateCounters(data.value);
+          }
+        })
+        .catch(() => updateCounters(1));
+
+      if (ownerButton && ownerConsole) {
+        ownerButton.addEventListener("click", () => {
+          const response = prompt("Enter the owner passphrase to unlock your private dashboard");
+          if (!response) return;
+          if (response.trim().toLowerCase() === OWNER_PIN) {
+            ownerConsole.classList.add("visible");
+            ownerButton.textContent = "Owner Console Ready";
+            ownerButton.classList.add("unlocked");
+            ownerButton.disabled = true;
+          } else {
+            alert("Incorrect passphrase. Please try again.");
+          }
+        });
+      }
+
+      if (downloadButton) {
+        downloadButton.addEventListener("click", () => {
+          const sheet = document.getElementById("cv-sheet");
+          if (!sheet || typeof html2pdf === "undefined") return;
+          const originalText = downloadButton.textContent;
+          downloadButton.disabled = true;
+          downloadButton.textContent = "Preparing PDF...";
+          const worker = html2pdf()
+            .set({
+              margin: 0,
+              filename: "Bannaga-Altieb-CV.pdf",
+              image: { type: "jpeg", quality: 0.98 },
+              html2canvas: { scale: 2, useCORS: true },
+              jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
+            })
+            .from(sheet)
+            .save();
+          const reset = () => {
+            downloadButton.disabled = false;
+            downloadButton.textContent = originalText;
+          };
+          worker.then(reset).catch(reset);
+        });
+      }
+
+      function loadEntries() {
+        try {
+          const data = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
+          return Array.isArray(data) ? data : [];
+        } catch (e) {
+          return [];
+        }
+      }
+
+      function saveEntries(entries) {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(entries));
+      }
+
+      function renderEntries(entries) {
+        if (!viewerLog) return;
+        viewerLog.innerHTML = "";
+        if (!entries.length) {
+          viewerLog.innerHTML = '<div class="empty-state">No check-ins yet. Be the first to say hello!</div>';
+          return;
+        }
+        entries.forEach((entry) => {
+          const div = document.createElement("div");
+          div.className = "viewer-entry";
+          const meta = [entry.organization, entry.email].filter(Boolean).join(" · ");
+          const noteHtml = entry.note ? `<p>${entry.note}</p>` : "";
+          div.innerHTML = `<strong>${entry.name}</strong>${meta ? `<span>${meta}</span>` : ""}${noteHtml}`;
+          viewerLog.appendChild(div);
+        });
+      }
+
+      const existingEntries = loadEntries();
+      renderEntries(existingEntries);
+
+      if (viewerForm) {
+        viewerForm.addEventListener("submit", (event) => {
+          event.preventDefault();
+          const formData = new FormData(viewerForm);
+          const getValue = (name) => {
+            const value = formData.get(name);
+            return value ? value.toString().trim() : "";
+          };
+          const entry = {
+            name: getValue("viewer-name"),
+            organization: getValue("viewer-organization"),
+            email: getValue("viewer-email"),
+            note: getValue("viewer-note"),
+            timestamp: new Date().toISOString(),
+          };
+          if (!entry.name) return;
+          const updatedEntries = [entry, ...loadEntries()].slice(0, 20);
+          saveEntries(updatedEntries);
+          renderEntries(updatedEntries);
+          viewerForm.reset();
+        });
+      }
+
+      const exportButton = document.getElementById("export-viewers");
+      if (exportButton) {
+        exportButton.addEventListener("click", () => {
+          const entries = loadEntries();
+          const blob = new Blob([JSON.stringify(entries, null, 2)], {
+            type: "application/json",
+          });
+          const url = URL.createObjectURL(blob);
+          const link = document.createElement("a");
+          link.href = url;
+          link.download = "bannaga-cv-viewers.json";
+          document.body.appendChild(link);
+          link.click();
+          link.remove();
+          URL.revokeObjectURL(url);
+        });
+      }
+    </script>
+  </body>
   </body>
 <head>
   <meta charset="UTF-8" />
