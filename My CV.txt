@@ -3,6 +3,184 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BANNAGA ALTIEB ABDUL MUHSIN — Bold.pro Layout</title>
+    <link rel="stylesheet" href="docs/assets/style.css" />
+  </head>
+  <body>
+    <div class="cv-wrapper">
+      <aside class="sidebar" aria-labelledby="summary-panel">
+        <div class="summary-card" id="summary-panel">
+          <h2>Summary</h2>
+          <p>
+            Electrical engineer and AI-native program director guiding national telecom and energy transformations. Builds
+            predictive operations centers, secures OT assets, and keeps multidisciplinary teams aligned on measurable impact.
+          </p>
+          <ul class="summary-list">
+            <li>AI-integrated program leadership</li>
+            <li>Smart grid & telecom modernization</li>
+            <li>Predictive maintenance evangelist</li>
+            <li>Coaches cross-functional talent</li>
+          </ul>
+        </div>
+      </aside>
+
+      <main>
+        <article class="hero-card" id="profile">
+          <div class="hero-banner">
+            <img
+              src="https://images.unsplash.com/photo-1528892952291-009c663ce843?auto=format&fit=crop&w=600&q=80"
+              alt="Portrait of Bannaga Altieb Abdul Muhsin"
+              class="profile-photo"
+            />
+          </div>
+          <div class="hero-body">
+            <h1>BANNAGA ALTIEB ABDUL MUHSIN</h1>
+            <h2>ELECTRICAL ENGINEER</h2>
+            <div class="location">Riyadh · Saudi Arabia</div>
+            <div class="contact-line">(966) 542-966-343 · ENG.ALTIEB@GMAIL.COM</div>
+            <p>
+              Delivers end-to-end modernization programs that merge electrical engineering rigor with applied AI—from digital twins
+              and IoT telemetry to analytics-first governance across remote infrastructure.
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn-contact" href="https://wa.me/966542966343" target="_blank" rel="noopener">Contact Me</a>
+              <a
+                class="btn btn-linkedin"
+                href="https://www.linkedin.com/in/bannaga-abdalmuhsin-cmvp%C2%AE-cem%C2%AE415106bb/"
+                target="_blank"
+                rel="noopener"
+                >LinkedIn Profile</a
+              >
+            </div>
+          </div>
+        </article>
+
+        <section class="section-card" id="work-history" aria-labelledby="work-title">
+          <h3>Work History</h3>
+          <h2 id="work-title">Career Timeline</h2>
+          <div class="work-list">
+            <article class="work-item">
+              <div class="work-dates">2018 – Present · Riyadh</div>
+              <div>
+                <h4>Project Director · CSS, Salam</h4>
+                <p>
+                  Directs modernization for high-availability telecom networks. Established an AI command center, deployed digital twins across hundreds of remote sites, and embedded predictive maintenance and cybersecurity practices for zero unplanned downtime.
+                </p>
+              </div>
+            </article>
+            <article class="work-item">
+              <div class="work-dates">2014 – 2018 · Riyadh</div>
+              <div>
+                <h4>Senior Projects Manager · Alfanar Telecom</h4>
+                <p>
+                  Led nationwide rollouts covering smart grid integration, fiber backbones, and IoT monitoring. Introduced machine learning pilots for outage prediction and standardized data governance for field engineering teams.
+                </p>
+              </div>
+            </article>
+            <article class="work-item">
+              <div class="work-dates">2011 – 2014 · Khartoum</div>
+              <div>
+                <h4>BS Optimization Manager · Ericsson</h4>
+                <p>
+                  Built KPI-driven performance programs, automated RAN tuning workflows, and delivered telemetry pipelines that prepared the organization for future AI investments.
+                </p>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="section-card" id="education" aria-labelledby="edu-title">
+          <h3>Education</h3>
+          <h2 id="edu-title">Academic Foundation</h2>
+          <p><strong>Bachelor of Electronic Engineering (Control)</strong> — El Neelain University · 2007 – 2012</p>
+          <p>Focused on control systems, automation, and embedded design—now reinforced with AI, digital twin, and energy credentials.</p>
+        </section>
+
+        <section class="section-card" id="skills" aria-labelledby="skills-title">
+          <h3>Skills</h3>
+          <h2 id="skills-title">Core Strengths</h2>
+          <div class="skill-grid">
+            <div class="skill-pill">Leadership & PMO</div>
+            <div class="skill-pill">AI / ML Strategy</div>
+            <div class="skill-pill">Predictive Maintenance</div>
+            <div class="skill-pill">Smart Grid Design</div>
+            <div class="skill-pill">Digital Twin Modeling</div>
+            <div class="skill-pill">Data Governance</div>
+            <div class="skill-pill">Vendor & Stakeholder Alignment</div>
+            <div class="skill-pill">Energy Analytics</div>
+            <div class="skill-pill">Cyber & OT Hardening</div>
+            <div class="skill-pill">Coaching & Talent Development</div>
+          </div>
+        </section>
+
+        <section class="section-card" id="certifications" aria-labelledby="cert-title">
+          <h3>Certifications</h3>
+          <h2 id="cert-title">Learning Journey</h2>
+          <div class="timeline">
+            <div class="timeline-item">
+              <strong>Certified Measurement & Verification Professional (CMVP®)</strong>
+              <span>Association of Energy Engineers</span>
+            </div>
+            <div class="timeline-item">
+              <strong>Certified Energy Manager (CEM®)</strong>
+              <span>Association of Energy Engineers</span>
+            </div>
+            <div class="timeline-item">
+              <strong>Machine Learning Specialization</strong>
+              <span>Industry and online lab work</span>
+            </div>
+            <div class="timeline-item">
+              <strong>Power BI Advanced Analytics</strong>
+              <span>Microsoft Partner Network</span>
+            </div>
+            <div class="timeline-item">
+              <strong>SCADA / PLC / DCS Masterclass</strong>
+              <span>Industrial Automation Center</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="section-card" id="affiliations" aria-labelledby="affiliations-title">
+          <h3>Affiliations</h3>
+          <h2 id="affiliations-title">Professional Memberships</h2>
+          <div class="affiliations">
+            <div>Association of Energy Engineers — CMVP® & CEM® Member</div>
+            <div>Saudi Council of Engineers — Registered Electrical Engineer</div>
+            <div>IEEE Power & Energy Society — Professional Member</div>
+            <div>Project Management Institute — PMP® community contributor</div>
+          </div>
+        </section>
+
+        <section class="section-card" id="languages" aria-labelledby="lang-title">
+          <h3>Languages</h3>
+          <h2 id="lang-title">Communication</h2>
+          <div class="languages">
+            <div class="language-bar">
+              <span><strong>Arabic</strong> · Native</span>
+              <div class="bar"><div class="bar-fill" style="width: 100%"></div></div>
+            </div>
+            <div class="language-bar">
+              <span><strong>English</strong> · Advanced</span>
+              <div class="bar"><div class="bar-fill" style="width: 85%"></div></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section-card" id="interests" aria-labelledby="interests-title">
+          <h3>Interests</h3>
+          <h2 id="interests-title">Beyond the Office</h2>
+          <div class="interests">
+            <span class="interest-chip">AI Evangelism</span>
+            <span class="interest-chip">Digital Twin Experiments</span>
+            <span class="interest-chip">Smart Mobility Hackathons</span>
+            <span class="interest-chip">Mentoring Young Engineers</span>
+            <span class="interest-chip">Desert Trail Runs</span>
+            <span class="interest-chip">Energy Policy Reading</span>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
     <title>Bannaga Altieb — Modern AI CV</title>
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
