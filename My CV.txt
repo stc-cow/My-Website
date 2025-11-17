@@ -1534,6 +1534,180 @@
       }
     </script>
   </body>
+
+    <section id="owner-console" class="owner-console" aria-hidden="true">
+      <div class="owner-panel">
+        <h2>Private Viewer Dashboard</h2>
+        <p>Track view counts and optional visitor check-ins. Data stays in your browser storage.</p>
+        <div class="stat-card" style="margin-bottom: 18px; display: inline-block">
+          <strong id="owner-view-count">--</strong>
+          <div>Total Visits (CountAPI)</div>
+        </div>
+        <form class="viewer-form" id="viewer-form">
+          <input type="text" name="viewer-name" placeholder="Visitor name" required />
+          <input type="text" name="viewer-organization" placeholder="Organization" />
+          <input type="email" name="viewer-email" placeholder="Email" />
+          <textarea name="viewer-note" placeholder="Notes or opportunities"></textarea>
+          <button type="submit">Log Viewer Locally</button>
+        </form>
+        <div class="viewer-log" id="viewer-log">
+          <div class="empty-state">No check-ins yet. Be the first to say hello!</div>
+        </div>
+        <button class="viewer-export" type="button" id="export-viewers">Export Log (.json)</button>
+      </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script>
+      const viewCountEls = [document.getElementById("owner-view-count")].filter(Boolean);
+      const countEndpoint = "https://api.countapi.xyz/hit/bannaga-ai-cv/views";
+      const ownerConsole = document.getElementById("owner-console");
+      const ownerButton = document.getElementById("owner-access-btn");
+      const downloadButton = document.getElementById("download-pdf");
+      const STORAGE_KEY = "bannaga-cv-viewers";
+      const viewerForm = document.getElementById("viewer-form");
+      const viewerLog = document.getElementById("viewer-log");
+      const OWNER_PIN = "bannaga-ai";
+
+      function updateCounters(value) {
+        viewCountEls.forEach((el) => {
+          if (el) {
+            el.textContent = value.toLocaleString();
+          }
+        });
+      }
+
+      fetch(countEndpoint)
+        .then((res) => res.json())
+        .then((data) => {
+          if (data && typeof data.value === "number") {
+            updateCounters(data.value);
+          }
+        })
+        .catch(() => updateCounters(1));
+
+      if (ownerButton && ownerConsole) {
+        ownerButton.addEventListener("click", () => {
+          const response = prompt("Enter the owner passphrase to unlock your private dashboard");
+          if (!response) return;
+          if (response.trim().toLowerCase() === OWNER_PIN) {
+            ownerConsole.classList.add("visible");
+            ownerConsole.setAttribute("aria-hidden", "false");
+            ownerButton.textContent = "Owner Console Ready";
+            ownerButton.classList.add("unlocked");
+            ownerButton.disabled = true;
+          } else {
+            alert("Incorrect passphrase. Please try again.");
+          }
+        });
+        ownerConsole.addEventListener("click", (event) => {
+          if (event.target === ownerConsole) {
+            ownerConsole.classList.remove("visible");
+            ownerConsole.setAttribute("aria-hidden", "true");
+          }
+        });
+      }
+
+      if (downloadButton) {
+        downloadButton.addEventListener("click", () => {
+          const sheet = document.getElementById("cv-sheet");
+          if (!sheet || typeof html2pdf === "undefined") return;
+          const originalText = downloadButton.textContent;
+          downloadButton.disabled = true;
+          downloadButton.textContent = "Preparing PDF...";
+          const worker = html2pdf()
+            .set({
+              margin: 0,
+              filename: "Bannaga-Altieb-CV.pdf",
+              image: { type: "jpeg", quality: 0.98 },
+              html2canvas: { scale: 2, useCORS: true },
+              jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
+            })
+            .from(sheet)
+            .save();
+          const reset = () => {
+            downloadButton.disabled = false;
+            downloadButton.textContent = originalText;
+          };
+          worker.then(reset).catch(reset);
+        });
+      }
+
+      function loadEntries() {
+        try {
+          const data = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
+          return Array.isArray(data) ? data : [];
+        } catch (e) {
+          return [];
+        }
+      }
+
+      function saveEntries(entries) {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(entries));
+      }
+
+      function renderEntries(entries) {
+        if (!viewerLog) return;
+        viewerLog.innerHTML = "";
+        if (!entries.length) {
+          viewerLog.innerHTML = '<div class="empty-state">No check-ins yet. Be the first to say hello!</div>';
+          return;
+        }
+        entries.forEach((entry) => {
+          const div = document.createElement("div");
+          div.className = "viewer-entry";
+          const meta = [entry.organization, entry.email].filter(Boolean).join(" · ");
+          const noteHtml = entry.note ? `<p>${entry.note}</p>` : "";
+          div.innerHTML = `<strong>${entry.name}</strong>${meta ? `<span>${meta}</span>` : ""}${noteHtml}`;
+          viewerLog.appendChild(div);
+        });
+      }
+
+      const existingEntries = loadEntries();
+      renderEntries(existingEntries);
+
+      if (viewerForm) {
+        viewerForm.addEventListener("submit", (event) => {
+          event.preventDefault();
+          const formData = new FormData(viewerForm);
+          const getValue = (name) => {
+            const value = formData.get(name);
+            return value ? value.toString().trim() : "";
+          };
+          const entry = {
+            name: getValue("viewer-name"),
+            organization: getValue("viewer-organization"),
+            email: getValue("viewer-email"),
+            note: getValue("viewer-note"),
+            timestamp: new Date().toISOString(),
+          };
+          if (!entry.name) return;
+          const updatedEntries = [entry, ...loadEntries()].slice(0, 20);
+          saveEntries(updatedEntries);
+          renderEntries(updatedEntries);
+          viewerForm.reset();
+        });
+      }
+
+      const exportButton = document.getElementById("export-viewers");
+      if (exportButton) {
+        exportButton.addEventListener("click", () => {
+          const entries = loadEntries();
+          const blob = new Blob([JSON.stringify(entries, null, 2)], {
+            type: "application/json",
+          });
+          const url = URL.createObjectURL(blob);
+          const link = document.createElement("a");
+          link.href = url;
+          link.download = "bannaga-cv-viewers.json";
+          document.body.appendChild(link);
+          link.click();
+          link.remove();
+          URL.revokeObjectURL(url);
+        });
+      }
+    </script>
+  </body>
         <div class="container">
         <header class="hero">
           <div class="hero-grid">
