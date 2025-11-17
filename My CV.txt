@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bannaga Altieb Abdul Muhsin - CV</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f4f4f4; }
+    .container { max-width: 900px; margin: auto; background: #fff; padding: 30px; }
+    h1, h2 { margin-bottom: 10px; }
+    h1 { font-size: 32px; }
+    h2 { margin-top: 30px; border-bottom: 2px solid #ddd; padding-bottom: 6px; }
+    .header { text-align: center; }
+    .section { margin-top: 20px; }
+    ul { margin: 0; padding-left: 20px; }
+    .contact a { color: #0056b3; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>ELECTRICAL ENGINEER</h1>
+      <h2>BANNAGA ALTIEB ABDUL MUHSIN</h2>
+      <p>Riyadh, Saudi Arabia | (966) 542-966-343 | ENG.ALTIEB@GMAIL.COM</p>
+    </div>
+
+    <h2>Social Links</h2>
+    <p class="contact">LinkedIn: <a href="https://www.linkedin.com/in/bannaga-abdalmuhsin-cmvp%C2%AE-cem%C2%AE415106bb/" target="_blank">Profile Link</a></p>
+
+    <h2>Summary</h2>
+    <p>As a dedicated Electrical Project Engineer with extensive experience in electrical design, project management, and maintenance engineering, I am eager to contribute my skills to your esteemed team. My passion for innovative solutions and commitment to excellence drive me to deliver projects on time and within budget. I am excited about the opportunity to collaborate with talented professionals and contribute to the success of your organization while advancing my career in a dynamic environment.</p>
+
+    <h2>Skills</h2>
+    <ul>
+      <li>Microsoft Power BI</li>
+      <li>Microsoft Office Suite</li>
+      <li>GNS3 & Cisco Packet Tracer</li>
+      <li>SQL Server for Access Control Systems</li>
+      <li>Network Configuration (LAN/WAN, TCP/IP)</li>
+      <li>Monitoring Systems (Symmetry, RTTS, Remedy, NetCool)</li>
+    </ul>
+
+    <h2>Experience</h2>
+
+    <h3>Electrical Project Engineer | ACES | Riyadh, Saudi Arabia (July 2019 - Present)</h3>
+    <ul>
+      <li>Energy manager, energy efficiency implementer and designer.</li>
+      <li>Operation & maintenance engineer for Mobily ENM managed service.</li>
+      <li>Operation & maintenance engineer for STC COW managed service.</li>
+      <li>Prepared technical documentation for troubleshooting & maintenance.</li>
+      <li>Proposed system modifications to improve efficiency.</li>
+      <li>Created standardized manuals and mentored junior engineers.</li>
+    </ul>
+
+    <h3>Electrical Project Engineer | Absar for General Contracting | Riyadh (June 2018 - June 2019)</h3>
+    <ul>
+      <li>Project Engineer (SEC unified contract).</li>
+      <li>Managed installation of RMU, transformers, mini-pillars.</li>
+      <li>Commissioning & handover to SEC.</li>
+      <li>Monitoring UHV, MV, LV lines through SCADA for system stability.</li>
+    </ul>
+
+    <h3>Electrical Engineer | Arabian BEMCO | Riyadh (Feb 2017 - Feb 2018)</h3>
+    <ul>
+      <li>Planned preventive maintenance routines for 11kV distribution.</li>
+      <li>Performed electrical acceptance testing.</li>
+      <li>Created maintenance manuals and project budgets.</li>
+      <li>Handled NCR & punch list clearance.</li>
+    </ul>
+
+    <h3>Electrical Engineer | SEC (Thermal Generation) | Sudan (Jan 2016 - Sept 2017)</h3>
+    <ul>
+      <li>Wastewater treatment using PH meter & OC 4000 DCS.</li>
+      <li>Plant maintenance and control room engineer.</li>
+      <li>Planned routines for trouble-free 11kV distribution operation.</li>
+    </ul>
+
+    <h3>Electrical Maintenance Engineer | Shawahid Eng. | Sudan (Jan 2014 - Sept 2015)</h3>
+    <ul>
+      <li>Installed conduits, cable trays, duct banks, power & control cables.</li>
+      <li>Inspections for LV/MV switchgear, MCCs, panels, transformers.</li>
+      <li>Prepared maintenance schedules and technical reports.</li>
+    </ul>
+
+    <h3>Electrical Maintenance Engineer | Ministry of Defense Sudan (Sept 2012 - Sept 2013)</h3>
+    <ul>
+      <li>Designed and implemented electrical projects.</li>
+      <li>Supervised technicians for installation & troubleshooting.</li>
+      <li>Managed electrification works including power & lighting.</li>
+    </ul>
+
+    <h2>Education</h2>
+    <p>B.Sc. (Honor) Electronic Engineering (Control), El Neelain University (2007 - 2012)</p>
+
+    <h2>Languages</h2>
+    <ul>
+      <li>Arabic</li>
+      <li>English</li>
+    </ul>
+
+    <h2>Certifications & Licenses</h2>
+    <ul>
+      <li>Certified Measurement & Verification Professional (CMVP®)</li>
+      <li>Certified Energy Manager (CEM®)</li>
+      <li>Machine Learning with Python</li>
+      <li>Power BI Essential Training</li>
+      <li>SCADA, PLC, DCS, RTU</li>
+      <li>English Language Diploma</li>
+      <li>Quality Control - ACES</li>
+    </ul>
+
+    <h2>Professional Memberships</h2>
+    <ul>
+      <li>Saudi Council of Engineers (SCE) – Registered Member</li>
+      <li>Sudanese Engineers Association (SEA) – Active Member</li>
+    </ul>
+
+    <h2>Hobbies & Interests</h2>
+    <ul>
+      <li>Electrical power systems (UHV, HV, MV, LV)</li>
+      <li>Industrial automation</li>
+      <li>Energy efficiency & sustainability</li>
+      <li>Technology research and innovation</li>
+      <li>Data analysis and visualization</li>
+      <li>Continuous learning & development</li>
+    </ul>
+
+  </div>
+</body>
+</html>
