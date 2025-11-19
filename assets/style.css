@@ -173,6 +173,18 @@ ul li {
 }
 
 /* Responsive */
+@media (min-width: 900px) {
+    .header-inner {
+        flex-direction: row;
+        text-align: left;
+        justify-content: space-between;
+    }
+
+    .hero-text {
+        text-align: left;
+    }
+}
+
 @media (max-width: 900px) {
     .columns {
         grid-template-columns: 1fr;
