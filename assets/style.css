@@ -156,6 +156,19 @@ section h4 {
     color: #1b2631;
 }
 
+.project-list,
+.recognition-list {
+    list-style: disc;
+    padding-left: 20px;
+    line-height: 1.6;
+    color: #2f3640;
+}
+
+.project-list li + li,
+.recognition-list li + li {
+    margin-top: 8px;
+}
+
 
 .timeline {
     position: relative;
