@@ -156,6 +156,54 @@ section h4 {
     color: #1b2631;
 }
 
+.project-list,
+.recognition-list {
+    list-style: disc;
+    padding-left: 20px;
+    line-height: 1.6;
+    color: #2f3640;
+}
+
+.project-list li + li,
+.recognition-list li + li {
+    margin-top: 8px;
+}
+
+.availability-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.availability-table thead th {
+    font-size: 14px;
+    color: #0a3d62;
+    font-weight: 600;
+    padding: 8px 6px;
+    text-align: center;
+}
+
+.availability-table thead .time-heading {
+    text-align: left;
+}
+
+.availability-table tbody th {
+    text-align: left;
+    font-weight: 600;
+    color: #0a3d62;
+    padding: 10px 6px;
+}
+
+.availability-table td {
+    padding: 10px 6px;
+    min-width: 60px;
+}
+
+.availability-table tbody tr + tr {
+    border-top: 1px solid rgba(10, 61, 98, 0.08);
+}
+
 
 .timeline {
     position: relative;
