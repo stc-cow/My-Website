@@ -15,24 +15,57 @@ body {
 .header {
     background: linear-gradient(135deg, #0a3d62, #1b9cfc);
     color: white;
-    padding: 60px 20px;
-    text-align: center;
+    padding: 60px 20px 80px;
+    position: relative;
+    overflow: hidden;
+}
+
+.header::after {
+    content: "";
+    position: absolute;
+    inset: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 24px;
+    pointer-events: none;
+}
+
+.header-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #d5e9ff;
+    margin-bottom: 12px;
 }
 
 .header h1 {
-    font-size: 42px;
+    font-size: 46px;
     font-weight: 700;
+    line-height: 1.2;
 }
 
-.header h2 {
-    font-size: 20px;
-    font-weight: 300;
-    margin-top: 8px;
-    color: #d5e9ff;
+.tagline {
+    margin-top: 12px;
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.9);
 }
 
 .contact-links {
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
 .contact-links a {
@@ -49,6 +82,26 @@ body {
 
 .contact-links a:hover {
     background: rgba(255,255,255,0.35);
+}
+
+.profile-frame {
+    width: 180px;
+    height: 180px;
+    min-width: 150px;
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.profile-pic {
+    width: 100%;
+    height: auto;
+    border-radius: 22px;
+    object-fit: cover;
 }
 
 /* Main container */
@@ -123,5 +176,19 @@ ul li {
 @media (max-width: 900px) {
     .columns {
         grid-template-columns: 1fr;
+    }
+
+    .header-inner {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .hero-text {
+        text-align: center;
+    }
+
+    .profile-frame {
+        width: 140px;
+        height: 140px;
     }
 }
