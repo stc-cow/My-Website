@@ -38,10 +38,9 @@
 
     <!-- Main Layout -->
     <div class="container">
-        <aside class="sidebar-stack">
-            <nav class="content-nav" aria-label="Content navigation">
+        <div class="sidebar-stack">
+            <nav class="content-nav" aria-label="Content summary">
                 <div class="content-nav__links">
-                    <a href="#download">Download CV</a>
                     <a href="#summary">Professional Summary</a>
                     <a href="#experience">Experience</a>
                     <a href="#projects">Key Projects</a>
@@ -53,30 +52,38 @@
                     <a href="#certifications">Certifications</a>
                     <a href="#memberships">Memberships</a>
                     <a href="#languages">Languages</a>
-                    <a href="#hobbies">Hobbies and Interests</a>
+                    <a href="#hobbies">Hobbies</a>
                     <a href="#availability">Work Availability</a>
                 </div>
             </nav>
-        </aside>
-        <div class="main-content">
 
-            <section id="download" class="download-section">
-                <h3>Download My CV</h3>
-                <div class="download-card">
-                    <div class="download-text">
-                        <p>Scan the QR code or tap the button to save a PDF copy of my CV.</p>
-                        <a id="cv-download-link" class="download-btn" href="https://example.com/Bannaga-Altieb-CV.pdf" target="_blank" rel="noopener">Download CV</a>
-                        <p class="download-note">Replace the link above with your hosted PDF file. The QR code will update automatically.</p>
+            <section class="overview-panel" aria-label="Career overview">
+                <header class="overview-header">
+                    <div class="overview-icon" aria-hidden="true">📄</div>
+                    <div>
+                        <p class="overview-eyebrow">Overview</p>
+                        <h2>Career snapshot</h2>
                     </div>
-                    <div class="qr-wrapper" aria-hidden="false">
-                        <img id="cv-download-qr" src="https://api.qrserver.com/v1/create-qr-code/?size=240x240&format=svg&data=https%3A%2F%2Fexample.com%2FBannaga-Altieb-CV.pdf" alt="QR code to download Bannaga Altieb's CV" loading="lazy">
-                    </div>
+                </header>
+                <div class="overview-grid">
+                    <article class="overview-card">
+                        <p class="overview-value">12<span>+</span></p>
+                        <p class="overview-label">Years of Professional Experience</p>
+                    </article>
+                    <article class="overview-card">
+                        <p class="overview-value">9</p>
+                        <p class="overview-label">Certifications &amp; Trainings</p>
+                    </article>
                 </div>
             </section>
+        </div>
+
+        <div class="main-content">
 
             <section id="summary">
                 <h3>Professional Summary</h3>
                 <p>
+                    Electrical Project Engineer with 12+ years of experience improving telecom and industrial
                     Electrical Project Engineer with 10+ years of experience improving telecom and industrial
                     infrastructure. Led multi-site energy optimization programs that cut facility utility costs by
                     up to 18% across 40+ sites, delivered nationwide O&amp;M coverage for three major Saudi telecom
@@ -85,21 +92,9 @@
             </section>
 
             <section id="experience">
+                <h3>Experience <span class="section-tag">12+ years</span></h3>
                 <h3>Experience</h3>
                 <div class="timeline">
-                    <article class="timeline-item">
-                        <div class="timeline-date">Jul 2019 – Present</div>
-                        <div class="timeline-content">
-                            <h4>Electrical Project Engineer — ACES | Riyadh</h4>
-                            <ul>
-                                <li>Manage efficiency retrofits for 40+ telecom facilities, trimming HVAC and power bills by 12‑18%.</li>
-                                <li>Serve as Mobily ENM O&amp;M lead, coordinating 15 field engineers for 24/7 network readiness.</li>
-                                <li>Oversee STC COW rapid-deployment fleet, enabling under 4-hour site turn-ups during peak events.</li>
-                                <li>Authored 30+ troubleshooting guides that reduced recurring alarms by 30%.</li>
-                            </ul>
-                        </div>
-                    </article>
-
                     <article class="timeline-item">
                         <div class="timeline-date">2018 – 2019</div>
                         <div class="timeline-content">
@@ -144,6 +139,7 @@
                             </ul>
                         </div>
                     </article>
+
                 </div>
             </section>
 
@@ -184,7 +180,7 @@
                     <li>Supervised and coordinated a workforce of 50+ engineers and technicians for stc COW (Cell on Wheels) Managed Services, ensuring high-quality execution and service continuity.</li>
                     <li>Led a team of 200+ staff in delivering the Mobily Managed Services Project, maintaining operational efficiency and strict SLA compliance.</li>
                     <li>Invented an Energy &amp; Environmental Calculations Application to perform energy assessment analysis for deployed GSM site passive infrastructure, enabling evaluation of power capabilities under full telecom traffic scenarios.</li>
-                    <li>Invented an AI-Driven Environmental Dashboard to track and calculate CO₂ emissions footprint across all regions of the Kingdom for the stc COW Project, supporting sustainability reporting and energy optimization strategies.</li>
+                    <li>Invented an AI-Driven Environmental Dashboard to track and calculate CO₂ emissions footprint across all regions of the Kingdom for the stc COW Project.</li>
                     <li>Authored and published comprehensive Technical Operation &amp; Maintenance Manuals for managing Electro-Mechanical Telecom Passive Infrastructure.</li>
                 </ul>
             </section>
@@ -213,7 +209,7 @@
             </section>
 
             <section id="certifications">
-                <h3>Certifications</h3>
+                <h3>Certifications <span class="section-tag">Total: 9</span></h3>
                 <ul>
                     <li>CMVP®</li>
                     <li>CEM®</li>
@@ -251,52 +247,53 @@
                 </ul>
             </section>
 
+            <!-- ✔ ONLY ONE CORRECT WORK AVAILABILITY SECTION -->
             <section id="availability" class="availability-section">
                 <h3>Work Availability</h3>
                 <div class="availability-card">
                     <table class="availability-table" aria-label="Weekly work availability schedule">
                         <thead>
                             <tr>
-                                <th scope="col">&nbsp;</th>
-                                <th scope="col">Monday</th>
-                                <th scope="col">Tuesday</th>
-                                <th scope="col">Wednesday</th>
-                                <th scope="col">Thursday</th>
-                                <th scope="col">Friday</th>
-                                <th scope="col">Saturday</th>
-                                <th scope="col">Sunday</th>
+                                <th>&nbsp;</th>
+                                <th>Monday</th>
+                                <th>Tuesday</th>
+                                <th>Wednesday</th>
+                                <th>Thursday</th>
+                                <th>Friday</th>
+                                <th>Saturday</th>
+                                <th>Sunday</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <th scope="row">Morning</th>
-                                <td><span class="status available" aria-label="Available"></span></td>
-                                <td><span class="status available" aria-label="Available"></span></td>
-                                <td><span class="status available" aria-label="Available"></span></td>
-                                <td><span class="status available" aria-label="Available"></span></td>
-                                <td><span class="status unavailable" aria-label="Unavailable"></span></td>
-                                <td><span class="status unavailable" aria-label="Unavailable"></span></td>
-                                <td><span class="status available" aria-label="Available"></span></td>
+                                <th>Morning</th>
+                                <td><span class="status available"></span></td>
+                                <td><span class="status available"></span></td>
+                                <td><span class="status available"></span></td>
+                                <td><span class="status available"></span></td>
+                                <td><span class="status unavailable"></span></td>
+                                <td><span class="status unavailable"></span></td>
+                                <td><span class="status available"></span></td>
                             </tr>
                             <tr>
-                                <th scope="row">Afternoon</th>
-                                <td><span class="status available" aria-label="Available"></span></td>
-                                <td><span class="status available" aria-label="Available"></span></td>
-                                <td><span class="status available" aria-label="Available"></span></td>
-                                <td><span class="status available" aria-label="Available"></span></td>
-                                <td><span class="status unavailable" aria-label="Unavailable"></span></td>
-                                <td><span class="status unavailable" aria-label="Unavailable"></span></td>
-                                <td><span class="status available" aria-label="Available"></span></td>
+                                <th>Afternoon</th>
+                                <td><span class="status available"></span></td>
+                                <td><span class="status available"></span></td>
+                                <td><span class="status available"></span></td>
+                                <td><span class="status available"></span></td>
+                                <td><span class="status unavailable"></span></td>
+                                <td><span class="status unavailable"></span></td>
+                                <td><span class="status available"></span></td>
                             </tr>
                             <tr>
-                                <th scope="row">Evening</th>
-                                <td><span class="status available" aria-label="Available"></span></td>
-                                <td><span class="status available" aria-label="Available"></span></td>
-                                <td><span class="status available" aria-label="Available"></span></td>
-                                <td><span class="status available" aria-label="Available"></span></td>
-                                <td><span class="status available" aria-label="Available"></span></td>
-                                <td><span class="status available" aria-label="Available"></span></td>
-                                <td><span class="status available" aria-label="Available"></span></td>
+                                <th>Evening</th>
+                                <td><span class="status available"></span></td>
+                                <td><span class="status available"></span></td>
+                                <td><span class="status available"></span></td>
+                                <td><span class="status available"></span></td>
+                                <td><span class="status available"></span></td>
+                                <td><span class="status available"></span></td>
+                                <td><span class="status available"></span></td>
                             </tr>
                         </tbody>
                     </table>
