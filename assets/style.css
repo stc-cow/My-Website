@@ -296,6 +296,23 @@ body {
     box-shadow: 0 0 0 6px rgba(27, 156, 252, 0.25);
 }
 
+.content-nav__links a::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #94b4d6;
+    flex-shrink: 0;
+    box-shadow: 0 0 0 6px rgba(148, 180, 214, 0.3);
+    transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.content-nav__links a:hover::before,
+.content-nav__links a:focus-visible::before {
+    background: #1b9cfc;
+    box-shadow: 0 0 0 6px rgba(27, 156, 252, 0.25);
+}
+
 /* Main content */
 .overview-panel {
     background: white;
