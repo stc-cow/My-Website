@@ -303,6 +303,18 @@
         </div>
     </div>
 
+    <script>
+        (function () {
+            const downloadLink = document.getElementById('cv-download-link');
+            const qrImage = document.getElementById('cv-download-qr');
+
+            if (downloadLink && qrImage) {
+                const encodedUrl = encodeURIComponent(downloadLink.href);
+                qrImage.src = `https://api.qrserver.com/v1/create-qr-code/?size=240x240&format=svg&data=${encodedUrl}`;
+            }
+        })();
+    </script>
+
 </body>
 
 </html>
