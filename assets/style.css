@@ -9,7 +9,7 @@
     overflow: hidden;
     background: #f1f5f9;
     box-shadow: 0 10px 32px rgba(0,0,0,0.15);
-    margin-bottom: 2.2rem;
+    margin: 0;
 }
 
 /* Cover Photo */
@@ -113,8 +113,18 @@ body {
     line-height: 1.7;
     min-height: 100vh;
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
     padding: 2.5rem 1rem;
+}
+
+.page-shell {
+    width: 100%;
+    max-width: 940px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
 }
 
 /* =========
