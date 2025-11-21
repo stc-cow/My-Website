@@ -1,3 +1,93 @@
+/* ================
+   Corporate Header
+   ================ */
+
+.hero-header {
+    position: relative;
+    width: 100%;
+    border-radius: 18px;
+    overflow: hidden;
+    background: #f1f5f9;
+    box-shadow: 0 10px 32px rgba(0,0,0,0.15);
+    margin-bottom: 2.2rem;
+}
+
+/* Cover Photo */
+.cover-image {
+    width: 100%;
+    height: 220px;
+    background-image: url("https://images.unsplash.com/photo-1504384308090-c894fdcc538d");
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.75);
+}
+
+/* Content Layout */
+.hero-content {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.6rem 2.2rem;
+    background: #ffffff;
+}
+
+/* Circular Profile */
+.hero-profile {
+    width: 125px;
+    height: 125px;
+    border-radius: 999px;
+    object-fit: cover;
+    border: 6px solid #ffffff;
+    margin-top: -85px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+}
+
+/* Name */
+.hero-name {
+    font-size: 1.85rem;
+    font-weight: 700;
+    color: #1e293b;
+    letter-spacing: 0.03em;
+}
+
+/* Role + Location */
+.hero-sub {
+    display: flex;
+    gap: 1.2rem;
+    margin-top: 0.35rem;
+}
+
+.hero-role,
+.hero-location {
+    font-size: 0.9rem;
+    color: #475569;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+/* Contact Button */
+.hero-btn {
+    margin-left: auto;
+    background: #e63946;
+    color: #ffffff;
+    padding: 0.75rem 1.6rem;
+    border-radius: 999px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.25s;
+}
+
+.hero-btn:hover {
+    background: #d62828;
+}
+
+/* Icons (Optional if using Font Awesome) */
+.fas {
+    color: #1d4ed8;
+}
+
 /* =========
    Base Reset
    ========= */
