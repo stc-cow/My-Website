@@ -1,63 +1,71 @@
 /* =====================================
    Clean Modern CV Stylesheet
-   ===================================== */
+===================================== */
 
 :root {
     --navy: #0B1F3C;
     --dark: #0f172a;
     --text: #1e293b;
     --muted: #475569;
-    --light: #f7f9fc;
+    --light: #eef2f5;
     --white: #ffffff;
     --accent: #1E4F8A;
     --border: #e5e7eb;
 }
 
+/* RESET */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* =====================================
+   PAGE BACKGROUND
+===================================== */
 body {
     font-family: "Poppins", sans-serif;
-    background: var(--light);
+    background: linear-gradient(160deg, #eef2f7, #d9e2ec);
     color: var(--text);
     line-height: 1.6;
+    padding: 2rem 1rem;
+    display: flex;
+    justify-content: center;
 }
 
-/* MAIN WRAPPER */
-.main-shell {
+/* =====================================
+   WHITE CARD FOR CV CONTENT
+===================================== */
+.cv-container {
     width: 100%;
     max-width: 900px;
-    margin: 0 auto;
-    padding: 1rem 1.5rem 3rem;
+    background: var(--white);
+    padding: 2.5rem 2rem;
+    border-radius: 18px;
+    box-shadow: 0 12px 36px rgba(0,0,0,0.08);
 }
 
 /* =====================================
    HERO SECTION
 ===================================== */
-
 .hero {
     background: var(--navy);
     padding: 3rem 2rem;
     border-radius: 20px;
     color: var(--white);
-    margin-bottom: 2.5rem;
+    margin-bottom: 3rem;
 }
 
 .hero-inner {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1fr auto;
     align-items: center;
     gap: 2rem;
 }
 
 .hero h1 {
     font-size: 2rem;
-    margin-bottom: 0.3rem;
     font-weight: 700;
-    color: var(--white);
 }
 
 .hero h2 {
@@ -87,14 +95,8 @@ body {
     transition: 0.2s;
 }
 
-.btn.secondary {
-    background: transparent;
-    border: 2px solid #dbeafe;
-    color: #dbeafe;
-}
-
 .btn:hover {
-    opacity: 0.9;
+    opacity: 0.85;
 }
 
 .hero-profile {
@@ -103,7 +105,6 @@ body {
     border-radius: 999px;
     object-fit: cover;
     border: 5px solid var(--white);
-    justify-self: end;
 }
 
 /* Mobile hero layout */
@@ -113,7 +114,7 @@ body {
         text-align: center;
     }
     .hero-profile {
-        justify-self: center;
+        margin: 0 auto;
     }
     .hero-actions {
         justify-content: center;
@@ -123,16 +124,29 @@ body {
 /* =====================================
    SECTION BASE STYLES
 ===================================== */
-
 section {
-    margin-bottom: 2.2rem;
+    margin-bottom: 2.5rem;
 }
 
 section h2 {
-    font-size: 1.4rem;
+    font-size: 1.35rem;
     color: var(--navy);
-    margin-bottom: 0.7rem;
     font-weight: 700;
+    margin-bottom: 0.8rem;
+    padding-bottom: 6px;
+    position: relative;
+}
+
+/* Stylish underline */
+section h2::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 45px;
+    height: 3px;
+    background: var(--accent);
+    border-radius: 3px;
 }
 
 p, ul li {
@@ -145,23 +159,23 @@ ul {
 }
 
 ul li {
-    margin-bottom: 0.45rem;
+    margin-bottom: 0.4rem;
 }
 
 /* =====================================
-   SPLIT GRID LAYOUT (Education, Skills...)
+   VERTICAL LAYOUT ONLY – No Split
 ===================================== */
-
 .split-section {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
+    display: block;
+}
+
+.split-section > div {
+    margin-bottom: 1.5rem;
 }
 
 /* =====================================
    TIMELINE
 ===================================== */
-
 .timeline {
     position: relative;
     padding-left: 25px;
@@ -178,7 +192,7 @@ ul li {
 }
 
 .timeline-item {
-    margin-bottom: 1.4rem;
+    margin-bottom: 1.6rem;
     position: relative;
     padding-left: 15px;
 }
@@ -210,37 +224,42 @@ ul li {
 /* =====================================
    PROJECT LIST
 ===================================== */
-
 .project-list {
     list-style: none;
     padding-left: 0;
 }
 
 .project-list li {
-    padding: 8px 0;
+    padding: 10px 0;
     border-bottom: 1px solid var(--border);
 }
 
 /* =====================================
-   INTERESTS (2 column grid)
+   INTERESTS
 ===================================== */
-
 .two-col-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    grid-template-columns: 1fr 1fr;
     gap: 6px 20px;
     padding-left: 1.2rem;
+}
+
+@media (max-width: 600px) {
+    .two-col-list {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* =====================================
    FOOTER
 ===================================== */
-
 .footer {
-    margin-top: 2.5rem;
+    margin-top: 2rem;
     text-align: center;
     font-size: 0.9rem;
     color: var(--muted);
-    padding-top: 1rem;
+    padding-top: 1.2rem;
     border-top: 1px solid var(--border);
 }
+
+
