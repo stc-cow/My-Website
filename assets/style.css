@@ -30,24 +30,38 @@ a {
     color: var(--accent);
 }
 
-a:hover {
-    color: #15406f;
+body {
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(160deg, #f8fafc 0%, #eef2f7 50%, #e2e8f0 100%);
+    color: #0f172a;
+    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2.5rem 1rem;
 }
 
-.main-shell {
-    max-width: 1080px;
-    margin: 0 auto 64px;
-    padding: 0 20px;
-}
-
-/* -------------------------------------
-   Hero
--------------------------------------- */
-.hero {
+/* ---------------------------------
+   2. HEADER (COVER + PROFILE)
+---------------------------------- */
+.hero-header {
     position: relative;
-    overflow: hidden;
-    background: linear-gradient(135deg, rgba(11,31,60,0.9), rgba(30,79,138,0.9)),
-                url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1600&q=80');
+    width: 100%;
+    max-width: 940px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 18px;
+    overflow: visible;
+    background: #f1f5f9;
+    box-shadow: 0 10px 32px rgba(0,0,0,0.15);
+}
+
+.cover-image {
+    width: 100%;
+    height: 240px;
+    background-image:
+        linear-gradient(120deg, rgba(15,23,42,0.80), rgba(37,99,235,0.55)),
+        url("https://images.unsplash.com/photo-1504384308090-c894fdcc538d");
     background-size: cover;
     background-position: center;
     color: var(--white);
@@ -70,14 +84,25 @@ a:hover {
     grid-template-columns: 2fr 1fr;
     gap: 28px;
     align-items: center;
-    padding: 48px 40px 44px;
+    gap: 1.6rem;
+    padding: 2.6rem 2.4rem;
+    background: linear-gradient(135deg, #f8fafc, #eef2ff);
+    position: relative;
+    margin: -70px 1.5rem 0;
+    border-radius: 18px;
+    box-shadow: 0 18px 40px rgba(15,23,42,0.12);
     z-index: 1;
 }
 
-.hero-text h1 {
-    margin: 0 0 10px;
-    font-size: 2.3rem;
-    letter-spacing: 0.02em;
+.hero-profile {
+    width: 140px;
+    height: 140px;
+    border-radius: 999px;
+    object-fit: cover;
+    border: 6px solid #ffffff;
+    box-shadow: 0 12px 28px rgba(15,23,42,0.25);
+    position: relative;
+    z-index: 2;
 }
 
 .hero-text h2 {
@@ -136,30 +161,36 @@ a:hover {
     background: #ffffff;
 }
 
-/* -------------------------------------
-   Sections
--------------------------------------- */
-section {
-    background: var(--white);
-    padding: 30px 26px;
-    border-radius: 16px;
-    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.06);
+/* ---------------------------------
+   4. SECTION HEADERS
+---------------------------------- */
+h3 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    margin-bottom: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    line-height: 1.5;
 }
 
 section + section {
     margin-top: 18px;
 }
 
-section h2 {
-    margin: 0 0 12px;
-    font-size: 1.35rem;
-    color: var(--navy);
-    letter-spacing: 0.01em;
+p {
+    font-size: 0.92rem;
+    color: #1f2937;
+    line-height: 1.5;
 }
 
-section p {
-    margin: 0 0 12px;
-    color: var(--dark-grey);
+ul li {
+    font-size: 0.9rem;
+    margin-bottom: 0.35rem;
+    color: #334155;
+    line-height: 1.5;
 }
 
 section ul {
@@ -220,11 +251,12 @@ section ul li {
     box-shadow: 0 0 0 4px rgba(30,79,138,0.15);
 }
 
-.timeline-range {
-    font-size: 0.85rem;
-    color: var(--light-grey);
-    letter-spacing: 0.05em;
-    margin-bottom: 4px;
+.timeline-content h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #0f172a;
+    margin-bottom: 0.4rem;
+    line-height: 1.5;
 }
 
 .timeline-role {
