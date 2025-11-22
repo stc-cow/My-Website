@@ -256,6 +256,86 @@ ul li {
     margin-bottom: 0.4rem;
     color: var(--navy);
 }
+/* ================================
+   CAREER OVERVIEW SECTION
+================================ */
+
+.overview-section {
+    margin-bottom: 3rem;
+}
+
+.overview-section h2 {
+    font-size: 1.35rem;
+    color: var(--navy);
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.overview-section h2::after {
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 45px;
+    height: 3px;
+    background: var(--accent);
+    border-radius: 3px;
+}
+
+/* GRID */
+.overview-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+/* CARD */
+.overview-card {
+    position: relative;
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+    border: 1px solid var(--border);
+    overflow: hidden;
+}
+
+/* Big faint number behind */
+.bg-number {
+    position: absolute;
+    right: 10px;
+    bottom: -10px;
+    font-size: 6rem;
+    font-weight: 700;
+    color: #eef2f7;
+    pointer-events: none;
+}
+
+/* Main blue number */
+.big-number {
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 0 0 0.4rem 0;
+    color: #2563eb; /* blue like example */
+}
+
+/* Label */
+.label {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text);
+    letter-spacing: 0.5px;
+    line-height: 1.4;
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+    .overview-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 
 /* =====================================
    TIMELINE
