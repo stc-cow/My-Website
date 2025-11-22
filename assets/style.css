@@ -48,6 +48,21 @@ body {
 /* =====================================
    HERO SECTION
 ===================================== */
+.hero-contact p {
+    margin: 4px 0;
+    font-size: 0.9rem;
+    color: #e2e8f0;
+}
+
+.hero-contact a {
+    color: #c7d7ff;
+    text-decoration: none;
+}
+
+.hero-contact a:hover {
+    text-decoration: underline;
+}
+
 .hero {
     background: var(--navy);
     padding: 3rem 2rem;
