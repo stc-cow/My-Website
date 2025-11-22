@@ -1,64 +1,88 @@
 /* =====================================
    Clean Modern CV Stylesheet
+===================================== */
 
 :root {
     --navy: #0B1F3C;
-    --dark: #0f172a;
-    --text: #1e293b;
-    --muted: #475569;
-    --light: #eef2f5;
-    --white: #ffffff;
     --accent: #1E4F8A;
+
+    /* Light theme (default) */
+    --bg-page-start: #eef2f7;
+    --bg-page-end: #d9e2ec;
+    --bg-card: #ffffff;
+    --text-main: #1e293b;
+    --text-muted: #475569;
     --border: #e5e7eb;
+
+    --hero-bg: #0B1F3C;
+    --hero-title: #ffffff;
+    --hero-subtitle: #dbeafe;
+    --hero-tagline: #e2e8f0;
+    --contact-text: #dbeafe;
+}
+
+/* Dark theme overrides (DM3 – matte graphite) */
+body.theme-dark {
+    --bg-page-start: #111827;
+    --bg-page-end: #020617;
+    --bg-card: #020617;
+    --text-main: #e5e7eb;
+    --text-muted: #9ca3af;
+    --border: #1f2937;
+
+    --hero-bg: #020617;
+    --hero-title: #f9fafb;
+    --hero-subtitle: #9ca3af;
+    --hero-tagline: #9ca3af;
+    --contact-text: #e5e7eb;
 }
 
 /* RESET */
 * {
-    box-sizing: border-box;
-}
-
-body {
     margin: 0;
     padding: 0;
-    font-family: 'Poppins', sans-serif;
-    background: var(--bg);
-    color: var(--dark-grey);
-    line-height: 1.5;
-    -webkit-font-smoothing: antialiased;
+    box-sizing: border-box;
 }
 
 /* =====================================
    PAGE BACKGROUND
+===================================== */
 body {
     font-family: "Poppins", sans-serif;
-    background: linear-gradient(160deg, #eef2f7, #d9e2ec);
-    color: var(--text);
+    background: linear-gradient(160deg, var(--bg-page-start), var(--bg-page-end));
+    color: var(--text-main);
     line-height: 1.6;
     padding: 2rem 1rem;
     display: flex;
     justify-content: center;
+    transition: background 0.35s ease, color 0.35s ease;
 }
 
 /* =====================================
-   WHITE CARD FOR CV CONTENT
+   CV CONTAINER (CARD)
+===================================== */
 .cv-container {
     width: 100%;
     max-width: 900px;
-    background: var(--white);
+    background: var(--bg-card);
     padding: 2.5rem 2rem;
     border-radius: 18px;
-    box-shadow: 0 12px 36px rgba(0,0,0,0.08);
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.08);
+    transition: background-color 0.35s ease, box-shadow 0.35s ease, color 0.35s ease;
 }
 
 /* =====================================
    HERO SECTION
-
+===================================== */
 .hero {
-    background: var(--navy);
+    background: var(--hero-bg);
     padding: 3rem 2rem;
     border-radius: 20px;
-    color: var(--white);
+    color: var(--hero-title);
     margin-bottom: 3rem;
+    opacity: 0;
+    transform: translateY(16px);
+    animation: heroFade 0.8s ease-out forwards;
 }
 
 .hero-inner {
@@ -71,20 +95,21 @@ body {
 .hero h1 {
     font-size: 2rem;
     font-weight: 700;
+    color: var(--hero-title);
 }
 
 .hero h2 {
     font-size: 1.1rem;
     font-weight: 400;
-    color: #dbeafe;
+    color: var(--hero-subtitle);
 }
 
 .hero-tagline {
     margin: 1rem 0 1.2rem;
-    color: #e2e8f0;
+    color: var(--hero-tagline);
 }
 
-/* ===== COMPACT CONTACT BAR ===== */
+/* CONTACT BAR */
 .contact-bar {
     display: flex;
     gap: 18px;
@@ -93,20 +118,37 @@ body {
 }
 
 .contact-item {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: 6px;
-    color: #dbeafe;
+    color: var(--contact-text);
     font-size: 0.92rem;
     text-decoration: none;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    padding: 0;
+    transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.contact-item span {
+    display: inline-block;
 }
 
 .contact-item:hover {
-    text-decoration: underline;
+    transform: translateY(-1px);
+    opacity: 0.9;
 }
 
-.icon {
-    font-size: 1.1rem;
+.icon-svg {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+}
+
+/* Specifically style button version (dark mode toggle) */
+.theme-toggle {
+    font: inherit;
 }
 
 /* Buttons */
@@ -116,7 +158,7 @@ body {
 }
 
 .btn {
-    background: var(--white);
+    background: #ffffff;
     color: var(--navy);
     padding: 10px 20px;
     border-radius: 40px;
@@ -124,6 +166,7 @@ body {
     font-weight: 600;
     text-decoration: none;
     transition: 0.2s;
+    border: none;
 }
 
 .btn:hover {
@@ -135,7 +178,8 @@ body {
     height: 160px;
     border-radius: 999px;
     object-fit: cover;
-    border: 5px solid var(--white);
+    border: 5px solid #ffffff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
 }
 
 /* Mobile hero layout */
@@ -159,8 +203,13 @@ body {
 
 /* =====================================
    SECTION BASE STYLES
+===================================== */
 section {
     margin-bottom: 2.5rem;
+    opacity: 0;
+    transform: translateY(14px);
+    animation: sectionFade 0.7s ease-out forwards;
+    animation-delay: 0.12s;
 }
 
 section h2 {
@@ -184,9 +233,10 @@ section h2::after {
     border-radius: 3px;
 }
 
-p, ul li {
+p,
+ul li {
     font-size: 0.95rem;
-    color: var(--text);
+    color: var(--text-main);
 }
 
 ul {
@@ -198,24 +248,15 @@ ul li {
 }
 
 /* =====================================
-   VERTICAL LAYOUT ONLY – No Split
-.split-section {
-    display: block;
-}
-
-.split-section > div {
-    margin-bottom: 1.5rem;
-}
-
-/* =====================================
    TIMELINE
+===================================== */
 .timeline {
     position: relative;
     padding-left: 25px;
 }
 
 .timeline::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     bottom: 0;
@@ -256,6 +297,7 @@ ul li {
 
 /* =====================================
    PROJECT LIST
+===================================== */
 .project-list {
     list-style: none;
     padding-left: 0;
@@ -268,6 +310,7 @@ ul li {
 
 /* =====================================
    INTERESTS
+===================================== */
 .two-col-list {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -283,14 +326,50 @@ ul li {
 
 /* =====================================
    FOOTER
+===================================== */
 .footer {
     margin-top: 2rem;
     text-align: center;
     font-size: 0.9rem;
-    color: var(--muted);
+    color: var(--text-muted);
     padding-top: 1.2rem;
     border-top: 1px solid var(--border);
 }
 
+/* =====================================
+   ANIMATIONS
+===================================== */
+@keyframes heroFade {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
+@keyframes sectionFade {
+    from {
+        opacity: 0;
+        transform: translateY(14px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
+/* Reduce motion preference */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+    .hero,
+    section {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}
