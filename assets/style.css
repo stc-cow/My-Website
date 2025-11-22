@@ -267,3 +267,69 @@ timeline-item:nth-child(even)::before {
    7. TAG LISTS (skills, certs)
 ---------------------------------- */
 section ul {
+
+
+/* =========
+   Timeline (Vertical Left – Professional)
+   ========= */
+
+.timeline {
+    position: relative;
+    margin: 2rem 0;
+    padding-left: 2.4rem;
+    border-left: 3px solid #3b82f6;
+}
+
+.timeline-item {
+    margin-bottom: 2rem;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -1.2rem;
+    top: 3px;
+    width: 16px;
+    height: 16px;
+    background: #1d4ed8;
+    border: 3px solid #bfdbfe;
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px rgba(191,219,254,0.45);
+}
+
+.timeline-date {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: #475569;
+    margin-bottom: 0.35rem;
+}
+
+.timeline-content {
+    background: #f8fafc;
+    border-radius: 14px;
+    padding: 1rem 1.2rem;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 10px 20px rgba(15,23,42,0.06);
+}
+
+.timeline-content h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #0f172a;
+    margin-bottom: 0.4rem;
+}
+
+@media (max-width: 640px) {
+    .timeline {
+        padding-left: 1.6rem;
+        border-left-width: 2px;
+    }
+    .timeline-item::before {
+        left: -0.9rem;
+        width: 14px;
+        height: 14px;
+    }
+}
