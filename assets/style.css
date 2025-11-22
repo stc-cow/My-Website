@@ -414,6 +414,16 @@ section:nth-of-type(n+5) ul li {
         border-radius: 22px;
     }
 
+    .contact-strip {
+        gap: 0.5rem;
+    }
+
+    .contact-strip span,
+    .contact-strip a {
+        width: 100%;
+        justify-content: center;
+    }
+
     .name {
         font-size: 1.6rem;
         letter-spacing: 0.12em;
