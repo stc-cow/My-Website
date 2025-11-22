@@ -48,20 +48,6 @@ body {
 /* =====================================
    HERO SECTION
 ===================================== */
-.hero-contact p {
-    margin: 4px 0;
-    font-size: 0.9rem;
-    color: #e2e8f0;
-}
-
-.hero-contact a {
-    color: #c7d7ff;
-    text-decoration: none;
-}
-
-.hero-contact a:hover {
-    text-decoration: underline;
-}
 
 .hero {
     background: var(--navy);
@@ -94,6 +80,32 @@ body {
     color: #e2e8f0;
 }
 
+/* ===== COMPACT CONTACT BAR ===== */
+.contact-bar {
+    display: flex;
+    gap: 18px;
+    margin: 1rem 0 1.2rem;
+    flex-wrap: wrap;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #dbeafe;
+    font-size: 0.92rem;
+    text-decoration: none;
+}
+
+.contact-item:hover {
+    text-decoration: underline;
+}
+
+.icon {
+    font-size: 1.1rem;
+}
+
+/* Buttons */
 .hero-actions {
     display: flex;
     gap: 12px;
@@ -133,6 +145,11 @@ body {
     }
     .hero-actions {
         justify-content: center;
+    }
+    .contact-bar {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
     }
 }
 
@@ -276,5 +293,6 @@ ul li {
     padding-top: 1.2rem;
     border-top: 1px solid var(--border);
 }
+
 
 
