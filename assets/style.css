@@ -1,6 +1,5 @@
 /* =====================================
    Clean Modern CV Stylesheet
-===================================== */
 
 :root {
     --navy: #0B1F3C;
@@ -15,14 +14,21 @@
 
 /* RESET */
 * {
+    box-sizing: border-box;
+}
+
+body {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    background: var(--bg);
+    color: var(--dark-grey);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
 }
 
 /* =====================================
    PAGE BACKGROUND
-===================================== */
 body {
     font-family: "Poppins", sans-serif;
     background: linear-gradient(160deg, #eef2f7, #d9e2ec);
@@ -35,7 +41,6 @@ body {
 
 /* =====================================
    WHITE CARD FOR CV CONTENT
-===================================== */
 .cv-container {
     width: 100%;
     max-width: 900px;
@@ -47,7 +52,6 @@ body {
 
 /* =====================================
    HERO SECTION
-===================================== */
 
 .hero {
     background: var(--navy);
@@ -155,7 +159,6 @@ body {
 
 /* =====================================
    SECTION BASE STYLES
-===================================== */
 section {
     margin-bottom: 2.5rem;
 }
@@ -196,7 +199,6 @@ ul li {
 
 /* =====================================
    VERTICAL LAYOUT ONLY – No Split
-===================================== */
 .split-section {
     display: block;
 }
@@ -207,14 +209,13 @@ ul li {
 
 /* =====================================
    TIMELINE
-===================================== */
 .timeline {
     position: relative;
     padding-left: 25px;
 }
 
 .timeline::before {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     bottom: 0;
@@ -255,7 +256,6 @@ ul li {
 
 /* =====================================
    PROJECT LIST
-===================================== */
 .project-list {
     list-style: none;
     padding-left: 0;
@@ -268,7 +268,6 @@ ul li {
 
 /* =====================================
    INTERESTS
-===================================== */
 .two-col-list {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -284,7 +283,6 @@ ul li {
 
 /* =====================================
    FOOTER
-===================================== */
 .footer {
     margin-top: 2rem;
     text-align: center;
