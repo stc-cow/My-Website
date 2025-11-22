@@ -246,6 +246,16 @@ ul {
 ul li {
     margin-bottom: 0.4rem;
 }
+/* AI Section Styling */
+.ai-block {
+    margin-bottom: 1.6rem;
+}
+
+.ai-block p {
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    color: var(--navy);
+}
 
 /* =====================================
    TIMELINE
