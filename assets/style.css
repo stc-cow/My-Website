@@ -1,17 +1,18 @@
 /* =====================================
-   MODERN CORPORATE CV STYLESHEET
+   MODERN CORPORATE CV (LIGHT VERSION)
+   Main background near white
+   Header slightly navy blue
 ===================================== */
 
-/* ---------- THEME COLOR TOKENS ---------- */
+/* ---------- THEME VARIABLES ---------- */
 :root {
-    --navy: #0B1F3C;
+    --navy: #123766;        /* Slight navy — requested */
+    --navy-dark: #0b2440;   /* Slight deeper navy */
     --accent: #1E4F8A;
 
-    --bg-page-start: #eef2f7;
-    --bg-page-end: #d9e2ec;
-
-    --bg-card: #ffffff;
-    --surface-soft: #f8fafc;
+    --bg-page: #f3f6fa;     /* MAIN BACKGROUND near white */
+    --bg-card: #ffffff;     /* White cards */
+    --bg-soft: #f8fafc;
 
     --text-main: #1e293b;
     --text-muted: #475569;
@@ -21,26 +22,27 @@
     --accent-blue: #2563eb;
     --accent-soft: #3b82f6;
 
+    --shadow-soft: 0 14px 32px rgba(0,0,0,0.08);
+
     --radius-lg: 20px;
     --radius-md: 14px;
-
-    --shadow-soft: 0 12px 32px rgba(0,0,0,0.10);
 }
 
-/* Dark Mode */
+/* ---------- DARK MODE ---------- */
 body.theme-dark {
-    --bg-page-start: #111827;
-    --bg-page-end: #020617;
-
+    --bg-page: #111827;
     --bg-card: #1e293b;
-    --surface-soft: #111827;
+    --bg-soft: #0f172a;
 
     --text-main: #f1f5f9;
     --text-muted: #9ca3af;
 
     --border: #334155;
 
-    --shadow-soft: 0 12px 32px rgba(0,0,0,0.55);
+    --navy: #0b1220;
+    --accent: #60a5fa;
+
+    --shadow-soft: 0 16px 36px rgba(0,0,0,0.55);
 }
 
 /* ---------- RESET ---------- */
@@ -53,13 +55,13 @@ body.theme-dark {
 /* ---------- PAGE BACKGROUND ---------- */
 body {
     font-family: "Poppins", sans-serif;
-    background: linear-gradient(160deg, var(--bg-page-start), var(--bg-page-end));
+    background: var(--bg-page);     /* LIGHT BG */
     color: var(--text-main);
-    line-height: 1.65;
+    line-height: 1.7;
     padding: 2rem 1rem;
     display: flex;
     justify-content: center;
-    transition: background 0.35s ease, color 0.35s ease;
+    transition: 0.3s ease-in-out;
 }
 
 /* ---------- MAIN CV CONTAINER ---------- */
@@ -67,23 +69,23 @@ body {
     width: 100%;
     max-width: 940px;
     background: var(--bg-card);
-    padding: 2.6rem 2rem;
+    padding: 2.4rem 2rem;
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-soft);
     border: 1px solid var(--border);
-    transition: 0.35s ease;
 }
 
 /* =====================================
-   HERO SECTION
+   HERO SECTION (HEADER)
+   Slight navy background
 ===================================== */
 .hero {
-    background: var(--navy);
+    background: linear-gradient(135deg, var(--navy), var(--navy-dark));
     padding: 3rem 2.2rem;
     border-radius: var(--radius-lg);
     color: #ffffff;
     margin-bottom: 3rem;
-    box-shadow: 0 14px 40px rgba(15,23,42,0.20);
+    box-shadow: 0 12px 34px rgba(0,0,0,0.20);
 }
 
 .hero-inner {
@@ -102,13 +104,12 @@ body {
     font-size: 1rem;
     font-weight: 400;
     color: #dbeafe;
-    margin-top: 0.4rem;
+    margin-top: 0.5rem;
 }
 
 .hero-tagline {
-    margin: 1rem 0 1.2rem;
+    margin: 1rem 0 1.4rem;
     color: #e2e8f0;
-    font-size: 0.96rem;
 }
 
 /* ---------- CONTACT BAR ---------- */
@@ -127,13 +128,10 @@ body {
     font-size: 0.92rem;
     text-decoration: none;
     cursor: pointer;
-    transition: transform 0.15s ease, opacity 0.15s ease;
+    transition: 0.15s;
 }
 
-.contact-item:hover {
-    transform: translateY(-1px);
-    opacity: 0.9;
-}
+.contact-item:hover { opacity: 0.85; }
 
 .icon-svg {
     width: 18px;
@@ -143,34 +141,33 @@ body {
 
 .theme-toggle { font: inherit; }
 
-/* ---------- BUTTONS ---------- */
+/* ---------- BUTTON ---------- */
 .hero-actions {
-    display: flex;
-    gap: 10px;
+    margin-top: 0.8rem;
 }
 
 .btn {
     background: #ffffff;
-    color: var(--navy);
+    color: var(--navy-dark);
     padding: 10px 20px;
     border-radius: 40px;
     font-size: 0.9rem;
     font-weight: 600;
     text-decoration: none;
     border: none;
-    transition: 0.2s;
+    transition: 0.2s ease;
 }
 
 .btn:hover { opacity: 0.85; }
 
-/* Profile Image */
+/* ---------- PROFILE IMAGE ---------- */
 .hero-profile {
     width: 160px;
     height: 160px;
     border-radius: 999px;
     object-fit: cover;
     border: 5px solid #ffffff;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.30);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.35);
 }
 
 /* ---------- MOBILE HERO ---------- */
@@ -184,7 +181,7 @@ body {
 }
 
 /* =====================================
-   SECTIONS BASE
+   SECTION BASE
 ===================================== */
 section {
     margin-bottom: 2.6rem;
@@ -192,8 +189,8 @@ section {
 
 section h2 {
     font-size: 1.35rem;
-    color: var(--navy);
     font-weight: 700;
+    color: var(--navy-dark);
     margin-bottom: 0.8rem;
     padding-bottom: 6px;
     position: relative;
@@ -223,7 +220,7 @@ ul li {
 }
 
 /* =====================================
-   OVERVIEW CARDS
+   OVERVIEW CARDS (12+ and 15+)
 ===================================== */
 .overview-grid {
     display: grid;
@@ -234,40 +231,38 @@ ul li {
 
 .overview-card {
     position: relative;
-    background: var(--surface-soft);
+    background: var(--bg-soft);
     border-radius: var(--radius-md);
-    padding: 2rem 2rem;
+    padding: 2rem;
     border: 1px solid var(--border);
-    box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
     overflow: hidden;
 }
 
-/* Background faint number */
-.big-number {
-    position: absolute;
-    right: 12px;
-    bottom: -6px;
-    font-size: 110px;
-    font-weight: 700;
-    color: rgba(37,99,235,0.12);
-    pointer-events: none;
-}
-
-/* Blue main number */
 .number {
     font-size: 2.8rem;
     font-weight: 700;
     color: var(--accent-blue);
-    margin-bottom: 0.3rem;
-    z-index: 2;
+    margin-bottom: 0.4rem;
     position: relative;
+    z-index: 2;
 }
 
 .label {
     font-size: 1rem;
-    font-weight: 500;
     color: var(--text-muted);
     line-height: 1.4;
+}
+
+/* Background big number */
+.big-number {
+    position: absolute;
+    right: 12px;
+    bottom: -4px;
+    font-size: 120px;
+    font-weight: 700;
+    color: rgba(30,64,175,0.12); /* Soft navy, readable */
+    pointer-events: none;
 }
 
 /* =====================================
@@ -290,7 +285,7 @@ ul li {
 }
 
 .timeline-item {
-    margin-bottom: 1.8rem;
+    margin-bottom: 1.9rem;
     position: relative;
     padding-left: 18px;
 }
@@ -303,18 +298,18 @@ ul li {
     width: 12px;
     height: 12px;
     background: var(--accent);
-    border-radius: 50%;
+    border-radius: 999px;
 }
 
 .timeline-date {
     font-size: 0.85rem;
     font-weight: 600;
     color: var(--accent);
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.4rem;
 }
 
 /* =====================================
-   PROJECT LIST
+   PROJECTS / INTERESTS / FOOTER
 ===================================== */
 .project-list {
     list-style: none;
@@ -326,9 +321,6 @@ ul li {
     border-bottom: 1px solid var(--border);
 }
 
-/* =====================================
-   INTERESTS
-===================================== */
 .two-col-list {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -341,14 +333,11 @@ ul li {
     }
 }
 
-/* =====================================
-   FOOTER
-===================================== */
 .footer {
-    margin-top: 2.2rem;
+    margin-top: 2rem;
     text-align: center;
     font-size: 0.88rem;
     color: var(--text-muted);
-    padding-top: 1rem;
+    padding-top: 1.2rem;
     border-top: 1px solid var(--border);
 }
