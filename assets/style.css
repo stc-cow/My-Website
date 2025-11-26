@@ -326,57 +326,48 @@ p, ul li {
 .cv-container::after {
     content: "";
     position: absolute;
-    width: 520px;
-    height: 520px;
+    width: 420px;
+    height: 420px;
     border-radius: 50%;
-    filter: blur(88px);
-    opacity: 0.14;
+    filter: blur(82px);
+    opacity: 0.16;
     z-index: -1; /* ensures blobs stay behind card */
     pointer-events: none;
 }
 
-/* Left Blob - Navy gradient, positioned fully outside */
+/* Left Blob - Navy gradient, outside margin */
 .cv-container::before {
-    top: 6%;
-    left: -620px;
+    top: 4%;
+    left: -320px;
     background: radial-gradient(
-        circle at 32% 38%,
-        rgba(26, 46, 79, 0.18) 0%,
-        rgba(26, 46, 79, 0.08) 35%,
-        rgba(26, 46, 79, 0) 68%
+        circle at 30% 40%,
+        rgba(26, 46, 79, 0.18),
+        rgba(26, 46, 79, 0)
     );
 }
 
-/* Right Blob - Green gradient, positioned fully outside */
+/* Right Blob - Green gradient, outside margin */
 .cv-container::after {
-    bottom: 8%;
-    right: -620px;
+    bottom: 6%;
+    right: -320px;
     background: radial-gradient(
-        circle at 68% 62%,
-        rgba(58, 209, 124, 0.18) 0%,
-        rgba(58, 209, 124, 0.08) 36%,
-        rgba(58, 209, 124, 0) 70%
+        circle at 70% 60%,
+        rgba(58, 209, 124, 0.18),
+        rgba(58, 209, 124, 0)
     );
 }
 
 @media (max-width: 900px) {
     .cv-container::before,
     .cv-container::after {
-        opacity: 0.1;
-        filter: blur(78px);
+        opacity: 0.12;
+        filter: blur(70px);
     }
 }
 
 @media (max-width: 640px) {
     .cv-container::before,
     .cv-container::after {
-        opacity: 0.02;
-    }
-}
-
-@media (max-width: 540px) {
-    .cv-container::before,
-    .cv-container::after {
-        opacity: 0;
+        opacity: 0.06;
     }
 }
