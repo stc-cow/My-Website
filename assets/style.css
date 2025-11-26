@@ -43,6 +43,8 @@ body {
     padding: 2rem 1rem;
     display: flex;
     justify-content: center;
+    position: relative;
+    overflow: hidden;
 }
 
 /* ---------- MAIN CONTAINER ---------- */
@@ -319,11 +321,11 @@ p, ul li {
 }
 
 /* =========================================================
-   3D GRADIENT MARGIN BLOBS (PERFECTED VERSION)
+   3D GRADIENT MARGIN BLOBS (BODY-LEVEL LAYER)
 ========================================================= */
 
-.cv-container::before,
-.cv-container::after {
+body::before,
+body::after {
     content: "";
     position: absolute;
     width: 420px;
