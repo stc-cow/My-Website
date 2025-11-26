@@ -44,7 +44,10 @@ body {
     display: flex;
     justify-content: center;
     position: relative;
-    overflow: hidden;
+
+    /* FIXED — allow scrolling */
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 /* ---------- MAIN CONTAINER ---------- */
@@ -57,7 +60,7 @@ body {
     box-shadow: var(--shadow-soft);
     border: 1px solid var(--border);
     position: relative;
-    z-index: 2; /* Ensures blobs stay behind */
+    z-index: 2;
 }
 
 /* =========================================================
@@ -321,48 +324,49 @@ p, ul li {
 }
 
 /* =========================================================
-   3D GRADIENT MARGIN BLOBS (BODY-LEVEL LAYER)
+   3D GRADIENT MARGIN BLOBS — FINAL WORKING VERSION
 ========================================================= */
 
-body::before,
-body::after {
+.cv-container::before,
+.cv-container::after {
     content: "";
     position: absolute;
-    width: 420px;
-    height: 420px;
+    width: 360px;
+    height: 360px;
     border-radius: 50%;
-    filter: blur(82px);
-    opacity: 0.16;
-    z-index: -1; /* ensures blobs stay behind card */
+    filter: blur(80px);
+    opacity: 0.22;
+    z-index: -1;
     pointer-events: none;
 }
 
-/* Left Blob - Navy gradient, outside margin */
+/* LEFT BLOB */
 .cv-container::before {
-    top: 4%;
-    left: -320px;
+    top: 8%;
+    left: -260px;
     background: radial-gradient(
-        circle at 30% 40%,
-        rgba(26, 46, 79, 0.18),
-        rgba(26, 46, 79, 0)
+        circle at 30% 30%,
+        rgba(19, 52, 108, 0.25),
+        rgba(19, 52, 108, 0)
     );
 }
 
-/* Right Blob - Green gradient, outside margin */
+/* RIGHT BLOB */
 .cv-container::after {
-    bottom: 6%;
-    right: -320px;
+    bottom: 12%;
+    right: -260px;
     background: radial-gradient(
-        circle at 70% 60%,
-        rgba(58, 209, 124, 0.18),
+        circle at 70% 70%,
+        rgba(58, 209, 124, 0.25),
         rgba(58, 209, 124, 0)
     );
 }
 
+/* Mobile Optimization */
 @media (max-width: 900px) {
     .cv-container::before,
     .cv-container::after {
-        opacity: 0.12;
+        opacity: 0.14;
         filter: blur(70px);
     }
 }
@@ -370,6 +374,7 @@ body::after {
 @media (max-width: 640px) {
     .cv-container::before,
     .cv-container::after {
-        opacity: 0.06;
+        opacity: 0.08;
+        filter: blur(60px);
     }
 }
