@@ -323,51 +323,56 @@ p, ul li {
     margin-bottom: 10px;
     line-height: 1.6;
 }
-/* ======= 3D Gradient Blob Margin Design ======= */
+/* ======= 3D Margin Blobs (Working Version) ======= */
 
-body::before,
-body::after {
-    content: "";
-    position: fixed;
-    width: 320px;
-    height: 320px;
-    border-radius: 50%;
-    z-index: -1;
-    filter: blur(70px);
-    opacity: 0.16; /* Soft visibility */
-    pointer-events: none;
+.cv-container {
+    position: relative;
+    z-index: 1;
 }
 
-/* Left blob */
-body::before {
-    top: 8%;
-    left: -120px;
+/* Left Blob */
+.cv-container::before {
+    content: "";
+    position: absolute;
+    top: 5%;
+    left: -180px;
+    width: 360px;
+    height: 360px;
     background: radial-gradient(
         circle at 30% 30%,
-        rgba(32, 43, 109, 0.45),
-        rgba(12, 18, 51, 0.10)
+        rgba(32, 43, 109, 0.40),
+        rgba(32, 43, 109, 0.05)
     );
+    border-radius: 50%;
+    filter: blur(60px);
+    opacity: 0.25;
+    z-index: -1;
+    animation: blobMove 14s ease-in-out infinite;
 }
 
-/* Right blob */
-body::after {
-    bottom: 12%;
-    right: -120px;
+/* Right Blob */
+.cv-container::after {
+    content: "";
+    position: absolute;
+    bottom: 8%;
+    right: -180px;
+    width: 360px;
+    height: 360px;
     background: radial-gradient(
         circle at 70% 70%,
         rgba(58, 209, 124, 0.45),
-        rgba(12, 18, 51, 0.10)
+        rgba(58, 209, 124, 0.05)
     );
+    border-radius: 50%;
+    filter: blur(60px);
+    opacity: 0.25;
+    z-index: -1;
+    animation: blobMove 18s ease-in-out infinite;
 }
 
-/* Slight animation (very subtle) */
-@keyframes blobFloat {
-    0%   { transform: translateY(0px) scale(1); }
-    50%  { transform: translateY(12px) scale(1.03); }
-    100% { transform: translateY(0px) scale(1); }
-}
-
-body::before,
-body::after {
-    animation: blobFloat 12s ease-in-out infinite;
+/* Blob animation */
+@keyframes blobMove {
+    0%   { transform: translateY(0) scale(1); }
+    50%  { transform: translateY(18px) scale(1.04); }
+    100% { transform: translateY(0) scale(1); }
 }
