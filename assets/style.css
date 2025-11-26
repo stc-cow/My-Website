@@ -43,6 +43,8 @@ body {
     padding: 2rem 1rem;
     display: flex;
     justify-content: center;
+    position: relative;
+    overflow: hidden;
 }
 
 /* ---------- MAIN CONTAINER ---------- */
@@ -319,49 +321,64 @@ p, ul li {
 }
 
 /* =========================================================
-   3D GRADIENT MARGIN BLOBS (PERFECTED VERSION)
+   3D GRADIENT MARGIN BLOBS (BODY-LEVEL LAYER)
 ========================================================= */
 
-.cv-container::before,
-.cv-container::after {
+body::before,
+body::after {
     content: "";
     position: absolute;
-    width: 360px;
-    height: 360px;
+    width: 560px;
+    height: 560px;
     border-radius: 50%;
-    filter: blur(65px);
-    opacity: 0.25;
-    z-index: -1; /* ensures blobs stay behind card */
+    filter: blur(88px);
+    opacity: 0.16;
+    z-index: 1; /* stays behind cv-container (z-index: 2) */
     pointer-events: none;
 }
 
-/* Left Blob */
-.cv-container::before {
-    top: 6%;
-    left: -200px;
+/* Left Blob - Navy gradient, fully outside left margin */
+body::before {
+    top: 10%;
+    left: -820px;
     background: radial-gradient(
-        circle at 30% 30%,
-        rgba(19, 52, 108, 0.40),
-        rgba(19, 52, 108, 0.06)
+        circle at 34% 40%,
+        rgba(26, 46, 79, 0.18) 0%,
+        rgba(26, 46, 79, 0.08) 34%,
+        rgba(26, 46, 79, 0) 68%
     );
-    animation: blobMove 14s ease-in-out infinite;
 }
 
-/* Right Blob */
-.cv-container::after {
-    bottom: 10%;
-    right: -200px;
+/* Right Blob - Green gradient, fully outside right margin */
+body::after {
+    bottom: 12%;
+    right: -820px;
     background: radial-gradient(
-        circle at 70% 70%,
-        rgba(56, 199, 118, 0.45),
-        rgba(56, 199, 118, 0.06)
+        circle at 66% 60%,
+        rgba(58, 209, 124, 0.18) 0%,
+        rgba(58, 209, 124, 0.08) 35%,
+        rgba(58, 209, 124, 0) 70%
     );
-    animation: blobMove 18s ease-in-out infinite;
 }
 
-/* Blob Animation */
-@keyframes blobMove {
-    0%   { transform: translateY(0) scale(1); }
-    50%  { transform: translateY(22px) scale(1.05); }
-    100% { transform: translateY(0) scale(1); }
+@media (max-width: 900px) {
+    body::before,
+    body::after {
+        opacity: 0.1;
+        filter: blur(80px);
+    }
+}
+
+@media (max-width: 640px) {
+    body::before,
+    body::after {
+        opacity: 0.04;
+    }
+}
+
+@media (max-width: 540px) {
+    body::before,
+    body::after {
+        opacity: 0;
+    }
 }
