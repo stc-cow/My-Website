@@ -308,9 +308,18 @@ p, ul li {
 }
 
 .footer {
-    margin-top: 2rem;
-    padding-top: 1rem;
     text-align: center;
-    color: var(--text-muted);
-    border-top: 1px solid var(--border);
+    padding: 25px 10px;
+    font-size: 14px;
+    color: #555;
+    margin-top: 40px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.footer-quote {
+    font-style: italic;
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 10px;
+    line-height: 1.6;
 }
