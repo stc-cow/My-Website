@@ -383,3 +383,18 @@ p, ul li {
         print-color-adjust: exact !important;
     }
 }
+.download-btn {
+    background: #1E4F8A;
+    color: #fff;
+    padding: 12px 26px;
+    border-radius: 50px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 12px;
+}
+
+.download-btn:hover {
+    opacity: 0.9;
+}
