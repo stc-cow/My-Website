@@ -398,3 +398,15 @@ p, ul li {
 .download-btn:hover {
     opacity: 0.9;
 }
+.qr-block {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.qr-img {
+    width: 130px;
+    height: auto;
+    border-radius: 12px;
+    margin-bottom: 8px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
