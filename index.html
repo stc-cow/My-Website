@@ -1,347 +1,413 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bannaga Altieb Abdul Muhsin | CV</title>
+/* =========================================================
+   FINAL MODERN CORPORATE — LIGHT MODE ONLY
+========================================================= */
 
-    <!-- ✅ Vercel Web Analytics -->
-    <script defer src="https://vercel.com/analytics/script.js"></script>
+/* ---------- COLOR VARIABLES ---------- */
+:root {
+    --navy: #123766;
+    --navy-dark: #0b2440;
+    --accent: #1E4F8A;
 
-    <link rel="stylesheet" href="assets/style.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-</head>
+    --bg-page: #f4f6f9;
+    --bg-card: #ffffff;
+    --bg-soft: #f8fafc;
 
-<body>
-<div class="cv-container">
+    --text-main: #1e293b;
+    --text-muted: #526278;
 
-  <!-- ======================= HERO ========================= -->
-<header class="hero">
-    <div class="hero-inner">
+    --border: #e4e7eb;
 
-        <!-- TEXT -->
-        <div class="hero-text">
-            <h1>Bannaga Altieb Abdul Muhsin</h1>
-            <h2>Electrical Project Engineer — Riyadh, Saudi Arabia</h2>
+    --accent-blue: #2563eb;
+    --accent-soft: #3b82f6;
 
-            <p class="hero-tagline">
-                Telecom & industrial passive infrastructure · Energy optimization · O&M excellence
-            </p>
+    --radius-lg: 20px;
+    --radius-md: 14px;
 
-            <!-- CONTACT BAR -->
-            <div class="contact-bar">
+    --shadow-soft: 0 14px 32px rgba(0,0,0,0.08);
+}
 
-                <!-- Phone -->
-                <a href="tel:+966542966343" class="contact-item">
-                    <svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.1 10.8 19.79 19.79 0 010 2.18 2 2 0 012.18 0h3A2 2 0 017 1.72a12.84 12.84 0 001 3.1A2 2 0 017.91 6L6.36 7.55a16 16 0 006.09 6.09L14 12.09a2 2 0 001.18-.91 12.84 12.84 0 003.1 1A2 2 0 0122 16.92z"/>
-                    </svg>
-                    <span>+966 54 296 6343</span>
-                </a>
+/* ---------- RESET ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-                <!-- LinkedIn -->
-                <a href="https://www.linkedin.com/in/bannaga-abdalmuhsin-cmvp%C2%AE-cem%C2%AE-415106bb"
-                   target="_blank" class="contact-item">
-                    <svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M4.98 3.5C4.98 5 3.9 6 2.5 6S0 5 0 3.5 1.08 1 2.5 1 4.98 2 4.98 3.5zM.4 23.5h4.2V7.98H.4V23.5zM8.9 7.98v15.52h4.2v-8.3c0-2.24.42-4.4 3.2-4.4s2.8 2.56 2.8 4.54v8.17H23V13c0-5.06-2.7-7.42-6.3-7.42-2.84 0-4.1 1.58-4.8 2.68h-.1V7.98H8.9z"/>
-                    </svg>
-                    <span>LinkedIn</span>
-                </a>
+/* ---------- GLOBAL PAGE ---------- */
+body {
+    font-family: "Poppins", sans-serif;
+    background: var(--bg-page);
+    color: var(--text-main);
+    line-height: 1.7;
+    padding: 2rem 1rem;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
 
-            </div>
+/* ---------- MAIN CONTAINER ---------- */
+.cv-container {
+    width: 100%;
+    max-width: 940px;
+    background: var(--bg-card);
+    border-radius: var(--radius-lg);
+    padding: 2.4rem 2rem;
+    box-shadow: var(--shadow-soft);
+    border: 1px solid var(--border);
+    position: relative;
+    z-index: 2;
+}
 
-            <div class="hero-actions">
-                <a class="btn" href="mailto:eng.altieb@gmail.com">Contact Me</a>
-            </div>
-        </div>
+/* =========================================================
+   HERO SECTION
+========================================================= */
+.hero {
+    background: linear-gradient(135deg, #0f3a6a, #0b294f);
+    padding: 3rem 2.2rem;
+    border-radius: 24px;
+    color: #ffffff;
+    margin-bottom: 3rem;
+    box-shadow: 0 14px 40px rgba(0,0,0,0.18);
+}
 
-        <!-- PROFILE IMAGE -->
-        <img src="assets/images/Untitled design.png" class="hero-profile" alt="Profile portrait" />
-    </div>
-    <a class="btn download-btn" 
-   href="assets/Bannaga_CV.pdf" 
-   download>
-    📄 Download CV
-</a>
+.hero-inner {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 2.2rem;
+    align-items: center;
+}
 
-</header>
-  </header>
+.hero-text h1 {
+    font-size: 2rem;
+    font-weight: 700;
+}
 
-    <!-- ====================== SUMMARY ====================== -->
-    <section id="summary">
-        <h2>Professional Summary</h2>
-        <p>
-          A Certified Energy Manager (CEM®) and Certified Measurement & Verification Professional (CMVP®) with over a decade of experience in electrical and energy engineering. I specialize in project management, telecom power systems, energy-efficient solutions, and technical operations across diverse infrastructure environments.
+.hero-text h2 {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #dbeafe;
+    margin-top: 0.4rem;
+}
 
-With strong expertise in data collection, energy analysis, facilities management, and structured reporting, I have delivered innovative, reliable, and performance-driven solutions for complex engineering projects. I hold a bachelor’s degree in Electronic Control Engineering and additional certifications in LEED Green Associate, SCADA systems.
+.hero-tagline {
+    margin: 1rem 0 1.4rem;
+    font-size: 0.96rem;
+    color: #e2e8f0;
+}
 
-Fluent in both English and Arabic, I am committed to driving operational excellence, improving system reliability, and delivering measurable results through disciplined engineering practices.
-        </p>
-    </section>
+/* CONTACT BAR */
+.contact-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin-bottom: 1.2rem;
+}
 
-   <!-- =================== CAREER OVERVIEW (CARD STYLE) =================== -->
-<section id="overview" class="overview-section">
-    <h2>Overview</h2>
+.contact-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #dbeafe;
+    font-size: 0.92rem;
+    text-decoration: none;
+    transition: 0.15s;
+}
 
-    <div class="overview-grid">
+.contact-item:hover { opacity: 0.85; }
 
-        <!-- CARD 1 -->
-        <div class="overview-card">
-            <div class="big-number">12</div>
-            <div class="number">12+</div>
-            <div class="label">
-                Years of<br>Professional<br>Experience
-            </div>
-        </div>
+.icon-svg {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+}
 
-        <!-- CARD 2 -->
-        <div class="overview-card">
-            <div class="big-number">15</div>
-            <div class="number">15+</div>
-            <div class="label">
-                Certifications &<br>Training Programs
-            </div>
-        </div>
+/* BUTTONS */
+.hero-actions .btn {
+    background: #ffffff;
+    color: #0b294f;
+    padding: 10px 20px;
+    border-radius: 40px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.2s;
+}
 
-    </div>
-</section>
+.hero-actions .btn:hover { opacity: 0.85; }
 
+/* Download CV button */
+.download-btn {
+    background: #1E4F8A;
+    color: #fff;
+    padding: 12px 26px;
+    border-radius: 50px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 12px;
+}
 
-    <!-- =================== AI & DEVELOPMENT =================== -->
-<section id="ai-development">
-    <h2>AI & Development</h2>
+.download-btn:hover { opacity: 0.9; }
 
-    <div class="ai-block">
-        <p><strong>AI & Automation</strong></p>
-        <ul>
-            <li>Designed Python-based automation to streamline energy performance reporting and KPI tracking.</li>
-            <li>Developed machine-learning–based anomaly alerts for telecom site power consumption behavior.</li>
-            <li>Built governance-ready Energy & Environmental dashboards for CO₂ footprint monitoring.</li>
-            <li>Applied Power BI, SQL Server, and DAX to model operational trends across multi-site networks.</li>
-        </ul>
-    </div>
+/* PROFILE IMAGE */
+.hero-profile {
+    width: 160px;
+    height: 160px;
+    border-radius: 999px;
+    object-fit: cover;
+    border: 5px solid #ffffff;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+}
 
-    <div class="ai-block">
-        <p><strong>Development & Tools</strong></p>
-        <ul>
-            <li>Created troubleshooting guides and reusable diagnostic scripts for SCADA / PLC / DCS systems.</li>
-            <li>Documented API-style checklists to standardize field data capture and site integrations.</li>
-            <li>Version-controlled documentation and templates using Git/GitHub workflows.</li>
-        </ul>
-    </div>
-</section>
+/* Mobile */
+@media (max-width: 820px) {
+    .hero-inner { grid-template-columns: 1fr; text-align: center; }
+    .hero-profile { margin: 0 auto; }
+}
 
+/* =========================================================
+   SECTIONS
+========================================================= */
+section { margin-bottom: 2.6rem; }
 
-    <!-- =================== KEY ACCOMPLISHMENTS =================== -->
-    <section id="accomplishments">
-        <h2>Key Accomplishments</h2>
-        <ul>
-            <li>Reduced nationwide telecom site utility costs by up to 18% through multi-phase energy optimization.</li>
-            <li>Delivered O&M coverage for STC COW & Mobily ENM networks with proactive outage prevention.</li>
-            <li>Authored troubleshooting guides and automation routines reducing incident resolution time by 30%.</li>
-            <li>Commissioned 60+ MV/LV assets under SEC unified contracts with full SCADA integration.</li>
-            <li>Developed an AI-driven Energy & Environmental Dashboard tracking CO₂ emissions and power efficiency across STC COW sites.</li>
-        </ul>
-    </section>
+section h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 0.8rem;
+    padding-bottom: 6px;
+    position: relative;
+}
 
-    <!-- =================== EXPERIENCE TIMELINE =================== -->
-    <section id="experience">
-        <h2>Experience</h2>
-        <div class="timeline">
+section h2::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 45px;
+    height: 3px;
+    background: var(--accent);
+    border-radius: 3px;
+}
 
-            <div class="timeline-item">
-                <div class="timeline-date">2019 – Present</div>
-                <div class="timeline-content">
-                    <h3>Electrical Project Engineer — ACES | Riyadh</h3>
-                    <ul>
-                        <li>Energy Manager & efficiency designer.</li>
-                        <li>O&M Engineer for Mobily ENM Managed Services.</li>
-                        <li>O&M Engineer for STC COW Managed Services.</li>
-                        <li>Developed technical troubleshooting & maintenance documentation.</li>
-                        <li>Improved telecom passive infrastructure performance.</li>
-                        <li>Mentored junior engineers.</li>
-                    </ul>
-                </div>
-            </div>
+p, ul li {
+    font-size: 0.96rem;
+    color: var(--text-main);
+}
 
-            <div class="timeline-item">
-                <div class="timeline-date">2018 – 2019</div>
-                <div class="timeline-content">
-                    <h3>Electrical Project Engineer — Absar | Riyadh</h3>
-                    <ul>
-                        <li>Executed SEC unified-contract builds for 60+ MV/LV assets.</li>
-                        <li>Installed RMUs, transformers, and mini-pillars.</li>
-                        <li>Full commissioning & SEC handover.</li>
-                        <li>SCADA monitoring & integration.</li>
-                    </ul>
-                </div>
-            </div>
+#summary p {
+    text-align: justify;
+    text-justify: inter-word;
+}
 
-            <div class="timeline-item">
-                <div class="timeline-date">2017 – 2018</div>
-                <div class="timeline-content">
-                    <h3>Electrical Engineer — BEMCO</h3>
-                    <ul>
-                        <li>Preventive maintenance for 11kV distribution networks.</li>
-                        <li>Developed standardized testing & inspection manuals.</li>
-                        <li>Handled NCR resolutions & technical documentation.</li>
-                    </ul>
-                </div>
-            </div>
+/* =========================================================
+   OVERVIEW CARDS
+========================================================= */
+.overview-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+    gap: 22px;
+}
 
-            <div class="timeline-item">
-                <div class="timeline-date">2012 – 2017</div>
-                <div class="timeline-content">
-                    <h3>Electrical Engineer — SEC Thermal Generation (Sudan)</h3>
-                    <ul>
-                        <li>Operations for 200 MW thermal generation block.</li>
-                        <li>Wastewater treatment (PH meters / OC 4000 DCS).</li>
-                        <li>Maintenance for 11kV distribution systems.</li>
-                    </ul>
-                </div>
-            </div>
+.overview-card {
+    background: var(--bg-soft);
+    border-radius: var(--radius-md);
+    padding: 2rem;
+    border: 1px solid var(--border);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+    position: relative;
+}
 
-        </div>
-    </section>
+.number {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: var(--accent-blue);
+}
 
-    <!-- =================== KEY PROJECTS =================== -->
-    <section id="projects">
-        <h2>Key Projects</h2>
-        <ul class="project-list">
-            <li><strong>STC COW Network</strong> – O&M + energy optimization.</li>
-            <li><strong>Mobily ENM Managed Services</strong> – Full O&M and facility support.</li>
-            <li><strong>Mobily Data Center Energy Audit</strong> – Energy efficiency assessment.</li>
-            <li><strong>SEC Unified Contract</strong> – MV/LV installations & SCADA commissioning.</li>
-            <li><strong>PP12 Thermal Generation</strong> – Operations & safety routines.</li>
-        </ul>
-    </section>
+.label {
+    margin-top: 0.3rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+}
 
-    <!-- =================== EDUCATION =================== -->
-    <section>
-        <h2>Education</h2>
-        <p><strong>B.Sc. Electronic Engineering (Control)</strong><br>El Neelain University — 2007–2012</p>
-    </section>
+.big-number {
+    position: absolute;
+    right: 12px;
+    bottom: -10px;
+    font-size: 115px;
+    font-weight: 700;
+    color: rgba(37,99,235,0.12);
+    pointer-events: none;
+}
 
-    <!-- =================== SKILLS =================== -->
-    <section>
-        <h2>Skills</h2>
-        <ul>
-            <li>Microsoft Office</li>
-            <li>Power BI</li>
-            <li>SQL Server</li>
-            <li>Figma AI Programming & Development</li>
-              <li>Energy Managaments Tools</li>
-            <li>SCADA / DCS / PLC</li>
-        </ul>
-    </section>
+/* =========================================================
+   TIMELINE
+========================================================= */
+.timeline {
+    position: relative;
+    padding-left: 22px;
+}
 
-    <!-- =================== CERTIFICATIONS =================== -->
-    <section>
-        <h2>Certifications</h2>
-        <ul>
-            <li>CMVP®</li>
-            <li>CEM®</li>
-            <li>Machine Learning with Python</li>
-            <li>Power BI Essential Training</li>
-            <li>Cert Prep: LEED Green Associate</li>
-            <li>Learning Excel: Data Analysis</li>
-            <li>The Non-Technical Skills of Effective Data Scientists</li>
-             <li>Quality Engineering</li>
-            <li>SCADA / PLC / DCS / RTU</li>
-        </ul>
-    </section>
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 8px;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: var(--accent);
+}
 
-    <!-- =================== MEMBERSHIPS =================== -->
-    <section>
-        <h2>Memberships</h2>
-        <ul>
-            <li>Saudi Council of Engineers (SCE)</li>
-            <li>Sudanese Engineers Association (SEA)</li>
-        </ul>
-    </section>
+.timeline-item {
+    position: relative;
+    padding-left: 18px;
+    margin-bottom: 1.8rem;
+}
 
-    <!-- =================== LANGUAGES =================== -->
-    <section>
-        <h2>Languages</h2>
-        <ul>
-            <li>Arabic — Native</li>
-            <li>English — Professional</li>
-        </ul>
-    </section>
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -2px;
+    top: 4px;
+    width: 12px;
+    height: 12px;
+    border-radius: 999px;
+    background: var(--accent);
+}
 
-    <!-- =================== AVAILABILITY =================== -->
-    <section>
-        <h2>Work Availability</h2>
-        <ul>
-            <li>Sunday–Thursday: 8:00 AM – 6:00 PM</li>
-            <li>Weekends: On-call for urgent interventions</li>
-            <li>Ready for short-notice regional travel</li>
-        </ul>
-    </section>
+.timeline-date {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--accent);
+    margin-bottom: 0.3rem;
+}
 
-    <!-- =================== INTERESTS =================== -->
-    <section>
-        <h2>Hobbies & Interests</h2>
-        <ul class="two-col-list">
-            <li>Electrical Power Systems</li>
-            <li>Energy Efficiency</li>
-            <li>Automation</li>
-            <li>Data Analysis</li>
-            <li>Innovation</li>
-            <li>Learning New Technologies</li>
-        </ul>
-    </section>
+/* =========================================================
+   PROJECT LIST / INTERESTS / FOOTER
+========================================================= */
+.project-list {
+    list-style: none;
+    padding-left: 0;
+}
 
-      <!-- ================= FOOTER ================= -->
-    <footer class="footer">
-        <div class="footer-quote">
-            “You never change things by fighting the existing reality. To change something, build a new model that makes the old one obsolete.”
-            <br>— R. Buckminster Fuller
-        </div>
-        2025 Eng. Bannaga Altieb Abdul Muhsin
-    </footer>
-<div class="qr-block">
-    <img src="assets/images/QR Code.jpg" alt="QR Code" class="qr-img">
-    <p>Scan to download my latest CV</p>
-</div>
+.project-list li {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+}
 
-</div>
+.two-col-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px 18px;
+}
 
-<!-- ============== DARK MODE TOGGLE SCRIPT ============== -->
-<script>
-(function() {
-    const body = document.body;
-    const toggle = document.querySelector('.theme-toggle');
-    if (!toggle) return;
+@media (max-width: 650px) {
+    .two-col-list { grid-template-columns: 1fr; }
+}
 
-    const label = toggle.querySelector('.toggle-label');
+.footer {
+    text-align: center;
+    padding: 25px 10px;
+    font-size: 14px;
+    color: #555;
+    margin-top: 40px;
+    border-top: 1px solid #e0e0e0;
+}
 
-    function setTheme(isDark) {
-        if (isDark) {
-            body.classList.add('theme-dark');
-            if (label) label.textContent = 'Light mode';
-            localStorage.setItem('theme', 'dark');
-        } else {
-            body.classList.remove('theme-dark');
-            if (label) label.textContent = 'Dark mode';
-            localStorage.setItem('theme', 'light');
-        }
+.footer-quote {
+    font-style: italic;
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+/* =========================================================
+   QR CODE BLOCK
+========================================================= */
+.qr-block {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.qr-img {
+    width: 130px;
+    height: auto;
+    border-radius: 12px;
+    margin-bottom: 8px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+/* =========================================================
+   3D BLOBS
+========================================================= */
+.cv-container::before,
+.cv-container::after {
+    content: "";
+    position: absolute;
+    width: 360px;
+    height: 360px;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.22;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.cv-container::before {
+    top: 8%;
+    left: -260px;
+    background: radial-gradient(circle at 30% 30%, rgba(19,52,108,0.25), rgba(19,52,108,0));
+}
+
+.cv-container::after {
+    bottom: 12%;
+    right: -260px;
+    background: radial-gradient(circle at 70% 70%, rgba(58,209,124,0.25), rgba(58,209,124,0));
+}
+
+/* =========================================================
+   PRINT MODE — PERFECT A4 OUTPUT
+========================================================= */
+
+@media print {
+
+    @page {
+        size: A4;
+        margin: 10mm !important;
     }
 
-    // Load stored preference
-    const stored = localStorage.getItem('theme');
-    if (stored === 'dark') {
-        setTheme(true);
-    } else {
-        setTheme(false);
+    body {
+        background: white !important;
+        padding: 0 !important;
+        margin: 0 !important;
     }
 
-    toggle.addEventListener('click', () => {
-        const isDark = body.classList.contains('theme-dark');
-        setTheme(!isDark);
-    });
-})();
-</script>
+    .cv-container {
+        max-width: 100%;
+        padding: 0.8cm !important;
+        border: none !important;
+        box-shadow: none !important;
+    }
 
-</body>
-</html>
+    /* Remove ink-heavy gradients */
+    .cv-container::before,
+    .cv-container::after {
+        display: none !important;
+    }
+
+    .hero {
+        break-inside: avoid-page;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    /* Keep colors visible in PDF */
+    * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+}
