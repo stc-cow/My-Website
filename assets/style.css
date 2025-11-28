@@ -244,13 +244,16 @@ p, ul li {
 
 .big-number {
     position: absolute;
-    right: 8px;
-    bottom: -8px;
-    font-size: 110px;
+    right: 12px;
+    bottom: -10px;
+    font-size: 125px;
     font-weight: 800;
-    color: rgba(37,99,235,0.10);
+    color: rgba(37, 99, 235, 0.10); /* Soft blue-gray */
     pointer-events: none;
+    user-select: none;
+    line-height: 0.8;
 }
+
 
 /* =========================================================
    TIMELINE
