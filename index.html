@@ -1,425 +1,794 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bannaga Altieb Abdul Muhsin | CV</title>
-    <script defer src="https://vercel.com/analytics/script.js"></script>
-    <link rel="stylesheet" href="assets/style.css" />
-    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bannaga Altieb Abdul Muhsin | Electrical Project Engineer</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<script defer src="https://vercel.com/analytics/script.js"></script>
+<style>
+    :root { --primary: #6366f1; --secondary: #8b5cf6; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: #020617; color: #e2e8f0; }
+    h1, h2, h3, h4 { font-family: 'Space Grotesk', sans-serif; }
+
+    .gradient-text {
+        background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #d946ef 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+    .glass {
+        background: rgba(15, 23, 42, 0.6);
+        backdrop-filter: blur(16px);
+        border: 1px solid rgba(255,255,255,0.1);
+    }
+    .card-glow {
+        position: relative;
+        transition: all 0.3s ease;
+    }
+    .card-glow::before {
+        content: '';
+        position: absolute;
+        inset: -1px;
+        background: linear-gradient(135deg, #6366f1, #8b5cf6, #d946ef);
+        border-radius: inherit;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        z-index: -1;
+    }
+    .card-glow:hover::before { opacity: 1; }
+
+    .animate-float { animation: float 6s ease-in-out infinite; }
+    @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-20px); }
+    }
+
+    .skill-bar {
+        position: relative;
+        overflow: hidden;
+    }
+    .skill-bar::after {
+        content: '';
+        position: absolute;
+        top: 0; left: 0;
+        height: 100%;
+        background: linear-gradient(90deg, #6366f1, #8b5cf6);
+        border-radius: 9999px;
+        animation: fillBar 1.5s ease-out forwards;
+        width: var(--skill-width);
+    }
+    @keyframes fillBar {
+        from { width: 0; }
+        to { width: var(--skill-width); }
+    }
+
+    .nav-link { position: relative; }
+    .nav-link::after {
+        content: '';
+        position: absolute;
+        bottom: -4px; left: 0;
+        width: 0; height: 2px;
+        background: linear-gradient(90deg, #6366f1, #8b5cf6);
+        transition: width 0.3s ease;
+    }
+    .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+
+    .project-card {
+        transform: translateY(0);
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    .project-card:hover { transform: translateY(-8px); }
+
+    .bg-grid {
+        background-image:
+            linear-gradient(rgba(99,102,241,0.1) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(99,102,241,0.1) 1px, transparent 1px);
+        background-size: 50px 50px;
+    }
+
+    .timeline-line::before {
+        content: '';
+        position: absolute;
+        left: 19px; top: 0; bottom: 0;
+        width: 2px;
+        background: linear-gradient(180deg, #6366f1, #8b5cf6, #d946ef);
+    }
+</style>
 </head>
-<body>
+<body class="antialiased">
 
-<div class="cv-container">
-
-    <!-- =================== SIDEBAR =================== -->
-    <aside class="sidebar">
-
-        <!-- Profile -->
-        <div class="profile-wrap">
-            <div class="profile-ring">
-                <img src="assets/images/Untitled design.png" alt="Bannaga Altieb Abdul Muhsin" />
-            </div>
-            <div>
-                <div class="profile-name">Bannaga Altieb<br>Abdul Muhsin</div>
-                <div class="profile-title">Electrical Project Engineer</div>
-            </div>
-        </div>
-
-        <hr class="s-divider" />
-
-        <!-- Contact -->
-        <div class="s-section">
-            <div class="s-label">Contact</div>
-            <ul class="s-contact-list">
-                <li>
-                    <a href="tel:+966542966343">
-                        <svg class="s-icon" viewBox="0 0 24 24" aria-hidden="true">
-                            <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.1 10.8 19.79 19.79 0 010 2.18 2 2 0 012.18 0h3A2 2 0 017 1.72a12.84 12.84 0 001 3.1A2 2 0 017.91 6L6.36 7.55a16 16 0 006.09 6.09L14 12.09a2 2 0 011.18-.91 12.84 12.84 0 003.1 1A2 2 0 0122 16.92z"/>
-                        </svg>
-                        +966 54 296 6343
-                    </a>
-                </li>
-                <li>
-                    <a href="mailto:eng.altieb@gmail.com">
-                        <svg class="s-icon" viewBox="0 0 24 24" aria-hidden="true">
-                            <path d="M4 4h16a2 2 0 012 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2zm8 7L4 6h16l-8 5z"/>
-                        </svg>
-                        eng.altieb@gmail.com
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.linkedin.com/in/bannaga-abdalmuhsin-cmvp%C2%AE-cem%C2%AE-415106bb" target="_blank">
-                        <svg class="s-icon" viewBox="0 0 24 24" aria-hidden="true">
-                            <path d="M4.98 3.5C4.98 5 3.9 6 2.5 6S0 5 0 3.5 1.08 1 2.5 1 4.98 2 4.98 3.5zM.4 23.5h4.2V7.98H.4V23.5zM8.9 7.98v15.52h4.2v-8.3c0-2.24.42-4.4 3.2-4.4s2.8 2.56 2.8 4.54v8.17H23V13c0-5.06-2.7-7.42-6.3-7.42-2.84 0-4.1 1.58-4.8 2.68h-.1V7.98H8.9z"/>
-                        </svg>
-                        LinkedIn Profile
-                    </a>
-                </li>
-                <li>
-                    <span>
-                        <svg class="s-icon" viewBox="0 0 24 24" aria-hidden="true">
-                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 119.5 9 2.5 2.5 0 0112 11.5z"/>
-                        </svg>
-                        Riyadh, Saudi Arabia
-                    </span>
-                </li>
-            </ul>
-        </div>
-
-        <hr class="s-divider" />
-
-        <!-- Skills -->
-        <div class="s-section">
-            <div class="s-label">Core Skills</div>
-            <div class="tag-grid">
-                <span class="tag">Energy Audit (I–III)</span>
-                <span class="tag">CEM® / CMVP®</span>
-                <span class="tag">PUE Optimization</span>
-                <span class="tag">MV/LV Systems</span>
-                <span class="tag">UPS / VFDs / MCCs</span>
-                <span class="tag">CAFM / CMMS</span>
-                <span class="tag">BMS Monitoring</span>
-                <span class="tag">SCADA / DCS / PLC</span>
-                <span class="tag">Electrical Protection</span>
-                <span class="tag">Arc-Flash / Grounding</span>
-                <span class="tag">Root-Cause Analysis</span>
-                <span class="tag">ETAP / EasyPower</span>
-                <span class="tag">Power BI</span>
-                <span class="tag">Python / SQL</span>
-                <span class="tag">IEC / IEEE / NFPA</span>
-            </div>
-        </div>
-
-        <hr class="s-divider" />
-
-        <!-- Certifications -->
-        <div class="s-section">
-            <div class="s-label">Certifications</div>
-            <ul class="cert-list">
-                <li>CMVP® — Certified Measurement &amp; Verification Professional</li>
-                <li>CEM® — Certified Energy Manager</li>
-                <li>Machine Learning with Python</li>
-                <li>Power BI Essential Training</li>
-                <li>LEED Green Associate (Prep)</li>
-                <li>Excel for Data Analysis</li>
-                <li>SCADA / PLC / DCS</li>
-                <li>Quality Engineering</li>
-            </ul>
-        </div>
-
-        <hr class="s-divider" />
-
-        <!-- Languages -->
-        <div class="s-section">
-            <div class="s-label">Languages</div>
-            <ul class="lang-list">
-                <li class="lang-item">
-                    <div class="lang-name"><span>Arabic</span><span>Native</span></div>
-                    <div class="lang-bar-bg"><div class="lang-bar-fill" style="width:100%"></div></div>
-                </li>
-                <li class="lang-item">
-                    <div class="lang-name"><span>English</span><span>Professional</span></div>
-                    <div class="lang-bar-bg"><div class="lang-bar-fill" style="width:80%"></div></div>
-                </li>
-            </ul>
-        </div>
-
-        <hr class="s-divider" />
-
-        <!-- Memberships -->
-        <div class="s-section">
-            <div class="s-label">Memberships</div>
-            <ul class="cert-list">
-                <li>Saudi Council of Engineers (SCE)</li>
-                <li>Sudanese Engineers Association (SEA)</li>
-            </ul>
-        </div>
-
-        <hr class="s-divider" />
-
-        <!-- QR Code -->
-        <div class="qr-wrap">
-            <img src="assets/images/QR Code.jpg" alt="QR Code — Download CV" />
-            <p>Scan to download latest CV</p>
-        </div>
-
-    </aside>
-
-    <!-- =================== MAIN CONTENT =================== -->
-    <main class="main">
-
-        <!-- Hero Strip -->
-        <div class="hero-strip">
-            <h1>Bannaga Altieb Abdul Muhsin</h1>
-            <div class="role">Electrical Project Engineer &nbsp;·&nbsp; Riyadh, Saudi Arabia</div>
-            <div class="tagline">Critical power systems &nbsp;·&nbsp; Data centers &nbsp;·&nbsp; Energy management &nbsp;·&nbsp; Facility operations</div>
-            <div class="hero-btns">
-                <a class="btn-primary" href="mailto:eng.altieb@gmail.com">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M4 4h16a2 2 0 012 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2zm8 7L4 6h16l-8 5z"/></svg>
-                    Contact Me
-                </a>
-                <a class="btn-secondary" href="assets/Bannaga_CV.pdf" download>
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 16l-5-5h3V4h4v7h3l-5 5zm-7 4h14v-2H5v2z"/></svg>
-                    Download CV
-                </a>
-            </div>
-        </div>
-
-        <!-- Stats -->
-        <div class="stats-row">
-            <div class="stat-card">
-                <div class="stat-num">12+</div>
-                <div class="stat-lbl">Years of Experience</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-num">15+</div>
-                <div class="stat-lbl">Certifications &amp; Training</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-num">600+</div>
-                <div class="stat-lbl">Sites Managed</div>
-            </div>
-        </div>
-
-        <!-- Summary -->
-        <section>
-            <div class="section-header">
-                <div class="section-icon">
-                    <svg viewBox="0 0 24 24"><path d="M12 2a5 5 0 110 10A5 5 0 0112 2zm0 12c5.33 0 8 2.67 8 4v2H4v-2c0-1.33 2.67-4 8-4z"/></svg>
-                </div>
-                <h2>Professional Summary</h2>
-            </div>
-            <p class="summary-text">
-                A Certified Energy Manager (CEM®) and Certified Measurement &amp; Verification Professional (CMVP®)
-                with 12+ years of experience in electrical engineering, energy management, and critical facility operations
-                across telecom, industrial, and data center environments. Specialized in electrical systems reliability,
-                energy audits, PUE optimization, O&amp;M performance enhancement, and full lifecycle facility management.
-                Experienced in CAFM/CMMS-based maintenance planning, BMS monitoring, power quality analysis,
-                electrical system studies, and technical bid evaluations for MV/LV systems, UPS, VFDs, MCCs, and transformers.
-                Skilled in leading engineering teams, conducting detailed electrical assessments, and ensuring compliance
-                with IEC, IEEE, NEC, and NFPA standards.
-            </p>
-        </section>
-
-        <!-- Key Accomplishments -->
-        <section>
-            <div class="section-header">
-                <div class="section-icon">
-                    <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm4.24 16L12 15.45 7.77 18l1.12-4.81-3.73-3.23 4.92-.42L12 5l1.92 4.53 4.92.42-3.73 3.23L16.23 18z"/></svg>
-                </div>
-                <h2>Key Accomplishments</h2>
-            </div>
-            <ul class="accomplish-list">
-                <li>Reduced nationwide telecom utility consumption by 18% through targeted energy programs.</li>
-                <li>Completed full Data Center Energy Audit — delivered measurable PUE improvements and energy savings.</li>
-                <li>Developed AI-based CO₂ tracking and energy dashboards for telecom COW sites.</li>
-                <li>Enhanced O&amp;M performance across 600+ sites for STC COW and Mobily ENM Networks.</li>
-                <li>Commissioned 60+ MV/LV assets under SEC unified projects, including SCADA integration.</li>
-                <li>Standardized technical documentation reducing troubleshooting time by 30%.</li>
-            </ul>
-        </section>
-
-        <!-- Experience -->
-        <section>
-            <div class="section-header">
-                <div class="section-icon">
-                    <svg viewBox="0 0 24 24"><path d="M20 6h-2.18c.07-.44.18-.88.18-1.36C18 2.5 15.5 0 12 0S6 2.5 6 4.64c0 .48.11.92.18 1.36H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-8-4c1.9 0 3.45 1.55 3.45 3.27 0 1.47-1.55 2.73-3.45 2.73s-3.45-1.26-3.45-2.73C8.55 3.55 10.1 2 12 2zm8 18H4V8h4.81C9.79 9.17 10.82 10 12 10s2.21-.83 3.19-2H20v12z"/></svg>
-                </div>
-                <h2>Experience</h2>
-            </div>
-            <div class="timeline">
-
-                <div class="tl-item">
-                    <div class="tl-dot"></div>
-                    <div class="tl-body">
-                        <div class="tl-date">2019 – Present</div>
-                        <h3>Electrical Project Engineer — ACES | Riyadh</h3>
-                        <ul>
-                            <li>Managed power systems &amp; O&amp;M for STC COW and Mobily ENM networks.</li>
-                            <li>Conducted Energy Audits, power quality assessments, and load analysis.</li>
-                            <li>Improved Data Center energy performance through PUE tracking and optimization.</li>
-                            <li>Utilized CAFM and CMMS for asset management, preventive maintenance, and SLA reporting.</li>
-                            <li>Managed real-time system performance via BMS (cooling, power, alarms, environment).</li>
-                            <li>Reviewed vendor documents: SLDs, protection schemes, datasheets, cable schedules.</li>
-                            <li>Performed Technical Bid Evaluations for MV/LV systems including UPS, MCC, VFDs, transformers.</li>
-                            <li>Diagnosed electrical faults and conducted full root-cause investigations.</li>
-                            <li>Mentored junior engineers and enforced compliance with IEC/IEEE/NFPA standards.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="tl-item">
-                    <div class="tl-dot"></div>
-                    <div class="tl-body">
-                        <div class="tl-date">2018 – 2019</div>
-                        <h3>Electrical Project Engineer — Absar | Riyadh</h3>
-                        <ul>
-                            <li>Executed SEC unified contract for 60+ MV/LV electrical assets.</li>
-                            <li>Completed commissioning, protection checks, and SEC handover.</li>
-                            <li>Integrated SCADA telemetry for remote operations and alarm monitoring.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="tl-item">
-                    <div class="tl-dot"></div>
-                    <div class="tl-body">
-                        <div class="tl-date">2017 – 2018</div>
-                        <h3>Electrical Engineer — BEMCO</h3>
-                        <ul>
-                            <li>Maintained 11kV networks through structured preventive maintenance.</li>
-                            <li>Developed electrical inspection &amp; testing procedures.</li>
-                            <li>Supported QA/QC, NCR resolution, and system reliability improvements.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="tl-item">
-                    <div class="tl-dot"></div>
-                    <div class="tl-body">
-                        <div class="tl-date">2012 – 2017</div>
-                        <h3>Electrical Engineer — SEC Thermal Generation (Sudan)</h3>
-                        <ul>
-                            <li>Operated 200 MW thermal generation electrical systems.</li>
-                            <li>Performed 11kV switching, maintenance, and fault handling.</li>
-                            <li>Supported wastewater treatment &amp; environmental control via DCS systems.</li>
-                        </ul>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- Key Projects -->
-        <section>
-            <div class="section-header">
-                <div class="section-icon">
-                    <svg viewBox="0 0 24 24"><path d="M19 3H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2V5a2 2 0 00-2-2zm-7 3l5 8H7l5-8z"/></svg>
-                </div>
-                <h2>Key Projects</h2>
-            </div>
-            <div class="project-grid">
-                <div class="project-card">
-                    <strong>STC COW Network</strong>
-                    <span>O&amp;M + energy optimization across national telecom infrastructure</span>
-                </div>
-                <div class="project-card">
-                    <strong>Mobily ENM Managed Services</strong>
-                    <span>Full O&amp;M &amp; facility operations for ENM network</span>
-                </div>
-                <div class="project-card">
-                    <strong>Data Center Energy Audit</strong>
-                    <span>PUE improvement &amp; measurable energy savings program</span>
-                </div>
-                <div class="project-card">
-                    <strong>SEC Unified Contract</strong>
-                    <span>MV/LV commissioning + SCADA system integration (60+ assets)</span>
-                </div>
-                <div class="project-card">
-                    <strong>PP12 Thermal Generation</strong>
-                    <span>200 MW plant operations &amp; safety routines (Sudan)</span>
-                </div>
-                <div class="project-card">
-                    <strong>AI CO₂ Dashboard</strong>
-                    <span>ML anomaly detection &amp; CO₂ footprint tracking for telecom COW sites</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- AI & Development -->
-        <section>
-            <div class="section-header">
-                <div class="section-icon">
-                    <svg viewBox="0 0 24 24"><path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/></svg>
-                </div>
-                <h2>AI &amp; Development</h2>
-            </div>
-            <div class="ai-grid">
-                <div class="ai-card">
-                    <strong>AI &amp; Automation</strong>
-                    <ul>
-                        <li>Python automation for energy KPIs and performance reporting.</li>
-                        <li>ML anomaly detection for telecom power systems.</li>
-                        <li>CO₂ footprint dashboards for nationwide telecom deployments.</li>
-                        <li>SQL + Power BI for operational analytics and trend modeling.</li>
-                    </ul>
-                </div>
-                <div class="ai-card">
-                    <strong>Development &amp; Tools</strong>
-                    <ul>
-                        <li>Created SCADA/PLC/DCS troubleshooting guides.</li>
-                        <li>Developed API-style checklists for system integration.</li>
-                        <li>Used Git/GitHub for documentation and version control.</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- Education -->
-        <section>
-            <div class="section-header">
-                <div class="section-icon">
-                    <svg viewBox="0 0 24 24"><path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/></svg>
-                </div>
-                <h2>Education</h2>
-            </div>
-            <div class="edu-card">
-                <div class="edu-icon">
-                    <svg viewBox="0 0 24 24"><path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/></svg>
-                </div>
-                <div>
-                    <strong>B.Sc. Electronic Engineering (Control)</strong>
-                    <span>El Neelain University &nbsp;·&nbsp; 2007 – 2012</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- Availability -->
-        <section>
-            <div class="section-header">
-                <div class="section-icon">
-                    <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>
-                </div>
-                <h2>Availability</h2>
-            </div>
-            <div class="info-chips">
-                <span class="chip">Sun – Thu: 8:00 AM – 6:00 PM</span>
-                <span class="chip">Weekends: On-call for urgent interventions</span>
-                <span class="chip">Available for short-notice travel</span>
-            </div>
-        </section>
-
-        <!-- Hobbies -->
-        <section>
-            <div class="section-header">
-                <div class="section-icon">
-                    <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                </div>
-                <h2>Interests</h2>
-            </div>
-            <div class="info-chips">
-                <span class="chip">Electrical Power Systems</span>
-                <span class="chip">Energy Optimization</span>
-                <span class="chip">Automation &amp; Control</span>
-                <span class="chip">Data Analytics</span>
-                <span class="chip">Innovation Engineering</span>
-                <span class="chip">Learning New Technologies</span>
-            </div>
-        </section>
-
-        <!-- Footer -->
-        <footer class="footer">
-            <div class="footer-quote">
-                "You never change things by fighting the existing reality. To change something, build a new model that makes the old one obsolete."
-                <br>— R. Buckminster Fuller
-            </div>
-            © 2025 Eng. Bannaga Altieb Abdul Muhsin
-        </footer>
-
-    </main>
-
+<!-- Background Effects -->
+<div class="fixed inset-0 -z-10 overflow-hidden">
+    <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-purple-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-float"></div>
+    <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-indigo-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-float" style="animation-delay:2s"></div>
+    <div class="absolute top-1/2 left-1/2 w-[500px] h-[500px] bg-pink-600 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-float" style="animation-delay:4s"></div>
+    <div class="absolute inset-0 bg-grid opacity-30"></div>
 </div>
 
+<!-- Navbar -->
+<nav class="fixed top-0 w-full z-50 glass">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+            <a href="#home" class="text-xl font-bold gradient-text">BA.</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#home"         class="nav-link text-sm font-medium text-slate-300 hover:text-white transition">Home</a>
+                <a href="#about"        class="nav-link text-sm font-medium text-slate-300 hover:text-white transition">About</a>
+                <a href="#experience"   class="nav-link text-sm font-medium text-slate-300 hover:text-white transition">Experience</a>
+                <a href="#skills"       class="nav-link text-sm font-medium text-slate-300 hover:text-white transition">Skills</a>
+                <a href="#projects"     class="nav-link text-sm font-medium text-slate-300 hover:text-white transition">Projects</a>
+                <a href="#contact"      class="nav-link text-sm font-medium text-slate-300 hover:text-white transition">Contact</a>
+            </div>
+            <button id="menuBtn" class="md:hidden text-slate-300 hover:text-white">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
+    </div>
+    <div id="mobileMenu" class="hidden md:hidden glass border-t border-slate-800">
+        <div class="px-4 py-4 space-y-3">
+            <a href="#home"        class="block text-sm font-medium text-slate-300 hover:text-white py-2">Home</a>
+            <a href="#about"       class="block text-sm font-medium text-slate-300 hover:text-white py-2">About</a>
+            <a href="#experience"  class="block text-sm font-medium text-slate-300 hover:text-white py-2">Experience</a>
+            <a href="#skills"      class="block text-sm font-medium text-slate-300 hover:text-white py-2">Skills</a>
+            <a href="#projects"    class="block text-sm font-medium text-slate-300 hover:text-white py-2">Projects</a>
+            <a href="#contact"     class="block text-sm font-medium text-slate-300 hover:text-white py-2">Contact</a>
+        </div>
+    </div>
+</nav>
+
+<!-- ===================== HERO ===================== -->
+<section id="home" class="min-h-screen flex items-center pt-16 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto w-full">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div class="order-2 lg:order-1">
+                <div class="inline-block mb-4 px-4 py-1.5 glass rounded-full text-xs font-medium text-indigo-300">
+                    <i class="fa-solid fa-bolt mr-2"></i>CEM® · CMVP® · Electrical Project Engineer
+                </div>
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                    Hi, I'm <span class="gradient-text">Bannaga Altieb</span>
+                </h1>
+                <p class="text-lg sm:text-xl text-slate-400 mb-8 leading-relaxed">
+                    Electrical Project Engineer with 12+ years delivering critical power systems, data center energy optimization, and large-scale O&amp;M across telecom and industrial environments in Saudi Arabia.
+                </p>
+                <div class="flex flex-wrap gap-4 mb-8">
+                    <a href="#contact" class="px-6 py-3 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-lg font-medium text-white hover:shadow-lg hover:shadow-indigo-500/50 transition-all duration-300 hover:scale-105">
+                        Get In Touch <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </a>
+                    <a href="assets/Bannaga_CV.pdf" download class="px-6 py-3 glass rounded-lg font-medium text-slate-200 hover:bg-slate-800/60 transition-all duration-300">
+                        Download CV <i class="fa-solid fa-download ml-2"></i>
+                    </a>
+                </div>
+                <div class="flex gap-4">
+                    <a href="tel:+966542966343" class="w-10 h-10 flex items-center justify-center glass rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 transition" title="+966 54 296 6343">
+                        <i class="fa-solid fa-phone"></i>
+                    </a>
+                    <a href="mailto:eng.altieb@gmail.com" class="w-10 h-10 flex items-center justify-center glass rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 transition" title="eng.altieb@gmail.com">
+                        <i class="fa-solid fa-envelope"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/bannaga-abdalmuhsin-cmvp%C2%AE-cem%C2%AE-415106bb" target="_blank" class="w-10 h-10 flex items-center justify-center glass rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 transition">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="order-1 lg:order-2 flex justify-center">
+                <div class="relative">
+                    <div class="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full blur-2xl opacity-30"></div>
+                    <img src="assets/images/Untitled design.png"
+                         alt="Bannaga Altieb Abdul Muhsin"
+                         class="relative w-64 h-64 sm:w-80 sm:h-80 rounded-full object-cover border-4 border-slate-800 shadow-2xl animate-float">
+                    <div class="absolute -bottom-4 -right-4 glass px-4 py-2 rounded-lg">
+                        <p class="text-xs text-slate-400">12+ Years</p>
+                        <p class="text-sm font-semibold">Experience</p>
+                    </div>
+                    <div class="absolute -top-4 -left-4 glass px-4 py-2 rounded-lg">
+                        <p class="text-xs text-slate-400">Riyadh</p>
+                        <p class="text-sm font-semibold">Saudi Arabia</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===================== ABOUT ===================== -->
+<section id="about" class="py-20 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <p class="text-indigo-400 text-sm font-semibold mb-2 uppercase tracking-wider">About Me</p>
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">Powering Critical Systems</h2>
+            <p class="text-slate-400 max-w-2xl mx-auto">Certified expert in energy management and electrical engineering, delivering safe and efficient solutions.</p>
+        </div>
+        <div class="grid md:grid-cols-2 gap-8 items-start">
+            <div class="glass rounded-2xl p-8 card-glow">
+                <h3 class="text-2xl font-bold mb-4">Professional Summary</h3>
+                <p class="text-slate-400 mb-4 leading-relaxed">
+                    A Certified Energy Manager (CEM®) and Certified Measurement &amp; Verification Professional (CMVP®) with 12+ years of experience across telecom, industrial, and data center environments in Saudi Arabia and Sudan.
+                </p>
+                <p class="text-slate-400 mb-6 leading-relaxed">
+                    Specialized in electrical systems reliability, energy audits, PUE optimization, O&amp;M performance, CAFM/CMMS maintenance planning, BMS monitoring, power quality analysis, and technical bid evaluations for MV/LV systems, UPS, VFDs, MCCs, and transformers.
+                </p>
+                <div class="grid grid-cols-3 gap-4">
+                    <div class="glass rounded-lg p-4 text-center">
+                        <h4 class="text-3xl font-bold gradient-text mb-1">12+</h4>
+                        <p class="text-xs text-slate-400">Years Experience</p>
+                    </div>
+                    <div class="glass rounded-lg p-4 text-center">
+                        <h4 class="text-3xl font-bold gradient-text mb-1">15+</h4>
+                        <p class="text-xs text-slate-400">Certifications</p>
+                    </div>
+                    <div class="glass rounded-lg p-4 text-center">
+                        <h4 class="text-3xl font-bold gradient-text mb-1">600+</h4>
+                        <p class="text-xs text-slate-400">Sites Managed</p>
+                    </div>
+                </div>
+            </div>
+            <div class="space-y-4">
+                <div class="glass rounded-xl p-6 card-glow">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 flex items-center justify-center bg-indigo-500/20 rounded-lg text-indigo-400 shrink-0">
+                            <i class="fa-solid fa-bolt text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold mb-2">Critical Power Systems</h4>
+                            <p class="text-sm text-slate-400">MV/LV engineering, UPS, VFDs, MCCs, transformers, protection schemes and IEC/IEEE/NFPA compliance.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass rounded-xl p-6 card-glow">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 flex items-center justify-center bg-purple-500/20 rounded-lg text-purple-400 shrink-0">
+                            <i class="fa-solid fa-leaf text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold mb-2">Energy Management</h4>
+                            <p class="text-sm text-slate-400">CEM® &amp; CMVP® certified. Energy audits (Level I–III), PUE optimization, and 18% utility reduction across national telecom networks.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass rounded-xl p-6 card-glow">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 flex items-center justify-center bg-pink-500/20 rounded-lg text-pink-400 shrink-0">
+                            <i class="fa-solid fa-chart-line text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold mb-2">AI &amp; Data Analytics</h4>
+                            <p class="text-sm text-slate-400">Python automation, ML anomaly detection for power systems, CO₂ dashboards, Power BI and SQL-based operational analytics.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass rounded-xl p-6 card-glow">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 flex items-center justify-center bg-cyan-500/20 rounded-lg text-cyan-400 shrink-0">
+                            <i class="fa-solid fa-server text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold mb-2">Facility Operations</h4>
+                            <p class="text-sm text-slate-400">CAFM/CMMS asset management, BMS monitoring, root-cause analysis, vendor document review, and SLA reporting.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===================== EXPERIENCE ===================== -->
+<section id="experience" class="py-20 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <p class="text-indigo-400 text-sm font-semibold mb-2 uppercase tracking-wider">Career</p>
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">Work Experience</h2>
+            <p class="text-slate-400 max-w-2xl mx-auto">Over a decade of progressive engineering leadership across the Middle East and Africa.</p>
+        </div>
+        <div class="relative timeline-line pl-12 space-y-8">
+
+            <!-- Job 1 -->
+            <div class="relative">
+                <div class="absolute left-0 top-1 w-10 h-10 flex items-center justify-center bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full shadow-lg shadow-indigo-500/30">
+                    <i class="fa-solid fa-briefcase text-white text-xs"></i>
+                </div>
+                <div class="glass rounded-2xl p-6 card-glow">
+                    <div class="flex flex-wrap items-start justify-between gap-4 mb-4">
+                        <div>
+                            <h3 class="text-xl font-bold">Electrical Project Engineer</h3>
+                            <p class="text-indigo-400 font-medium">ACES · Riyadh, Saudi Arabia</p>
+                        </div>
+                        <span class="px-3 py-1 glass rounded-full text-xs font-medium text-purple-300 shrink-0">2019 – Present</span>
+                    </div>
+                    <ul class="space-y-2 text-slate-400 text-sm">
+                        <li class="flex gap-2"><i class="fa-solid fa-chevron-right text-indigo-400 mt-0.5 shrink-0 text-xs"></i>Managed power systems &amp; O&amp;M for STC COW and Mobily ENM networks across 600+ sites.</li>
+                        <li class="flex gap-2"><i class="fa-solid fa-chevron-right text-indigo-400 mt-0.5 shrink-0 text-xs"></i>Conducted Energy Audits, power quality assessments, load analysis, and PUE optimization for Data Centers.</li>
+                        <li class="flex gap-2"><i class="fa-solid fa-chevron-right text-indigo-400 mt-0.5 shrink-0 text-xs"></i>Utilized CAFM and CMMS for asset management, preventive maintenance, and SLA reporting.</li>
+                        <li class="flex gap-2"><i class="fa-solid fa-chevron-right text-indigo-400 mt-0.5 shrink-0 text-xs"></i>Reviewed vendor documents: SLDs, protection schemes, datasheets, and cable schedules.</li>
+                        <li class="flex gap-2"><i class="fa-solid fa-chevron-right text-indigo-400 mt-0.5 shrink-0 text-xs"></i>Performed Technical Bid Evaluations for MV/LV systems including UPS, MCC, VFDs, and transformers.</li>
+                        <li class="flex gap-2"><i class="fa-solid fa-chevron-right text-indigo-400 mt-0.5 shrink-0 text-xs"></i>Mentored junior engineers and enforced IEC/IEEE/NFPA compliance.</li>
+                    </ul>
+                    <div class="flex flex-wrap gap-2 mt-4">
+                        <span class="px-2 py-1 bg-slate-800 rounded text-xs text-slate-300">Energy Audit</span>
+                        <span class="px-2 py-1 bg-slate-800 rounded text-xs text-slate-300">CAFM/CMMS</span>
+                        <span class="px-2 py-1 bg-slate-800 rounded text-xs text-slate-300">BMS</span>
+                        <span class="px-2 py-1 bg-slate-800 rounded text-xs text-slate-300">MV/LV</span>
+                        <span class="px-2 py-1 bg-slate-800 rounded text-xs text-slate-300">PUE</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Job 2 -->
+            <div class="relative">
+                <div class="absolute left-0 top-1 w-10 h-10 flex items-center justify-center bg-gradient-to-br from-purple-500 to-pink-600 rounded-full shadow-lg shadow-purple-500/30">
+                    <i class="fa-solid fa-plug text-white text-xs"></i>
+                </div>
+                <div class="glass rounded-2xl p-6 card-glow">
+                    <div class="flex flex-wrap items-start justify-between gap-4 mb-4">
+                        <div>
+                            <h3 class="text-xl font-bold">Electrical Project Engineer</h3>
+                            <p class="text-purple-400 font-medium">Absar · Riyadh, Saudi Arabia</p>
+                        </div>
+                        <span class="px-3 py-1 glass rounded-full text-xs font-medium text-pink-300 shrink-0">2018 – 2019</span>
+                    </div>
+                    <ul class="space-y-2 text-slate-400 text-sm">
+                        <li class="flex gap-2"><i class="fa-solid fa-chevron-right text-purple-400 mt-0.5 shrink-0 text-xs"></i>Executed SEC unified contract for 60+ MV/LV electrical assets.</li>
+                        <li class="flex gap-2"><i class="fa-solid fa-chevron-right text-purple-400 mt-0.5 shrink-0 text-xs"></i>Completed commissioning, protection checks, and SEC handover.</li>
+                        <li class="flex gap-2"><i class="fa-solid fa-chevron-right text-purple-400 mt-0.5 shrink-0 text-xs"></i>Integrated SCADA telemetry for remote operations and alarm monitoring.</li>
+                    </ul>
+                    <div class="flex flex-wrap gap-2 mt-4">
+                        <span class="px-2 py-1 bg-slate-800 rounded text-xs text-slate-300">SCADA</span>
+                        <span class="px-2 py-1 bg-slate-800 rounded text-xs text-slate-300">Commissioning</span>
+                        <span class="px-2 py-1 bg-slate-800 rounded text-xs text-slate-300">SEC</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Job 3 -->
+            <div class="relative">
+                <div class="absolute left-0 top-1 w-10 h-10 flex items-center justify-center bg-gradient-to-br from-pink-500 to-rose-600 rounded-full shadow-lg shadow-pink-500/30">
+                    <i class="fa-solid fa-tower-broadcast text-white text-xs"></i>
+                </div>
+                <div class="glass rounded-2xl p-6 card-glow">
+                    <div class="flex flex-wrap items-start justify-between gap-4 mb-4">
+                        <div>
+                            <h3 class="text-xl font-bold">Electrical Engineer</h3>
+                            <p class="text-pink-400 font-medium">BEMCO</p>
+                        </div>
+                        <span class="px-3 py-1 glass rounded-full text-xs font-medium text-rose-300 shrink-0">2017 – 2018</span>
+                    </div>
+                    <ul class="space-y-2 text-slate-400 text-sm">
+                        <li class="flex gap-2"><i class="fa-solid fa-chevron-right text-pink-400 mt-0.5 shrink-0 text-xs"></i>Maintained 11kV networks through structured preventive maintenance.</li>
+                        <li class="flex gap-2"><i class="fa-solid fa-chevron-right text-pink-400 mt-0.5 shrink-0 text-xs"></i>Developed electrical inspection &amp; testing procedures.</li>
+                        <li class="flex gap-2"><i class="fa-solid fa-chevron-right text-pink-400 mt-0.5 shrink-0 text-xs"></i>Supported QA/QC, NCR resolution, and system reliability improvements.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Job 4 -->
+            <div class="relative">
+                <div class="absolute left-0 top-1 w-10 h-10 flex items-center justify-center bg-gradient-to-br from-slate-500 to-slate-700 rounded-full shadow-lg">
+                    <i class="fa-solid fa-industry text-white text-xs"></i>
+                </div>
+                <div class="glass rounded-2xl p-6 card-glow">
+                    <div class="flex flex-wrap items-start justify-between gap-4 mb-4">
+                        <div>
+                            <h3 class="text-xl font-bold">Electrical Engineer</h3>
+                            <p class="text-slate-400 font-medium">SEC Thermal Generation · Sudan</p>
+                        </div>
+                        <span class="px-3 py-1 glass rounded-full text-xs font-medium text-slate-300 shrink-0">2012 – 2017</span>
+                    </div>
+                    <ul class="space-y-2 text-slate-400 text-sm">
+                        <li class="flex gap-2"><i class="fa-solid fa-chevron-right text-slate-400 mt-0.5 shrink-0 text-xs"></i>Operated 200 MW thermal generation electrical systems.</li>
+                        <li class="flex gap-2"><i class="fa-solid fa-chevron-right text-slate-400 mt-0.5 shrink-0 text-xs"></i>Performed 11kV switching, maintenance, and fault handling.</li>
+                        <li class="flex gap-2"><i class="fa-solid fa-chevron-right text-slate-400 mt-0.5 shrink-0 text-xs"></i>Supported wastewater treatment &amp; environmental control via DCS systems.</li>
+                    </ul>
+                    <div class="flex flex-wrap gap-2 mt-4">
+                        <span class="px-2 py-1 bg-slate-800 rounded text-xs text-slate-300">DCS</span>
+                        <span class="px-2 py-1 bg-slate-800 rounded text-xs text-slate-300">11kV</span>
+                        <span class="px-2 py-1 bg-slate-800 rounded text-xs text-slate-300">200 MW</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ===================== SKILLS ===================== -->
+<section id="skills" class="py-20 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <p class="text-indigo-400 text-sm font-semibold mb-2 uppercase tracking-wider">Expertise</p>
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">Technical Skills</h2>
+            <p class="text-slate-400 max-w-2xl mx-auto">Core competencies built across 12+ years of hands-on engineering work.</p>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Power Systems -->
+            <div class="glass rounded-xl p-6 card-glow">
+                <div class="flex items-center gap-3 mb-4">
+                    <i class="fa-solid fa-bolt text-3xl text-yellow-400"></i>
+                    <h3 class="font-semibold text-lg">Power Systems</h3>
+                </div>
+                <div class="space-y-3">
+                    <div>
+                        <div class="flex justify-between text-sm mb-1"><span class="text-slate-300">MV/LV Systems</span><span class="text-slate-400">95%</span></div>
+                        <div class="h-2 bg-slate-800 rounded-full skill-bar" style="--skill-width:95%"></div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-sm mb-1"><span class="text-slate-300">UPS / VFDs / MCCs</span><span class="text-slate-400">90%</span></div>
+                        <div class="h-2 bg-slate-800 rounded-full skill-bar" style="--skill-width:90%"></div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-sm mb-1"><span class="text-slate-300">Protection & Grounding</span><span class="text-slate-400">88%</span></div>
+                        <div class="h-2 bg-slate-800 rounded-full skill-bar" style="--skill-width:88%"></div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-sm mb-1"><span class="text-slate-300">ETAP / EasyPower</span><span class="text-slate-400">80%</span></div>
+                        <div class="h-2 bg-slate-800 rounded-full skill-bar" style="--skill-width:80%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Energy Management -->
+            <div class="glass rounded-xl p-6 card-glow">
+                <div class="flex items-center gap-3 mb-4">
+                    <i class="fa-solid fa-leaf text-3xl text-green-400"></i>
+                    <h3 class="font-semibold text-lg">Energy Management</h3>
+                </div>
+                <div class="space-y-3">
+                    <div>
+                        <div class="flex justify-between text-sm mb-1"><span class="text-slate-300">Energy Audit (I–III)</span><span class="text-slate-400">95%</span></div>
+                        <div class="h-2 bg-slate-800 rounded-full skill-bar" style="--skill-width:95%"></div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-sm mb-1"><span class="text-slate-300">PUE Optimization</span><span class="text-slate-400">92%</span></div>
+                        <div class="h-2 bg-slate-800 rounded-full skill-bar" style="--skill-width:92%"></div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-sm mb-1"><span class="text-slate-300">CAFM / CMMS</span><span class="text-slate-400">88%</span></div>
+                        <div class="h-2 bg-slate-800 rounded-full skill-bar" style="--skill-width:88%"></div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-sm mb-1"><span class="text-slate-300">BMS Monitoring</span><span class="text-slate-400">85%</span></div>
+                        <div class="h-2 bg-slate-800 rounded-full skill-bar" style="--skill-width:85%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Automation & Data -->
+            <div class="glass rounded-xl p-6 card-glow">
+                <div class="flex items-center gap-3 mb-4">
+                    <i class="fa-solid fa-microchip text-3xl text-purple-400"></i>
+                    <h3 class="font-semibold text-lg">Automation & Data</h3>
+                </div>
+                <div class="space-y-3">
+                    <div>
+                        <div class="flex justify-between text-sm mb-1"><span class="text-slate-300">SCADA / DCS / PLC</span><span class="text-slate-400">85%</span></div>
+                        <div class="h-2 bg-slate-800 rounded-full skill-bar" style="--skill-width:85%"></div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-sm mb-1"><span class="text-slate-300">Python / ML</span><span class="text-slate-400">78%</span></div>
+                        <div class="h-2 bg-slate-800 rounded-full skill-bar" style="--skill-width:78%"></div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-sm mb-1"><span class="text-slate-300">Power BI / SQL</span><span class="text-slate-400">82%</span></div>
+                        <div class="h-2 bg-slate-800 rounded-full skill-bar" style="--skill-width:82%"></div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-sm mb-1"><span class="text-slate-300">Root-Cause Analysis</span><span class="text-slate-400">93%</span></div>
+                        <div class="h-2 bg-slate-800 rounded-full skill-bar" style="--skill-width:93%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Certifications -->
+        <div class="mt-10 glass rounded-2xl p-8 card-glow">
+            <h3 class="text-xl font-bold mb-6 text-center">Certifications &amp; Credentials</h3>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                <div class="glass rounded-xl p-4 text-center hover:border-indigo-500/50 transition">
+                    <div class="w-12 h-12 mx-auto mb-3 flex items-center justify-center bg-indigo-500/20 rounded-lg text-indigo-400">
+                        <i class="fa-solid fa-certificate text-xl"></i>
+                    </div>
+                    <p class="text-sm font-semibold text-white">CMVP®</p>
+                    <p class="text-xs text-slate-400 mt-1">Measurement &amp; Verification</p>
+                </div>
+                <div class="glass rounded-xl p-4 text-center hover:border-purple-500/50 transition">
+                    <div class="w-12 h-12 mx-auto mb-3 flex items-center justify-center bg-purple-500/20 rounded-lg text-purple-400">
+                        <i class="fa-solid fa-award text-xl"></i>
+                    </div>
+                    <p class="text-sm font-semibold text-white">CEM®</p>
+                    <p class="text-xs text-slate-400 mt-1">Certified Energy Manager</p>
+                </div>
+                <div class="glass rounded-xl p-4 text-center hover:border-cyan-500/50 transition">
+                    <div class="w-12 h-12 mx-auto mb-3 flex items-center justify-center bg-cyan-500/20 rounded-lg text-cyan-400">
+                        <i class="fa-brands fa-python text-xl"></i>
+                    </div>
+                    <p class="text-sm font-semibold text-white">ML / Python</p>
+                    <p class="text-xs text-slate-400 mt-1">Machine Learning</p>
+                </div>
+                <div class="glass rounded-xl p-4 text-center hover:border-pink-500/50 transition">
+                    <div class="w-12 h-12 mx-auto mb-3 flex items-center justify-center bg-pink-500/20 rounded-lg text-pink-400">
+                        <i class="fa-solid fa-chart-bar text-xl"></i>
+                    </div>
+                    <p class="text-sm font-semibold text-white">Power BI</p>
+                    <p class="text-xs text-slate-400 mt-1">Essential Training</p>
+                </div>
+                <div class="glass rounded-xl p-4 text-center hover:border-green-500/50 transition">
+                    <div class="w-12 h-12 mx-auto mb-3 flex items-center justify-center bg-green-500/20 rounded-lg text-green-400">
+                        <i class="fa-solid fa-leaf text-xl"></i>
+                    </div>
+                    <p class="text-sm font-semibold text-white">LEED GA</p>
+                    <p class="text-xs text-slate-400 mt-1">Green Associate Prep</p>
+                </div>
+                <div class="glass rounded-xl p-4 text-center hover:border-yellow-500/50 transition">
+                    <div class="w-12 h-12 mx-auto mb-3 flex items-center justify-center bg-yellow-500/20 rounded-lg text-yellow-400">
+                        <i class="fa-solid fa-robot text-xl"></i>
+                    </div>
+                    <p class="text-sm font-semibold text-white">SCADA/PLC</p>
+                    <p class="text-xs text-slate-400 mt-1">DCS Systems</p>
+                </div>
+                <div class="glass rounded-xl p-4 text-center hover:border-orange-500/50 transition">
+                    <div class="w-12 h-12 mx-auto mb-3 flex items-center justify-center bg-orange-500/20 rounded-lg text-orange-400">
+                        <i class="fa-solid fa-table text-xl"></i>
+                    </div>
+                    <p class="text-sm font-semibold text-white">Excel Analytics</p>
+                    <p class="text-xs text-slate-400 mt-1">Data Analysis</p>
+                </div>
+                <div class="glass rounded-xl p-4 text-center hover:border-rose-500/50 transition">
+                    <div class="w-12 h-12 mx-auto mb-3 flex items-center justify-center bg-rose-500/20 rounded-lg text-rose-400">
+                        <i class="fa-solid fa-star text-xl"></i>
+                    </div>
+                    <p class="text-sm font-semibold text-white">Quality Eng.</p>
+                    <p class="text-xs text-slate-400 mt-1">QA/QC Engineering</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===================== PROJECTS ===================== -->
+<section id="projects" class="py-20 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <p class="text-indigo-400 text-sm font-semibold mb-2 uppercase tracking-wider">Portfolio</p>
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">Key Projects</h2>
+            <p class="text-slate-400 max-w-2xl mx-auto">Major engineering projects delivered across Saudi Arabia and Sudan.</p>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <div class="project-card glass rounded-2xl overflow-hidden card-glow">
+                <div class="relative h-36 bg-gradient-to-br from-indigo-900 to-indigo-700 flex items-center justify-center">
+                    <i class="fa-solid fa-tower-cell text-6xl text-indigo-300 opacity-40"></i>
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"></div>
+                    <div class="absolute top-4 right-4">
+                        <span class="px-3 py-1 glass rounded-full text-xs font-medium text-indigo-300">Telecom</span>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2">STC COW Network</h3>
+                    <p class="text-slate-400 text-sm mb-4">Nationwide O&amp;M and energy optimization across STC's tower infrastructure. Reduced utility consumption by 18%.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-2 py-1 bg-slate-800 rounded text-xs text-slate-300">Energy Audit</span>
+                        <span class="px-2 py-1 bg-slate-800 rounded text-xs text-slate-300">O&M</span>
+                        <span class="px-2 py-1 bg-slate-800 rounded text-xs text-slate-300">600+ Sites</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card glass rounded-2xl overflow-hidden card-glow">
+                <div class="relative h-36 bg-gradient-to-br from-purple-900 to-purple-700 flex items-center justify-center">
+                    <i class="fa-solid fa-network-wired text-6xl text-purple-300 opacity-40"></i>
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"></div>
+                    <div class="absolute top-4 right-4">
+                        <span class="px-3 py-1 glass rounded-full text-xs font-medium text-purple-300">Managed Services</span>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2">Mobily ENM Network</h3>
+                    <p class="text-slate-400 text-sm mb-4">Full O&amp;M and facility operations for Mobily's ENM managed services network including CAFM/BMS integration.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-2 py-1 bg-slate-800 rounded text-xs text-slate-300">CAFM</span>
+                        <span class="px-2 py-1 bg-slate-800 rounded text-xs text-slate-300">BMS</span>
+                        <span class="px-2 py-1 bg-slate-800 rounded text-xs text-slate-300">Facility Ops</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card glass rounded-2xl overflow-hidden card-glow">
+                <div class="relative h-36 bg-gradient-to-br from-cyan-900 to-cyan-700 flex items-center justify-center">
+                    <i class="fa-solid fa-server text-6xl text-cyan-300 opacity-40"></i>
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"></div>
+                    <div class="absolute top-4 right-4">
+                        <span class="px-3 py-1 glass rounded-full text-xs font-medium text-cyan-300">Data Center</span>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2">Data Center Energy Audit</h3>
+                    <p class="text-slate-400 text-sm mb-4">Complete energy audit with measurable PUE improvements and energy savings across critical DC infrastructure.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-2 py-1 bg-slate-800 rounded text-xs text-slate-300">PUE</span>
+                        <span class="px-2 py-1 bg-slate-800 rounded text-xs text-slate-300">CEM®</span>
+                        <span class="px-2 py-1 bg-slate-800 rounded text-xs text-slate-300">CMVP®</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card glass rounded-2xl overflow-hidden card-glow">
+                <div class="relative h-36 bg-gradient-to-br from-yellow-900 to-yellow-700 flex items-center justify-center">
+                    <i class="fa-solid fa-plug text-6xl text-yellow-300 opacity-40"></i>
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"></div>
+                    <div class="absolute top-4 right-4">
+                        <span class="px-3 py-1 glass rounded-full text-xs font-medium text-yellow-300">SEC</span>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2">SEC Unified Contract</h3>
+                    <p class="text-slate-400 text-sm mb-4">MV/LV commissioning of 60+ electrical assets with SCADA integration and full SEC handover documentation.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-2 py-1 bg-slate-800 rounded text-xs text-slate-300">SCADA</span>
+                        <span class="px-2 py-1 bg-slate-800 rounded text-xs text-slate-300">MV/LV</span>
+                        <span class="px-2 py-1 bg-slate-800 rounded text-xs text-slate-300">60+ Assets</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card glass rounded-2xl overflow-hidden card-glow">
+                <div class="relative h-36 bg-gradient-to-br from-orange-900 to-orange-700 flex items-center justify-center">
+                    <i class="fa-solid fa-fire-flame-curved text-6xl text-orange-300 opacity-40"></i>
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"></div>
+                    <div class="absolute top-4 right-4">
+                        <span class="px-3 py-1 glass rounded-full text-xs font-medium text-orange-300">Generation</span>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2">PP12 Thermal Generation</h3>
+                    <p class="text-slate-400 text-sm mb-4">Operations of 200 MW thermal power plant including 11kV switching, safety routines, and DCS-based environmental control.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-2 py-1 bg-slate-800 rounded text-xs text-slate-300">200 MW</span>
+                        <span class="px-2 py-1 bg-slate-800 rounded text-xs text-slate-300">DCS</span>
+                        <span class="px-2 py-1 bg-slate-800 rounded text-xs text-slate-300">11kV</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card glass rounded-2xl overflow-hidden card-glow">
+                <div class="relative h-36 bg-gradient-to-br from-pink-900 to-pink-700 flex items-center justify-center">
+                    <i class="fa-solid fa-brain text-6xl text-pink-300 opacity-40"></i>
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"></div>
+                    <div class="absolute top-4 right-4">
+                        <span class="px-3 py-1 glass rounded-full text-xs font-medium text-pink-300">AI / ML</span>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2">AI CO₂ Dashboard</h3>
+                    <p class="text-slate-400 text-sm mb-4">ML anomaly detection and CO₂ footprint tracking dashboards for nationwide telecom COW site deployments.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-2 py-1 bg-slate-800 rounded text-xs text-slate-300">Python</span>
+                        <span class="px-2 py-1 bg-slate-800 rounded text-xs text-slate-300">Power BI</span>
+                        <span class="px-2 py-1 bg-slate-800 rounded text-xs text-slate-300">ML</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ===================== CONTACT ===================== -->
+<section id="contact" class="py-20 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-16">
+            <p class="text-indigo-400 text-sm font-semibold mb-2 uppercase tracking-wider">Contact</p>
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">Let's Work Together</h2>
+            <p class="text-slate-400 max-w-2xl mx-auto">Have a project or opportunity? I'd love to hear from you.</p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6 mb-10">
+            <a href="mailto:eng.altieb@gmail.com" class="glass rounded-xl p-6 text-center card-glow group block">
+                <div class="w-12 h-12 mx-auto mb-3 flex items-center justify-center bg-indigo-500/20 rounded-lg text-indigo-400 group-hover:bg-indigo-500/40 transition">
+                    <i class="fa-solid fa-envelope"></i>
+                </div>
+                <p class="text-sm text-slate-400 mb-1">Email</p>
+                <p class="font-medium text-slate-200 text-sm">eng.altieb@gmail.com</p>
+            </a>
+            <a href="tel:+966542966343" class="glass rounded-xl p-6 text-center card-glow group block">
+                <div class="w-12 h-12 mx-auto mb-3 flex items-center justify-center bg-purple-500/20 rounded-lg text-purple-400 group-hover:bg-purple-500/40 transition">
+                    <i class="fa-solid fa-phone"></i>
+                </div>
+                <p class="text-sm text-slate-400 mb-1">Phone</p>
+                <p class="font-medium text-slate-200 text-sm">+966 54 296 6343</p>
+            </a>
+            <div class="glass rounded-xl p-6 text-center card-glow">
+                <div class="w-12 h-12 mx-auto mb-3 flex items-center justify-center bg-pink-500/20 rounded-lg text-pink-400">
+                    <i class="fa-solid fa-location-dot"></i>
+                </div>
+                <p class="text-sm text-slate-400 mb-1">Location</p>
+                <p class="font-medium text-slate-200 text-sm">Riyadh, Saudi Arabia</p>
+            </div>
+        </div>
+        <div class="glass rounded-2xl p-8 lg:p-12 card-glow text-center">
+            <h3 class="text-2xl font-bold mb-4">Ready to connect?</h3>
+            <p class="text-slate-400 mb-8 max-w-xl mx-auto">Available Sun–Thu 8AM–6PM. On-call for urgent interventions on weekends. Open to short-notice travel.</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="mailto:eng.altieb@gmail.com"
+                   class="px-8 py-4 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-lg font-medium text-white hover:shadow-lg hover:shadow-indigo-500/50 transition-all duration-300 hover:scale-105">
+                    Send Email <i class="fa-solid fa-paper-plane ml-2"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/bannaga-abdalmuhsin-cmvp%C2%AE-cem%C2%AE-415106bb" target="_blank"
+                   class="px-8 py-4 glass rounded-lg font-medium text-slate-200 hover:bg-slate-800/60 transition-all duration-300">
+                    LinkedIn <i class="fa-brands fa-linkedin-in ml-2"></i>
+                </a>
+                <a href="assets/Bannaga_CV.pdf" download
+                   class="px-8 py-4 glass rounded-lg font-medium text-slate-200 hover:bg-slate-800/60 transition-all duration-300">
+                    Download CV <i class="fa-solid fa-download ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="border-t border-slate-800 py-8 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto">
+        <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+            <div>
+                <p class="text-slate-400 text-sm italic mb-1">"You never change things by fighting the existing reality. Build a new model that makes the old one obsolete."</p>
+                <p class="text-slate-600 text-xs">— R. Buckminster Fuller</p>
+            </div>
+            <div class="flex flex-col items-end gap-3">
+                <div class="flex gap-4">
+                    <a href="mailto:eng.altieb@gmail.com" class="text-slate-400 hover:text-white transition"><i class="fa-solid fa-envelope text-lg"></i></a>
+                    <a href="tel:+966542966343" class="text-slate-400 hover:text-white transition"><i class="fa-solid fa-phone text-lg"></i></a>
+                    <a href="https://www.linkedin.com/in/bannaga-abdalmuhsin-cmvp%C2%AE-cem%C2%AE-415106bb" target="_blank" class="text-slate-400 hover:text-white transition"><i class="fa-brands fa-linkedin-in text-lg"></i></a>
+                </div>
+                <p class="text-slate-500 text-xs">© 2025 Eng. Bannaga Altieb Abdul Muhsin</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Mobile menu
+    document.getElementById('menuBtn').addEventListener('click', () => {
+        document.getElementById('mobileMenu').classList.toggle('hidden');
+    });
+    document.querySelectorAll('#mobileMenu a').forEach(link => {
+        link.addEventListener('click', () => document.getElementById('mobileMenu').classList.add('hidden'));
+    });
+
+    // Active nav on scroll
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
+    function updateActiveLink() {
+        let current = '';
+        sections.forEach(s => { if (window.scrollY >= s.offsetTop - 100) current = s.id; });
+        navLinks.forEach(l => {
+            l.classList.remove('active');
+            if (l.getAttribute('href') === `#${current}`) l.classList.add('active');
+        });
+    }
+    window.addEventListener('scroll', updateActiveLink);
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+        a.addEventListener('click', e => {
+            e.preventDefault();
+            const t = document.querySelector(a.getAttribute('href'));
+            if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+    });
+
+    // Re-trigger skill bar animations on scroll into view
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.animation = 'none';
+                entry.target.offsetHeight;
+                entry.target.style.animation = null;
+            }
+        });
+    }, { threshold: 0.5 });
+    document.querySelectorAll('.skill-bar').forEach(b => observer.observe(b));
+</script>
 </body>
 </html>
