@@ -1,0 +1,8 @@
+uploads = []
+generated = []
+
+[[outputs]]
+id = "xyy6dKbQ04qdGbosrAxpo"
+uri = "file://assets/Bannaga_CV.pdf"
+type = "pdf"
+title = "Bannaga Altieb — Modern CV (ATS Format)"
